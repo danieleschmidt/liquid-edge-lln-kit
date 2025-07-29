@@ -1,0 +1,71 @@
+# Auto-detect text files and perform LF normalization
+* text=auto
+
+# Python files
+*.py text eol=lf
+*.pyx text eol=lf
+*.pyi text eol=lf
+
+# Configuration files
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+*.json text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.rst text eol=lf
+*.txt text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Docker files
+Dockerfile* text eol=lf
+*.dockerfile text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.bin binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+
+# Model files
+*.onnx binary
+*.tflite binary
+*.h5 binary
+*.pkl binary
+*.pth binary
+*.pt binary
+
+# Archive files
+*.zip binary
+*.tar.gz binary
+*.tgz binary
+*.rar binary
+*.7z binary
+
+# Jupyter notebooks - treat as binary to avoid merge conflicts
+*.ipynb binary
+
+# Linguist overrides for proper language detection
+*.c linguist-language=C
+*.h linguist-language=C
+*.cpp linguist-language=C++
+*.hpp linguist-language=C++
+*.cu linguist-language=Cuda
+*.cuh linguist-language=Cuda

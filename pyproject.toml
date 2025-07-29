@@ -92,4 +92,13 @@ strict_optional = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
-addopts = "--cov=liquid_edge --cov-report=term-missing --cov-report=html"
+addopts = "--cov=liquid_edge --cov-report=term-missing --cov-report=html --cov-report=xml"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "hardware: marks tests requiring physical hardware",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", "examples"]
+skips = ["B101", "B601"]
