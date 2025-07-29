@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Community Discussion
+    url: https://github.com/liquid-edge/liquid-edge-lln-kit/discussions
+    about: Ask questions and discuss with the community
+  - name: 🛠️ Hardware Support Forum
+    url: https://github.com/liquid-edge/liquid-edge-lln-kit/discussions/categories/hardware
+    about: Get help with MCU deployment and hardware-specific issues
+  - name: 📚 Documentation
+    url: https://liquid-edge.readthedocs.io
+    about: Read the comprehensive documentation
+  - name: 🔒 Security Vulnerability
+    url: https://github.com/liquid-edge/liquid-edge-lln-kit/security/advisories/new
+    about: Report a security vulnerability privately
