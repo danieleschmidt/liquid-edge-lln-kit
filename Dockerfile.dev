@@ -1,0 +1,116 @@
+# Development container for Liquid Edge LLN Kit
+FROM ubuntu:22.04
+
+# Prevent interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Set locale
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    # Python and build tools
+    python3.10 \
+    python3.10-dev \
+    python3.10-venv \
+    python3-pip \
+    build-essential \
+    cmake \
+    ninja-build \
+    git \
+    curl \
+    wget \
+    # ARM toolchain for embedded development
+    gcc-arm-none-eabi \
+    # Libraries for scientific computing
+    libopenblas-dev \
+    liblapack-dev \
+    # Development tools
+    vim \
+    htop \
+    tree \
+    jq \
+    # For hardware simulation and testing
+    socat \
+    minicom \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create non-root user
+RUN useradd -m -s /bin/bash -u 1000 developer && \
+    usermod -aG dialout developer
+
+# Set up Python environment
+USER developer
+WORKDIR /home/developer
+
+# Install Python development tools
+RUN python3.10 -m pip install --user --upgrade pip setuptools wheel
+
+# Set up ESP-IDF for ESP32 development
+RUN git clone --recursive https://github.com/espressif/esp-idf.git esp-idf && \
+    cd esp-idf && \
+    git checkout v5.2 && \
+    ./install.sh esp32,esp32s3 && \
+    echo 'source $HOME/esp-idf/export.sh' >> ~/.bashrc
+
+# Install PlatformIO for embedded development
+RUN python3.10 -m pip install --user platformio && \
+    echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.bashrc
+
+# Set up working directory
+WORKDIR /workspace
+
+# Copy development requirements first for better caching
+COPY requirements-dev.txt* ./
+RUN if [ -f requirements-dev.txt ]; then \
+        python3.10 -m pip install --user -r requirements-dev.txt; \
+    fi
+
+# Install JAX with CPU support (more stable for development)
+RUN python3.10 -m pip install --user \
+    "jax[cpu]>=0.4.28" \
+    "jaxlib>=0.4.28" \
+    "flax>=0.8.0" \
+    "optax>=0.2.0"
+
+# Development tools
+RUN python3.10 -m pip install --user \
+    pytest \
+    pytest-cov \
+    pytest-xvfb \
+    pytest-benchmark \
+    ruff \
+    black \
+    mypy \
+    pre-commit \
+    ipython \
+    jupyter \
+    matplotlib \
+    seaborn
+
+# Set environment variables
+ENV PATH="/home/developer/.local/bin:$PATH" \
+    PYTHONPATH="/workspace/src:$PYTHONPATH" \
+    JAX_PLATFORM_NAME=cpu
+
+# Create common directories
+RUN mkdir -p /workspace/{src,tests,docs,examples,firmware}
+
+# Set up Git configuration template
+RUN git config --global init.defaultBranch main && \
+    git config --global pull.rebase false
+
+# Copy entrypoint script
+COPY --chown=developer:developer docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Expose common ports
+EXPOSE 8888 8000 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD python3.10 -c "import jax; print('Container healthy')" || exit 1
+
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+CMD ["bash"]

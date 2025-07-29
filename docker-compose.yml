@@ -1,0 +1,93 @@
+version: '3.8'
+
+services:
+  liquid-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: liquid-edge-dev
+    volumes:
+      - .:/workspace
+      - liquid-cache:/home/developer/.cache
+      - liquid-pip:/home/developer/.local
+      - liquid-platformio:/home/developer/.platformio
+      - /dev:/dev
+    ports:
+      - "8888:8888"  # Jupyter
+      - "8000:8000"  # Development server
+      - "3000:3000"  # Live reload
+    environment:
+      - PYTHONPATH=/workspace/src
+      - JAX_PLATFORM_NAME=cpu
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    privileged: true  # For hardware device access
+    stdin_open: true
+    tty: true
+    working_dir: /workspace
+    command: bash
+
+  # Hardware simulation service
+  hardware-sim:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: liquid-hardware-sim
+    volumes:
+      - .:/workspace
+      - liquid-cache:/home/developer/.cache
+    ports:
+      - "5555:5555"  # Hardware simulation port
+    environment:
+      - SIMULATION_MODE=true
+      - HARDWARE_DEVICES=stm32h7,esp32s3,nrf52840
+    working_dir: /workspace
+    command: python scripts/hardware_simulator.py
+    depends_on:
+      - liquid-dev
+
+  # Documentation development
+  docs-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: liquid-docs-dev
+    volumes:
+      - .:/workspace
+      - liquid-cache:/home/developer/.cache
+    ports:
+      - "8080:8080"  # Docs live server
+    working_dir: /workspace
+    command: bash -c "cd docs && python -m http.server 8080"
+    depends_on:
+      - liquid-dev
+
+  # Benchmark runner
+  benchmark:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: liquid-benchmark
+    volumes:
+      - .:/workspace
+      - liquid-cache:/home/developer/.cache
+      - ./benchmarks:/benchmarks
+    environment:
+      - BENCHMARK_OUTPUT=/benchmarks/results
+      - JAX_PLATFORM_NAME=cpu
+    working_dir: /workspace
+    command: python -m pytest tests/test_benchmarks.py -v --benchmark-json=/benchmarks/results.json
+    depends_on:
+      - liquid-dev
+
+volumes:
+  liquid-cache:
+    driver: local
+  liquid-pip:
+    driver: local  
+  liquid-platformio:
+    driver: local
+
+networks:
+  default:
+    name: liquid-edge-network
