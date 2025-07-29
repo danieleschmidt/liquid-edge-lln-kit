@@ -1,0 +1,369 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Install Development Dependencies",
+            "type": "shell",
+            "command": "pip",
+            "args": ["install", "-e", ".[dev,deployment,ros2]"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run All Tests",
+            "type": "shell",
+            "command": "pytest",
+            "args": [
+                "tests/",
+                "-v",
+                "--cov=liquid_edge",
+                "--cov-report=html",
+                "--cov-report=term"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "python",
+                    "fileLocation": ["relative", "${workspaceFolder}"],
+                    "pattern": [
+                        {
+                            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "severity": 4,
+                            "message": 5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Run Unit Tests",
+            "type": "shell",
+            "command": "pytest",
+            "args": [
+                "tests/unit/",
+                "-v"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Run Integration Tests",
+            "type": "shell",
+            "command": "pytest",
+            "args": [
+                "tests/integration/",
+                "-v",
+                "--slow"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Format Code",
+            "type": "shell",
+            "command": "black",
+            "args": ["src/", "tests/", "examples/"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Lint Code",
+            "type": "shell",
+            "command": "ruff",
+            "args": ["check", "src/", "tests/", "examples/"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "ruff",
+                    "fileLocation": ["relative", "${workspaceFolder}"],
+                    "pattern": [
+                        {
+                            "regexp": "^(.+?):(\\d+):(\\d+):\\s+(\\w+)\\s+(.+)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "severity": 4,
+                            "message": 5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Type Check",
+            "type": "shell",
+            "command": "mypy",
+            "args": ["src/liquid_edge"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "mypy",
+                    "fileLocation": ["relative", "${workspaceFolder}"],
+                    "pattern": [
+                        {
+                            "regexp": "^(.+?):(\\d+):(\\d+):\\s+(error|warning|note):\\s+(.+)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "severity": 4,
+                            "message": 5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Security Scan",
+            "type": "shell",
+            "command": "python",
+            "args": ["scripts/security_scan.py", "--project-root", "${workspaceFolder}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Package",
+            "type": "shell",
+            "command": "python",
+            "args": ["-m", "build"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean Build Artifacts",
+            "type": "shell",
+            "command": "rm",
+            "args": ["-rf", "build/", "dist/", "*.egg-info/", "__pycache__/", ".pytest_cache/", ".mypy_cache/", "htmlcov/"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Start Development Server",
+            "type": "shell",
+            "command": "liquid-lln",
+            "args": [
+                "serve",
+                "--config", "examples/configs/dev_server.yaml",
+                "--debug",
+                "--reload"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "liquid-edge",
+                "pattern": [
+                    {
+                        "regexp": "^(.*)$",
+                        "file": 1,
+                        "location": 2,
+                        "message": 3
+                    }
+                ],
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Starting Liquid Edge server",
+                    "endsPattern": "Server started on"
+                }
+            }
+        },
+        {
+            "label": "Run Benchmarks",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "scripts/benchmark_performance.py",
+                "--models", "models/",
+                "--output", "benchmark_results/"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Generate Documentation",
+            "type": "shell",
+            "command": "sphinx-build",
+            "args": [
+                "-b", "html",
+                "docs/source",
+                "docs/build/html"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Deploy to MCU (STM32)",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "examples/deploy_to_mcu.py",
+                "--target", "stm32h7",
+                "--model", "${input:modelPath}",
+                "--port", "${input:serialPort}"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Deploy to MCU (ESP32)",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "examples/deploy_to_mcu.py",
+                "--target", "esp32s3",
+                "--model", "${input:modelPath}",
+                "--port", "${input:serialPort}"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Monitor Device Logs",
+            "type": "shell",
+            "command": "liquid-lln",
+            "args": [
+                "monitor",
+                "--device", "${input:deviceId}",
+                "--follow"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "isBackground": true
+        },
+        {
+            "label": "Full CI Pipeline",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Install Development Dependencies",
+                "Format Code",
+                "Lint Code",
+                "Type Check",
+                "Run All Tests",
+                "Security Scan",
+                "Build Package"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "modelPath",
+            "description": "Path to model file",
+            "default": "models/liquid_model.ckpt",
+            "type": "promptString"
+        },
+        {
+            "id": "serialPort",
+            "description": "Serial port for MCU connection",
+            "default": "/dev/ttyUSB0",
+            "type": "promptString"
+        },
+        {
+            "id": "deviceId",
+            "description": "Device ID to monitor",
+            "default": "liquid-edge-001",
+            "type": "promptString"
+        }
+    ]
+}

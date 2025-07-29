@@ -1,0 +1,126 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.linting.mypyEnabled": true,
+    "python.linting.banditEnabled": true,
+    "python.formatting.provider": "black",
+    "python.sortImports.args": ["--profile", "black"],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests/",
+        "-v",
+        "--tb=short",
+        "--strict-markers",
+        "--disable-warnings"
+    ],
+    
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll": true
+    },
+    "editor.rulers": [88],
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
+        "**/.coverage": true,
+        "**/htmlcov": true,
+        "**/.tox": true,
+        "**/build": true,
+        "**/dist": true,
+        "**/*.egg-info": true
+    },
+    
+    "files.watcherExclude": {
+        "**/__pycache__/**": true,
+        "**/.pytest_cache/**": true,
+        "**/.mypy_cache/**": true,
+        "**/htmlcov/**": true,
+        "**/build/**": true,
+        "**/dist/**": true
+    },
+    
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/src"
+    ],
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.typeCheckingMode": "strict",
+    
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": [
+            ".github/workflows/*.yml",
+            ".github/workflows/*.yaml"
+        ],
+        "https://json.schemastore.org/pre-commit-config.json": [
+            ".pre-commit-config.yaml"
+        ],
+        "https://json.schemastore.org/dependabot-2.0.json": [
+            ".github/dependabot.yml"
+        ]
+    },
+    
+    "markdownlint.config": {
+        "MD013": false,
+        "MD033": false,
+        "MD041": false
+    },
+    
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.py": "${capture}.pyi",
+        "pyproject.toml": "setup.py,setup.cfg,requirements*.txt,Pipfile,Pipfile.lock,poetry.lock",
+        "README.md": "CHANGELOG.md,CONTRIBUTING.md,LICENSE*,CODE_OF_CONDUCT.md,SECURITY.md",
+        ".gitignore": ".gitattributes,.gitmodules,.gitmessage,.mailmap,.git-blame*",
+        "Dockerfile": "Dockerfile*,.dockerignore,docker-compose*.yml,docker-compose*.yaml"
+    },
+    
+    "emmet.includeLanguages": {
+        "markdown": "html"
+    },
+    
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
+        "**/htmlcov": true,
+        "**/build": true,
+        "**/dist": true
+    },
+    
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
+    },
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
+    },
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}/src;${env:PYTHONPATH}"
+    },
+    
+    "liquid-edge.deviceConfig": {
+        "defaultDevice": "simulation",
+        "simulationMode": true,
+        "enableHardwareAcceleration": false
+    }
+}

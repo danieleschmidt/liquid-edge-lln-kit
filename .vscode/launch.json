@@ -1,0 +1,192 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Liquid Edge Training",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/train_liquid_model.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src",
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "args": [
+                "--config", "examples/configs/debug_config.yaml",
+                "--verbose"
+            ],
+            "justMyCode": false,
+            "stopOnEntry": false
+        },
+        {
+            "name": "Debug Liquid Edge Inference",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/run_inference.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "args": [
+                "--model", "models/liquid_model.ckpt",
+                "--input", "examples/data/sample_input.npy",
+                "--device", "cpu"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Debug CLI Command",
+            "type": "python",
+            "request": "launch",
+            "module": "liquid_edge.cli",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "args": [
+                "serve",
+                "--config", "examples/configs/dev_server.yaml",
+                "--debug"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Debug Tests",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "args": [
+                "tests/",
+                "-v",
+                "-s",
+                "--tb=long",
+                "--pdb"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Debug Specific Test",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "args": [
+                "${file}",
+                "-v",
+                "-s",
+                "--tb=long",
+                "--pdb"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Debug MCU Deployment",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/deploy_to_mcu.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "args": [
+                "--target", "stm32h7",
+                "--model", "models/liquid_model.ckpt",
+                "--optimization", "O3",
+                "--debug"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Debug ROS2 Integration",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/examples/ros2_liquid_controller.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src",
+                "ROS_DOMAIN_ID": "0"
+            },
+            "args": [
+                "--model", "models/liquid_turtlebot.ckpt",
+                "--simulation"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Debug Performance Benchmark",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/benchmark_performance.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "args": [
+                "--models", "models/",
+                "--iterations", "100",
+                "--profile-memory",
+                "--profile-energy"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Attach to Liquid Edge Server",
+            "type": "python",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 5678
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/src",
+                    "remoteRoot": "/app/src"
+                }
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Debug Jupyter Notebook",
+            "type": "python",
+            "request": "launch",
+            "module": "jupyter",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "args": [
+                "notebook",
+                "--ip=0.0.0.0",
+                "--port=8888",
+                "--no-browser",
+                "--allow-root"
+            ],
+            "justMyCode": false
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Debug Training + Monitoring",
+            "configurations": [
+                "Debug Liquid Edge Training",
+                "Attach to Liquid Edge Server"
+            ]
+        }
+    ]
+}

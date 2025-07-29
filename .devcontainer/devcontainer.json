@@ -1,0 +1,143 @@
+{
+    "name": "Liquid Edge LLN Kit Development",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true,
+            "username": "vscode",
+            "userUid": "1000",
+            "userGid": "1000"
+        },
+        "ghcr.io/devcontainers/features/git:1": {
+            "ppa": true,
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "installDirectlyFromGitHubRelease": true,
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "moby": true,
+            "azureDnsAutoDetection": true,
+            "installDockerBuildx": true,
+            "version": "latest"
+        }
+    },
+    
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/bin/python",
+                "python.terminal.activateEnvironment": true,
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/bin/zsh"
+                    }
+                }
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.flake8",
+                "ms-python.mypy-type-checker",
+                "ms-python.black-formatter",
+                "charliermarsh.ruff",
+                "ms-toolsai.jupyter",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools",
+                "platformio.platformio-ide",
+                "redhat.vscode-yaml",
+                "DavidAnson.vscode-markdownlint",
+                "GitHub.copilot",
+                "ms-vscode-remote.remote-containers",
+                "eamodio.gitlens"
+            ]
+        }
+    },
+    
+    "forwardPorts": [
+        8000,
+        8080,
+        8081,
+        8888,
+        3000,
+        9090,
+        5000
+    ],
+    
+    "portsAttributes": {
+        "8000": {
+            "label": "Liquid Edge API",
+            "onAutoForward": "notify"
+        },
+        "8080": {
+            "label": "Metrics",
+            "onAutoForward": "silent"
+        },
+        "8081": {
+            "label": "Health Check",
+            "onAutoForward": "silent"
+        },
+        "8888": {
+            "label": "Jupyter",
+            "onAutoForward": "notify"
+        },
+        "3000": {
+            "label": "Grafana",
+            "onAutoForward": "notify"
+        },
+        "9090": {
+            "label": "Prometheus",
+            "onAutoForward": "silent"
+        },
+        "5000": {
+            "label": "MLflow",
+            "onAutoForward": "notify"
+        }
+    },
+    
+    "mounts": [
+        "source=${localWorkspaceFolder}/.devcontainer/data,target=/workspace/data,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/models,target=/workspace/models,type=bind,consistency=cached",
+        "source=liquid-edge-conda-cache,target=/opt/conda/pkgs,type=volume",
+        "source=liquid-edge-pip-cache,target=/home/vscode/.cache/pip,type=volume"
+    ],
+    
+    "remoteEnv": {
+        "PYTHONPATH": "/workspace/src",
+        "LIQUID_EDGE_ENV": "development",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "WANDB_MODE": "offline"
+    },
+    
+    "containerEnv": {
+        "TZ": "UTC",
+        "DEBIAN_FRONTEND": "noninteractive"
+    },
+    
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
+    "postStartCommand": "bash .devcontainer/post-start.sh",
+    
+    "remoteUser": "vscode",
+    
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/workspace",
+    
+    "shutdownAction": "stopContainer",
+    
+    "capAdd": [
+        "SYS_PTRACE"
+    ],
+    
+    "securityOpt": [
+        "seccomp=unconfined"
+    ],
+    
+    "init": true
+}
