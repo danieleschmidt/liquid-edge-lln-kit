@@ -1,0 +1,18 @@
+[bandit]
+# Bandit configuration for Liquid Edge LLN Kit
+exclude_dirs = tests,examples,docs
+skips = B101,B601,B602
+confidence_level = medium
+severity_level = medium
+
+[bandit.assert_used]
+# Allow assert statements in tests
+skips = *test*.py
+
+[bandit.hardcoded_password_string]
+# Skip common false positives
+word_list = password,passwd,pwd,secret,token
+
+[bandit.shell_injection]
+# Allow shell usage in build scripts
+skips = scripts/*,setup.py
