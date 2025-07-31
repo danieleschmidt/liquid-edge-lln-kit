@@ -1,0 +1,35 @@
+name: SBOM Generation
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+
+jobs:
+  generate-sbom:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          path: .
+          format: spdx-json
+          output-file: liquid-edge-sbom.spdx.json
+          
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v3
+        with:
+          name: sbom
+          path: liquid-edge-sbom.spdx.json
+          
+      - name: Attest SBOM
+        uses: actions/attest-sbom@v1
+        with:
+          subject-path: liquid-edge-sbom.spdx.json
+          sbom-path: liquid-edge-sbom.spdx.json
