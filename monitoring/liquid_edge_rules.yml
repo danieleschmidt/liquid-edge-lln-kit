@@ -1,0 +1,29 @@
+groups:
+  - name: liquid_edge_performance
+    rules:
+      - alert: HighInferenceLatency
+        expr: liquid_edge_inference_duration_seconds > 0.1
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High inference latency detected"
+          description: "Inference taking > 100ms for {{ $labels.instance }}"
+          
+      - alert: HighMemoryUsage
+        expr: liquid_edge_memory_usage_bytes / liquid_edge_memory_total_bytes > 0.8
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High memory usage on edge device"
+          description: "Memory usage is {{ $value | humanizePercentage }} on {{ $labels.instance }}"
+          
+      - alert: ModelAccuracyDrop
+        expr: liquid_edge_model_accuracy < 0.85
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Model accuracy degradation"
+          description: "Model accuracy dropped to {{ $value | humanizePercentage }} on {{ $labels.instance }}"

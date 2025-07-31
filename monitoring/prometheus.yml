@@ -1,0 +1,24 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "liquid_edge_rules.yml"
+
+scrape_configs:
+  - job_name: 'liquid-edge-app'
+    static_configs:
+      - targets: ['localhost:8000']
+    metrics_path: /metrics
+    scrape_interval: 5s
+    
+  - job_name: 'liquid-edge-hardware'
+    static_configs:
+      - targets: ['localhost:9100']
+    scrape_interval: 10s
+    
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
