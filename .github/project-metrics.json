@@ -1,0 +1,166 @@
+{
+  "project": {
+    "name": "liquid-edge-lln-kit",
+    "version": "0.1.0",
+    "description": "Tiny liquid neural networks toolkit for sensor-rich edge robots",
+    "repository": "https://github.com/danieleschmidt/liquid-edge-lln-kit",
+    "created": "2025-01-15T00:00:00Z",
+    "updated": "2025-01-15T21:42:00Z"
+  },
+  "metrics": {
+    "code_quality": {
+      "test_coverage": {
+        "target": 90,
+        "current": 85,
+        "trend": "increasing",
+        "last_updated": "2025-01-15T21:42:00Z"
+      },
+      "technical_debt": {
+        "hours": 12,
+        "trend": "decreasing",
+        "categories": {
+          "code_smells": 3,
+          "bugs": 1,
+          "vulnerabilities": 0,
+          "duplications": 2
+        }
+      },
+      "complexity": {
+        "cyclomatic_avg": 3.2,
+        "cognitive_avg": 4.1,
+        "maintainability_index": 82
+      }
+    },
+    "performance": {
+      "energy_efficiency": {
+        "baseline_mw": 150,
+        "current_mw": 85,
+        "improvement_factor": 1.76,
+        "target_improvement": 5.0
+      },
+      "inference_speed": {
+        "baseline_ms": 25,
+        "current_ms": 8.5,
+        "improvement_factor": 2.94,
+        "target_ms": 10
+      },
+      "memory_usage": {
+        "baseline_kb": 512,
+        "current_kb": 186,
+        "improvement_factor": 2.75,
+        "target_kb": 256
+      },
+      "accuracy": {
+        "baseline_pct": 91.2,
+        "current_pct": 89.8,
+        "degradation_pct": 1.4,
+        "target_min_pct": 88.0
+      }
+    },
+    "development": {
+      "velocity": {
+        "commits_per_week": 15,
+        "prs_per_week": 3,
+        "issues_closed_per_week": 5,
+        "trend": "stable"
+      },
+      "collaboration": {
+        "active_contributors": 3,
+        "total_contributors": 5,
+        "pr_review_time_avg_hours": 8,
+        "pr_merge_rate_pct": 85
+      },
+      "automation": {
+        "ci_success_rate_pct": 92,
+        "deployment_frequency": "weekly",
+        "lead_time_hours": 24,
+        "mttr_hours": 2
+      }
+    },
+    "adoption": {
+      "downloads": {
+        "total": 1250,
+        "monthly": 150,
+        "trend": "increasing"
+      },
+      "github": {
+        "stars": 89,
+        "forks": 12,
+        "watchers": 15,
+        "issues_open": 8,
+        "issues_closed": 42
+      },
+      "community": {
+        "discord_members": 45,
+        "discussions": 23,
+        "documentation_views": 2341
+      }
+    },
+    "hardware_support": {
+      "platforms": {
+        "arm_cortex_m": {
+          "supported": true,
+          "tested_devices": ["stm32h743", "stm32f767"],
+          "performance_validated": true
+        },
+        "esp32": {
+          "supported": true,
+          "tested_devices": ["esp32s3", "esp32c3"],
+          "performance_validated": true
+        },
+        "simulation": {
+          "supported": true,
+          "accuracy": 98,
+          "performance_correlation": 95
+        }
+      },
+      "deployment_success_rate": {
+        "arm_cortex_m": 94,
+        "esp32": 89,
+        "simulation": 99
+      }
+    },
+    "quality_gates": {
+      "energy_regression_threshold_pct": 5,
+      "latency_regression_threshold_pct": 10,
+      "accuracy_degradation_threshold_pct": 3,
+      "memory_increase_threshold_pct": 5,
+      "test_coverage_minimum_pct": 85
+    },
+    "benchmarks": {
+      "last_run": "2025-01-15T21:42:00Z",
+      "results": {
+        "line_following": {
+          "energy_mw": 73,
+          "latency_ms": 8.2,
+          "accuracy_pct": 94.2,
+          "memory_kb": 145
+        },
+        "obstacle_avoidance": {
+          "energy_mw": 142,
+          "latency_ms": 9.8,
+          "accuracy_pct": 91.8,
+          "memory_kb": 198
+        },
+        "gesture_recognition": {
+          "energy_mw": 89,
+          "latency_ms": 7.1,
+          "accuracy_pct": 88.5,
+          "memory_kb": 167
+        }
+      }
+    }
+  },
+  "health_indicators": {
+    "overall_health": "good",
+    "alerts": [
+      {
+        "type": "warning",
+        "message": "Test coverage below target (85% < 90%)",
+        "severity": "medium",
+        "created": "2025-01-15T20:30:00Z"
+      }
+    ],
+    "last_health_check": "2025-01-15T21:42:00Z"
+  }
+}
