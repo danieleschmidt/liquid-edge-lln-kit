@@ -1,0 +1,51 @@
+# Liquid Edge LLN Kit - Code Owners
+# This file defines who is responsible for reviewing changes to specific parts of the codebase.
+
+# Global owners - these users will be requested for review on all PRs
+* @danieleschmidt
+
+# Core library code
+/src/liquid_edge/ @danieleschmidt
+/src/liquid_edge/core.py @danieleschmidt
+/src/liquid_edge/layers.py @danieleschmidt
+
+# Deployment and hardware code
+/src/liquid_edge/deploy/ @danieleschmidt
+/firmware/ @danieleschmidt
+
+# ROS 2 integration
+/src/liquid_edge/ros2/ @danieleschmidt
+/examples/ros2/ @danieleschmidt
+
+# Energy profiling and optimization
+/src/liquid_edge/profiling/ @danieleschmidt
+/src/liquid_edge/optimization/ @danieleschmidt
+
+# Documentation
+/docs/ @danieleschmidt
+/README.md @danieleschmidt
+/CONTRIBUTING.md @danieleschmidt
+
+# Configuration and build files
+/pyproject.toml @danieleschmidt
+/Dockerfile* @danieleschmidt
+/docker-compose*.yml @danieleschmidt
+/Makefile @danieleschmidt
+/.github/ @danieleschmidt
+
+# Testing infrastructure
+/tests/ @danieleschmidt
+/conftest.py @danieleschmidt
+/.pre-commit-config.yaml @danieleschmidt
+/tox.ini @danieleschmidt
+
+# Security and compliance
+/SECURITY.md @danieleschmidt
+/scripts/security_scan.py @danieleschmidt
+
+# Examples and tutorials
+/examples/ @danieleschmidt
+
+# Monitoring and observability
+/monitoring/ @danieleschmidt
+/src/liquid_edge/monitoring/ @danieleschmidt

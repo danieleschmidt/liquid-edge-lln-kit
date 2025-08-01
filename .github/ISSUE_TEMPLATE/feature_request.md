@@ -1,33 +1,38 @@
 ---
-name: Feature request
+name: Feature Request
 about: Suggest an idea for this project
-title: ''
-labels: enhancement
+title: '[FEATURE] '
+labels: ['enhancement', 'needs-triage']
 assignees: ''
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## Feature Summary
+A clear and concise description of the feature you'd like to see implemented.
 
-**Describe the solution you'd like**
+## Use Case
+**Describe your use case**
+- What are you trying to accomplish?
+- How would this feature help you?
+- What's your target hardware/platform?
+
+## Proposed Solution
 A clear and concise description of what you want to happen.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## API Design (Optional)
+```python
+# Example of how you'd like to use this feature
+import liquid_edge
 
-**Use Case**
-Describe the specific robotics or edge AI use case this feature would enable:
-- Target hardware platform
-- Robot application type
-- Performance requirements
-- Energy constraints
+# Your proposed API usage here
+```
 
-**Implementation Details**
-If you have ideas about implementation:
-- Proposed API changes
-- Dependencies that might be needed
-- Backward compatibility considerations
-- Testing approach
+## Priority
+- [ ] Critical - Blocking my project
+- [ ] High - Would significantly improve my workflow
+- [ ] Medium - Nice to have
+- [ ] Low - Minor improvement
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## Checklist
+- [ ] I have searched existing issues to ensure this is not a duplicate
+- [ ] I have provided a clear use case for this feature
+EOF < /dev/null
