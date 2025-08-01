@@ -1,0 +1,127 @@
+# Git and version control
+.git
+.gitignore
+.gitattributes
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+htmlcov/
+.hypothesis/
+coverage.xml
+*.cover
+.cache
+nosetests.xml
+
+# Environment files
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+site/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.pid
+
+# Node.js (if any frontend assets)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Large datasets and models
+datasets/
+models/
+*.h5
+*.pkl
+*.bin
+*.model
+
+# Hardware simulation data
+hardware_sim/
+device_logs/
+
+# Benchmark results
+benchmarks/results/
+performance_data/
+
+# Local configuration
+local_config/
+.env.local
+
+# Secrets and credentials
+secrets/
+credentials/
+*.key
+*.pem
+*.crt
+
+# CI/CD artifacts
+.github/
+.gitlab-ci.yml
+azure-pipelines.yml
+
+# Docker files (avoid recursive builds)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Documentation files (not needed in runtime)
+*.md
+CHANGELOG*
+LICENSE
+CONTRIBUTING*
+CODE_OF_CONDUCT*

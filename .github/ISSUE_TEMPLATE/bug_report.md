@@ -1,43 +1,41 @@
 ---
-name: Bug report
+name: Bug Report
 about: Create a report to help us improve
-title: ''
-labels: bug
+title: '[BUG] '
+labels: ['bug', 'needs-triage']
 assignees: ''
 ---
 
-**Describe the bug**
+## Bug Description
 A clear and concise description of what the bug is.
 
-**To Reproduce**
+## To Reproduce
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
+## Expected Behavior
 A clear and concise description of what you expected to happen.
 
-**Code Example**
+## Environment Information
+- **OS**: [e.g., Ubuntu 22.04]
+- **Python Version**: [e.g., 3.10.12]
+- **Liquid Edge LLN Kit Version**: [e.g., 0.1.0]
+- **JAX Version**: [e.g., 0.4.28]
+- **Hardware**: [e.g., STM32H743, ESP32-S3, simulation]
+
+## Code Example
 ```python
-# Paste your code here
+# Minimal code example that reproduces the issue
+import liquid_edge
+
+# Your code here
 ```
 
-**Environment (please complete the following information):**
-- OS: [e.g. Ubuntu 22.04, Windows 11, macOS 13]
-- Python version: [e.g. 3.10.5]
-- Package version: [e.g. 0.1.0]
-- JAX version: [e.g. 0.4.28]
-- Hardware: [e.g. STM32H743, ESP32-S3, desktop]
-
-**Error message**
-```
-Paste the full error message here
-```
-
-**Additional context**
-Add any other context about the problem here. Include:
-- Energy measurements if applicable
-- MCU specifications for deployment issues
-- Robot platform details for integration issues
+## Checklist
+- [ ] I have searched existing issues to ensure this is not a duplicate
+- [ ] I have provided all the requested information above
+- [ ] I have tested this with the latest version of the library
+EOF < /dev/null
