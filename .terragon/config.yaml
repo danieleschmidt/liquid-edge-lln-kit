@@ -1,0 +1,52 @@
+scoring:
+  weights:
+    advanced:
+      wsjf: 0.5
+      ice: 0.1
+      technicalDebt: 0.3
+      security: 0.1
+  
+  thresholds:
+    minScore: 15
+    maxRisk: 0.7
+    securityBoost: 2.0
+    complianceBoost: 1.8
+
+discovery:
+  sources:
+    - gitHistory
+    - staticAnalysis
+    - issueTrackers
+    - vulnerabilityDatabases
+    - performanceMonitoring
+    - testResults
+  
+  tools:
+    staticAnalysis:
+      - ruff
+      - mypy
+      - bandit
+    security:
+      - safety
+      - bandit
+    performance:
+      - pytest-benchmark
+    quality:
+      - coverage
+
+execution:
+  maxConcurrentTasks: 1
+  testRequirements:
+    minCoverage: 90
+    performanceRegression: 5
+  rollbackTriggers:
+    - testFailure
+    - buildFailure
+    - securityViolation
+    - coverageDecrease
+
+automation:
+  preCommitHooks: true
+  qualityGates: true
+  performanceTracking: true
+  securityScanning: true

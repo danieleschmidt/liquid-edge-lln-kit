@@ -7,22 +7,51 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
       - id: check-merge-conflict
+      - id: check-toml
       - id: debug-statements
+      - id: detect-private-key
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.6
+    rev: v0.1.8
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
-
-  - repo: https://github.com/psf/black
-    rev: 23.10.1
-    hooks:
-      - id: black
+      - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.6.1
+    rev: v1.7.1
     hooks:
       - id: mypy
         additional_dependencies: [types-all]
-        args: [--strict]
+        args: [--ignore-missing-imports]
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: [-r, src/, -f, json, -o, reports/bandit-precommit.json]
+        files: ^src/
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.2
+    hooks:
+      - id: python-safety-dependencies-check
+        args: [--json, --output, reports/safety-precommit.json]
+
+  - repo: local
+    hooks:
+      - id: pytest-fast
+        name: pytest-fast
+        entry: pytest
+        language: system
+        args: [-x, -v, --tb=short, -m, "not slow"]
+        files: ^(src/|tests/).*\.py$
+        pass_filenames: false
+
+      - id: coverage-check
+        name: coverage-check
+        entry: pytest
+        language: system
+        args: [--cov=liquid_edge, --cov-fail-under=90, --cov-report=term-missing]
+        files: ^(src/|tests/).*\.py$
+        pass_filenames: false
