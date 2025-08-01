@@ -1,0 +1,108 @@
+{
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.banditEnabled": true,
+  
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "88"],
+  
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": [
+    "tests",
+    "--cov=src/liquid_edge",
+    "--cov-report=html",
+    "--cov-report=term-missing"
+  ],
+  
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll.ruff": true
+  },
+  "editor.rulers": [88],
+  
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/htmlcov": true,
+    "**/.coverage": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/*.egg-info": true
+  },
+  
+  "files.associations": {
+    "*.toml": "toml",
+    "*.yml": "yaml",
+    "*.yaml": "yaml",
+    "Makefile": "makefile",
+    "Dockerfile*": "dockerfile",
+    "*.md": "markdown"
+  },
+  
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}/src"
+  },
+  
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml",
+    "https://json.schemastore.org/pre-commit-config.json": ".pre-commit-config.yaml"
+  },
+  
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.preview.autoShowPreviewToSide": false,
+  
+  "git.ignoreLimitWarning": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  
+  "makefile.configureOnOpen": true,
+  
+  "docker.defaultRegistryPath": "ghcr.io/liquid-edge",
+  
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\*))\\s*($TAGS)",
+  "todo-tree.general.tags": [
+    "TODO",
+    "FIXME",
+    "HACK", 
+    "BUG",
+    "NOTE",
+    "PERF",
+    "OPTIMIZE"
+  ],
+  
+  "emmet.includeLanguages": {
+    "markdown": "html"
+  },
+  
+  "workbench.editor.enablePreview": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/htmlcov": true,
+    "**/.git": true,
+    "**/.venv": true,
+    "**/venv": true,
+    "**/build": true,
+    "**/dist": true
+  }
+}

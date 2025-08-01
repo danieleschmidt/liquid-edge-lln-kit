@@ -1,0 +1,2 @@
+Copyright (c) 2025 Liquid Edge LLN Kit Contributors
+SPDX-License-Identifier: MIT
