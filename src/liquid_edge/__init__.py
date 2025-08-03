@@ -3,7 +3,48 @@
 __version__ = "0.1.0"
 __author__ = "Daniel Schmidt"
 
-from .core import LiquidNN, LiquidConfig
-from .layers import LiquidCell, LiquidRNN
+# Core components
+from .core import LiquidNN, LiquidConfig, EnergyAwareTrainer
 
-__all__ = ["LiquidNN", "LiquidConfig", "LiquidCell", "LiquidRNN"]
+# Advanced layers
+from .layers import (
+    LiquidCell, 
+    LiquidRNN, 
+    AdvancedLiquidCell,
+    SparseLinear,
+    MultiModalLiquidFusion,
+    EnergyEfficientLiquidCell,
+    QuantizedDense
+)
+
+# Deployment tools
+from .deploy import MCUDeployer, TargetDevice, DeploymentConfig
+
+# Profiling and optimization
+from .profiling import EnergyProfiler, ProfilingConfig, ModelEnergyOptimizer
+
+__all__ = [
+    # Core
+    "LiquidNN", 
+    "LiquidConfig",
+    "EnergyAwareTrainer",
+    
+    # Layers
+    "LiquidCell",
+    "LiquidRNN",
+    "AdvancedLiquidCell", 
+    "SparseLinear",
+    "MultiModalLiquidFusion",
+    "EnergyEfficientLiquidCell",
+    "QuantizedDense",
+    
+    # Deployment
+    "MCUDeployer",
+    "TargetDevice", 
+    "DeploymentConfig",
+    
+    # Profiling
+    "EnergyProfiler",
+    "ProfilingConfig",
+    "ModelEnergyOptimizer"
+]
