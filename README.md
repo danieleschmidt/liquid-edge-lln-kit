@@ -479,9 +479,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ```bibtex
 @software{liquid_edge_lln,
   title={Liquid Edge LLN Kit: Efficient Neural Networks for Resource-Constrained Robots},
-  author={Your Name},
+  author={Daniel Schmidt},
   year={2025},
-  url={https://github.com/yourusername/liquid-edge-lln-kit}
+  url={https://github.com/danieleschmidt/liquid-edge-lln-kit}
 }
 
 @article{mit_liquid_nn_2023,
