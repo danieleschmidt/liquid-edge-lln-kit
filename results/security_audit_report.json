@@ -1,0 +1,177 @@
+{
+  "audit_summary": {
+    "total_findings": 19,
+    "severity_breakdown": {
+      "HIGH": 6,
+      "MEDIUM": 13,
+      "LOW": 0,
+      "INFO": 0
+    },
+    "audit_timestamp": 1754574111.3075542,
+    "project_root": "/root/repo"
+  },
+  "findings": [
+    {
+      "severity": "HIGH",
+      "category": "Code Patterns",
+      "description": "Code injection risk - eval() usage: r'eval\\s*\\(': (\"HIGH\", \"Code injection risk - eval() usage\"),",
+      "file": "scripts/security_audit_fixed.py",
+      "line": 42,
+      "timestamp": 1754574111.1562252
+    },
+    {
+      "severity": "HIGH",
+      "category": "Code Patterns",
+      "description": "Code injection risk - exec() usage: r'exec\\s*\\(': (\"HIGH\", \"Code injection risk - exec() usage\"),",
+      "file": "scripts/security_audit_fixed.py",
+      "line": 43,
+      "timestamp": 1754574111.1565185
+    },
+    {
+      "severity": "HIGH",
+      "category": "Code Patterns",
+      "description": "Command injection risk - os.system() usage: r'os\\.system\\s*\\(': (\"HIGH\", \"Command injection risk - os.system() usage\"),",
+      "file": "scripts/security_audit_fixed.py",
+      "line": 44,
+      "timestamp": 1754574111.1567905
+    },
+    {
+      "severity": "HIGH",
+      "category": "Code Patterns",
+      "description": "Code injection risk - eval() usage: r'eval\\s*\\(': (\"HIGH\", \"Code injection risk - eval() usage\"),",
+      "file": "scripts/security_audit.py",
+      "line": 71,
+      "timestamp": 1754574111.1596394
+    },
+    {
+      "severity": "HIGH",
+      "category": "Code Patterns",
+      "description": "Code injection risk - exec() usage: r'exec\\s*\\(': (\"HIGH\", \"Code injection risk - exec() usage\"),",
+      "file": "scripts/security_audit.py",
+      "line": 72,
+      "timestamp": 1754574111.1600268
+    },
+    {
+      "severity": "HIGH",
+      "category": "Code Patterns",
+      "description": "Command injection risk - os.system() usage: r'os\\.system\\s*\\(': (\"HIGH\", \"Command injection risk - os.system() usage\"),",
+      "file": "scripts/security_audit.py",
+      "line": 73,
+      "timestamp": 1754574111.1604319
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Code Patterns",
+      "description": "Potential secret exposure in logs: print(\"Checking for hardcoded secrets...\")",
+      "file": "scripts/security_scan.py",
+      "line": 76,
+      "timestamp": 1754574111.1551
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Code Patterns",
+      "description": "Deserialization risk - pickle.load() usage: r'pickle\\.load\\s*\\(': (\"MEDIUM\", \"Deserialization risk - pickle.load() usage\"),",
+      "file": "scripts/security_audit_fixed.py",
+      "line": 46,
+      "timestamp": 1754574111.1573305
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Code Patterns",
+      "description": "Deserialization risk - pickle.load() usage: r'pickle\\.load\\s*\\(': (\"MEDIUM\", \"Deserialization risk - pickle.load() usage\"),",
+      "file": "scripts/security_audit.py",
+      "line": 75,
+      "timestamp": 1754574111.1610925
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def critical_alert_handler(alert):",
+      "file": "examples/production_robustness.py",
+      "line": 129,
+      "timestamp": 1754574111.2991185
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def performance_alert_handler(alert):",
+      "file": "examples/production_robustness.py",
+      "line": 138,
+      "timestamp": 1754574111.2992048
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def test_liquid_rnn_sequence_processing(benchmark):",
+      "file": "tests/test_performance.py",
+      "line": 65,
+      "timestamp": 1754574111.3021555
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def _init_sparse_mask(self, key, shape):",
+      "file": "src/liquid_edge/layers.py",
+      "line": 120,
+      "timestamp": 1754574111.3040123
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def _process_metrics_queue(self):",
+      "file": "src/liquid_edge/monitoring.py",
+      "line": 292,
+      "timestamp": 1754574111.3057885
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def _process_alerts_queue(self):",
+      "file": "src/liquid_edge/monitoring.py",
+      "line": 303,
+      "timestamp": 1754574111.3058667
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def _handle_alert(self, alert: Alert):",
+      "file": "src/liquid_edge/monitoring.py",
+      "line": 345,
+      "timestamp": 1754574111.3060155
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def handle_error(self, exception: Exception, context: ErrorContext) -> Optional[Any]:",
+      "file": "src/liquid_edge/error_handling.py",
+      "line": 130,
+      "timestamp": 1754574111.3064852
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def create_error_handler(name: str = \"liquid_network\") -> RobustErrorHandler:",
+      "file": "src/liquid_edge/error_handling.py",
+      "line": 492,
+      "timestamp": 1754574111.30677
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "description": "Function may lack input validation: def attach_error_handler(handler: RobustErrorHandler):",
+      "file": "src/liquid_edge/error_handling.py",
+      "line": 498,
+      "timestamp": 1754574111.3068376
+    }
+  ],
+  "recommendations": [
+    "Address HIGH severity findings immediately - they pose significant security risks",
+    "Implement comprehensive input validation and sanitization",
+    "Review and secure dangerous code patterns identified in the audit",
+    "Implement regular security auditing in CI/CD pipeline",
+    "Enable static code analysis tools (bandit, semgrep)",
+    "Implement proper logging and monitoring for security events",
+    "Regular security training for development team",
+    "Implement security code review process"
+  ]
+}
