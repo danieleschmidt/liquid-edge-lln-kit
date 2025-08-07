@@ -1,0 +1,448 @@
+{
+  "bandit": {
+    "status": "success",
+    "issues": 11,
+    "report": {
+      "errors": [],
+      "generated_at": "2025-08-07T23:26:29Z",
+      "metrics": {
+        "_totals": {
+          "CONFIDENCE.HIGH": 11,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 11,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 4034,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/__init__.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 66,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/cli.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 83,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/compliance.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 557,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/core.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 165,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/deploy.py": {
+          "CONFIDENCE.HIGH": 10,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 10,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 452,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/error_handling.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 371,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/layers.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 208,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/logging_config.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 256,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/monitoring.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 522,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/profiling.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 408,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/ros2_integration.py": {
+          "CONFIDENCE.HIGH": 0,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 0,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 395,
+          "nosec": 0,
+          "skipped_tests": 0
+        },
+        "src/liquid_edge/scaling.py": {
+          "CONFIDENCE.HIGH": 1,
+          "CONFIDENCE.LOW": 0,
+          "CONFIDENCE.MEDIUM": 0,
+          "CONFIDENCE.UNDEFINED": 0,
+          "SEVERITY.HIGH": 0,
+          "SEVERITY.LOW": 1,
+          "SEVERITY.MEDIUM": 0,
+          "SEVERITY.UNDEFINED": 0,
+          "loc": 551,
+          "nosec": 0,
+          "skipped_tests": 0
+        }
+      },
+      "results": [
+        {
+          "code": "8 import os\n9 import subprocess\n10 import tempfile\n",
+          "col_offset": 0,
+          "end_col_offset": 17,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Consider possible security implications associated with the subprocess module.",
+          "line_number": 9,
+          "line_range": [
+            9
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b404-import-subprocess",
+          "test_id": "B404",
+          "test_name": "blacklist"
+        },
+        {
+          "code": "548         try:\n549             result = subprocess.run(\n550                 [\"make\", \"-C\", source_dir],\n551                 capture_output=True,\n552                 text=True,\n553                 check=True\n554             )\n555             print(\"Build successful!\")\n",
+          "col_offset": 21,
+          "end_col_offset": 13,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Starting a process with a partial executable path",
+          "line_number": 549,
+          "line_range": [
+            549,
+            550,
+            551,
+            552,
+            553,
+            554
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html",
+          "test_id": "B607",
+          "test_name": "start_process_with_partial_path"
+        },
+        {
+          "code": "548         try:\n549             result = subprocess.run(\n550                 [\"make\", \"-C\", source_dir],\n551                 capture_output=True,\n552                 text=True,\n553                 check=True\n554             )\n555             print(\"Build successful!\")\n",
+          "col_offset": 21,
+          "end_col_offset": 13,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "subprocess call - check for execution of untrusted input.",
+          "line_number": 549,
+          "line_range": [
+            549,
+            550,
+            551,
+            552,
+            553,
+            554
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html",
+          "test_id": "B603",
+          "test_name": "subprocess_without_shell_equals_true"
+        },
+        {
+          "code": "560             if os.path.exists(built_binary):\n561                 subprocess.run([\"cp\", built_binary, output_file], check=True)\n562             \n",
+          "col_offset": 16,
+          "end_col_offset": 77,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Starting a process with a partial executable path",
+          "line_number": 561,
+          "line_range": [
+            561
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html",
+          "test_id": "B607",
+          "test_name": "start_process_with_partial_path"
+        },
+        {
+          "code": "560             if os.path.exists(built_binary):\n561                 subprocess.run([\"cp\", built_binary, output_file], check=True)\n562             \n",
+          "col_offset": 16,
+          "end_col_offset": 77,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "subprocess call - check for execution of untrusted input.",
+          "line_number": 561,
+          "line_range": [
+            561
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html",
+          "test_id": "B603",
+          "test_name": "subprocess_without_shell_equals_true"
+        },
+        {
+          "code": "573             # Run idf.py build\n574             result = subprocess.run(\n575                 [\"idf.py\", \"build\"],\n576                 cwd=source_dir,\n577                 capture_output=True,\n578                 text=True,\n579                 check=True\n580             )\n581             print(\"ESP-IDF build successful!\")\n",
+          "col_offset": 21,
+          "end_col_offset": 13,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Starting a process with a partial executable path",
+          "line_number": 574,
+          "line_range": [
+            574,
+            575,
+            576,
+            577,
+            578,
+            579,
+            580
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html",
+          "test_id": "B607",
+          "test_name": "start_process_with_partial_path"
+        },
+        {
+          "code": "573             # Run idf.py build\n574             result = subprocess.run(\n575                 [\"idf.py\", \"build\"],\n576                 cwd=source_dir,\n577                 capture_output=True,\n578                 text=True,\n579                 check=True\n580             )\n581             print(\"ESP-IDF build successful!\")\n",
+          "col_offset": 21,
+          "end_col_offset": 13,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "subprocess call - check for execution of untrusted input.",
+          "line_number": 574,
+          "line_range": [
+            574,
+            575,
+            576,
+            577,
+            578,
+            579,
+            580
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html",
+          "test_id": "B603",
+          "test_name": "subprocess_without_shell_equals_true"
+        },
+        {
+          "code": "586             if os.path.exists(binary_file):\n587                 subprocess.run([\"cp\", binary_file, output_file], check=True)\n588             \n",
+          "col_offset": 16,
+          "end_col_offset": 76,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Starting a process with a partial executable path",
+          "line_number": 587,
+          "line_range": [
+            587
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b607_start_process_with_partial_path.html",
+          "test_id": "B607",
+          "test_name": "start_process_with_partial_path"
+        },
+        {
+          "code": "586             if os.path.exists(binary_file):\n587                 subprocess.run([\"cp\", binary_file, output_file], check=True)\n588             \n",
+          "col_offset": 16,
+          "end_col_offset": 76,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "subprocess call - check for execution of untrusted input.",
+          "line_number": 587,
+          "line_range": [
+            587
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html",
+          "test_id": "B603",
+          "test_name": "subprocess_without_shell_equals_true"
+        },
+        {
+          "code": "605             \n606             result = subprocess.run(cmd, capture_output=True, text=True, check=True)\n607             print(\"Flash successful!\")\n",
+          "col_offset": 21,
+          "end_col_offset": 84,
+          "filename": "src/liquid_edge/deploy.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "subprocess call - check for execution of untrusted input.",
+          "line_number": 606,
+          "line_range": [
+            606
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b603_subprocess_without_shell_equals_true.html",
+          "test_id": "B603",
+          "test_name": "subprocess_without_shell_equals_true"
+        },
+        {
+          "code": "17 from pathlib import Path\n18 import pickle\n19 import psutil\n",
+          "col_offset": 0,
+          "end_col_offset": 13,
+          "filename": "src/liquid_edge/scaling.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 502,
+            "link": "https://cwe.mitre.org/data/definitions/502.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Consider possible security implications associated with pickle module.",
+          "line_number": 18,
+          "line_range": [
+            18
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.8.6/blacklists/blacklist_imports.html#b403-import-pickle",
+          "test_id": "B403",
+          "test_name": "blacklist"
+        }
+      ]
+    }
+  },
+  "safety": {
+    "status": "vulnerabilities_found",
+    "output": "",
+    "errors": "Usage: safety check [OPTIONS]\nTry 'safety check --help' for help.\n\nError: Invalid value for '--output' / '-o': 'safety-report.json' is not one of 'screen', 'text', 'json', 'bare', 'html'.\n"
+  },
+  "pip_audit": {
+    "status": "error",
+    "message": "[Errno 2] No such file or directory: 'pip-audit'"
+  },
+  "secrets": {
+    "status": "clean",
+    "findings": []
+  },
+  "sbom": {
+    "status": "generated",
+    "components": 102
+  },
+  "summary": {
+    "total_issues": 11,
+    "vulnerabilities_found": true,
+    "sbom_generated": true,
+    "overall_status": "fail"
+  }
+}

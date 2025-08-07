@@ -19,7 +19,8 @@ def basic_config():
         input_dim=4,
         hidden_dim=8,
         output_dim=2,
-        time_constant=1.0,
+        tau_min=10.0,
+        tau_max=100.0,
         sensory_sigma=0.1,
         sensory_mu=0.3,
         learning_rate=0.001

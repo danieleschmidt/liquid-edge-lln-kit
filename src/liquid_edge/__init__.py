@@ -21,7 +21,15 @@ from .layers import (
 from .deploy import MCUDeployer, TargetDevice, DeploymentConfig
 
 # Profiling and optimization
-from .profiling import EnergyProfiler, ProfilingConfig, ModelEnergyOptimizer\n\n# Production robustness\nfrom .monitoring import LiquidNetworkMonitor, PerformanceMetrics, AlertLevel, CircuitBreaker\nfrom .error_handling import (\n    RobustErrorHandler, LiquidNetworkError, ModelInferenceError,\n    EnergyBudgetExceededError, SensorTimeoutError, ErrorSeverity,\n    retry_with_backoff, graceful_degradation, validate_inputs\n)
+from .profiling import EnergyProfiler, ProfilingConfig, ModelEnergyOptimizer
+
+# Production robustness
+from .monitoring import LiquidNetworkMonitor, PerformanceMetrics, AlertLevel, CircuitBreaker
+from .error_handling import (
+    RobustErrorHandler, LiquidNetworkError, ModelInferenceError,
+    EnergyBudgetExceededError, SensorTimeoutError, ErrorSeverity,
+    retry_with_backoff, graceful_degradation, validate_inputs
+)
 
 # ROS 2 integration (optional)
 try:
@@ -54,4 +62,30 @@ __all__ = [
     "EnergyProfiler",
     "ProfilingConfig",
     "ModelEnergyOptimizer"
-]\n\n# Add robustness components\n__all__.extend([\n    \"LiquidNetworkMonitor\",\n    \"PerformanceMetrics\", \n    \"AlertLevel\",\n    \"CircuitBreaker\",\n    \"RobustErrorHandler\",\n    \"LiquidNetworkError\",\n    \"ModelInferenceError\",\n    \"EnergyBudgetExceededError\",\n    \"SensorTimeoutError\",\n    \"ErrorSeverity\",\n    \"retry_with_backoff\",\n    \"graceful_degradation\",\n    \"validate_inputs\"\n])\n\n# Conditionally add ROS 2 components\nif _ros2_available:\n    __all__.extend([\n        \"LiquidController\",\n        \"ROS2Config\", \n        \"LiquidTurtleBot\",\n        \"LiquidNavigationNode\"\n    ])
+]
+
+# Add robustness components
+__all__.extend([
+    "LiquidNetworkMonitor",
+    "PerformanceMetrics", 
+    "AlertLevel",
+    "CircuitBreaker",
+    "RobustErrorHandler",
+    "LiquidNetworkError",
+    "ModelInferenceError",
+    "EnergyBudgetExceededError",
+    "SensorTimeoutError",
+    "ErrorSeverity",
+    "retry_with_backoff",
+    "graceful_degradation",
+    "validate_inputs"
+])
+
+# Conditionally add ROS 2 components
+if _ros2_available:
+    __all__.extend([
+        "LiquidController",
+        "ROS2Config", 
+        "LiquidTurtleBot",
+        "LiquidNavigationNode"
+    ])
