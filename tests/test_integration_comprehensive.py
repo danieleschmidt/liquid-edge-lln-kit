@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Comprehensive integration tests for the Liquid Edge LLN Kit."""
 
+import sys
 import pytest
 import numpy as np
 import time

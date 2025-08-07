@@ -50,7 +50,7 @@ class TestLiquidNN:
         """Test forward pass execution."""
         model = LiquidNN(basic_config)
         params = model.init(rng_key, sample_input)
-        output = model.apply(params, sample_input)
+        output, hidden = model.apply(params, sample_input)
         
         # Check output shape and validity
         assert output.shape == (1, basic_config.output_dim)
@@ -60,7 +60,7 @@ class TestLiquidNN:
         """Test batch processing."""
         model = LiquidNN(basic_config)
         params = model.init(rng_key, sample_batch[:1])  # Init with single sample
-        output = model.apply(params, sample_batch)
+        output, hidden = model.apply(params, sample_batch)
         
         # Check batch output shape
         assert output.shape == (sample_batch.shape[0], basic_config.output_dim)
@@ -71,7 +71,7 @@ class TestLiquidNN:
         model = LiquidNN(basic_config)
         params = model.init(rng_key, sample_input)
         
-        output1 = model.apply(params, sample_input)
-        output2 = model.apply(params, sample_input)
+        output1, _ = model.apply(params, sample_input)
+        output2, _ = model.apply(params, sample_input)
         
         assert jnp.allclose(output1, output2, atol=1e-6)

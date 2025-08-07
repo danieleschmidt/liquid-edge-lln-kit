@@ -50,6 +50,9 @@ class AdvancedLiquidCell(nn.Module):
             kernel_init=nn.initializers.lecun_normal()
         )
         
+        # Dropout for training regularization
+        self.dropout = nn.Dropout(rate=0.1)
+        
         # Sparse recurrent projection if sparsity > 0
         if self.sparsity > 0:
             self.recurrent_projection = SparseLinear(
@@ -88,9 +91,11 @@ class AdvancedLiquidCell(nn.Module):
         dx_dt = (-hidden + activation) / tau
         new_hidden = hidden + self.dt * dx_dt
         
-        # Optional dropout during training
-        if training:
-            new_hidden = nn.Dropout(rate=0.1)(new_hidden)
+        # Optional dropout during training (simplified for now)
+        # if training:
+        #     new_hidden = self.dropout(new_hidden, deterministic=False)
+        # else:
+        #     new_hidden = self.dropout(new_hidden, deterministic=True)
             
         return new_hidden
 

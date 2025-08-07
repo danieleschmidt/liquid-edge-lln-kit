@@ -139,7 +139,6 @@ class EnergyAwareTrainer:
             'step': 0
         }
     
-    @jax.jit
     def train_step(self, 
                    state: Dict[str, Any], 
                    batch: Tuple[jnp.ndarray, jnp.ndarray]) -> Tuple[Dict[str, Any], Dict[str, float]]:
