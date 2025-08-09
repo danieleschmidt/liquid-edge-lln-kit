@@ -7,6 +7,7 @@ from flax import linen as nn
 import optax
 from dataclasses import dataclass, field
 import numpy as np
+from functools import partial
 
 
 @dataclass
@@ -27,6 +28,7 @@ class LiquidConfig:
     target_fps: int = 50
     quantization: str = "int8"
     dt: float = 0.1
+    use_layer_norm: bool = False
     
     def __post_init__(self):
         """Validate configuration parameters."""
@@ -53,24 +55,30 @@ class LiquidNN(nn.Module):
     
     def setup(self):
         """Initialize the liquid neural network layers."""
-        from .layers import AdvancedLiquidCell
+        from .optimized_layers import FastLiquidCell
         
-        self.liquid_cell = AdvancedLiquidCell(
+        self.liquid_cell = FastLiquidCell(
             features=self.config.hidden_dim,
             tau_min=self.config.tau_min,
             tau_max=self.config.tau_max,
             sparsity=self.config.sparsity if self.config.use_sparse else 0.0,
-            dt=self.config.dt
+            dt=self.config.dt,
+            use_fast_approx=True  # Enable performance optimizations
         )
         
-        # Output projection with optional quantization awareness
+        # Lightweight output projection
         self.output_layer = nn.Dense(
             self.config.output_dim,
-            kernel_init=nn.initializers.lecun_normal()
+            kernel_init=nn.initializers.lecun_normal(),
+            use_bias=True
         )
         
-        # Layer normalization for stable training
-        self.layer_norm = nn.LayerNorm()
+        # Optional layer normalization (can impact performance)
+        self.use_layer_norm = getattr(self.config, 'use_layer_norm', False)
+        if self.use_layer_norm:
+            self.layer_norm = nn.LayerNorm()
+        else:
+            self.layer_norm = None
     
     def __call__(self, 
                  x: jnp.ndarray, 
@@ -82,16 +90,24 @@ class LiquidNN(nn.Module):
         if hidden is None:
             hidden = jnp.zeros((batch_size, self.config.hidden_dim))
             
-        # Normalize input for stable dynamics
-        x_norm = self.layer_norm(x)
+        # Optional input normalization
+        if self.layer_norm is not None:
+            x_norm = self.layer_norm(x)
+        else:
+            x_norm = x
         
-        # Liquid dynamics
+        # Optimized liquid dynamics
         new_hidden = self.liquid_cell(x_norm, hidden, training=training)
         
         # Output projection
         output = self.output_layer(new_hidden)
         
         return output, new_hidden
+    
+    @partial(jax.jit, static_argnums=(0, 3))
+    def fast_apply(self, params: Dict[str, Any], x: jnp.ndarray, training: bool = False) -> Tuple[jnp.ndarray, jnp.ndarray]:
+        """JIT-compiled fast application method."""
+        return self.apply(params, x, training=training)
     
     def energy_estimate(self, sequence_length: int = 1) -> float:
         """Estimate energy consumption in milliwatts."""

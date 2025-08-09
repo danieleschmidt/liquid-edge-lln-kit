@@ -19,14 +19,14 @@ class TestPerformanceBenchmarks:
         # Warmup
         for _ in range(5):
             loss, grads = jax.value_and_grad(
-                lambda p: jnp.mean((model.apply(p, sensor_data) - motor_targets) ** 2)
+                lambda p: jnp.mean((model.apply(p, sensor_data)[0] - motor_targets) ** 2)
             )(params)
         
         # Benchmark
         start_time = time.perf_counter()
         for _ in range(100):
             loss, grads = jax.value_and_grad(
-                lambda p: jnp.mean((model.apply(p, sensor_data) - motor_targets) ** 2)
+                lambda p: jnp.mean((model.apply(p, sensor_data)[0] - motor_targets) ** 2)
             )(params)
         end_time = time.perf_counter()
         
@@ -48,7 +48,7 @@ class TestPerformanceBenchmarks:
         # Benchmark
         start_time = time.perf_counter()
         for _ in range(1000):
-            output = model.apply(params, sample_batch)
+            output, _ = model.apply(params, sample_batch)
         end_time = time.perf_counter()
         
         avg_time_us = (end_time - start_time) * 1_000_000 / 1000

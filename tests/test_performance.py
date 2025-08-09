@@ -90,9 +90,9 @@ def test_liquid_rnn_sequence_processing(benchmark):
 def test_memory_efficiency():
     """Test memory usage of liquid neural networks."""
     config = LiquidConfig(
-        input_size=100,
-        hidden_size=200,
-        output_size=50
+        input_dim=100,
+        hidden_dim=200,
+        output_dim=50
     )
     
     model = LiquidNN(config)

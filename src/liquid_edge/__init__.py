@@ -17,6 +17,14 @@ from .layers import (
     QuantizedDense
 )
 
+# Optimized high-performance layers
+from .optimized_layers import (
+    FastLiquidCell,
+    LiquidNNOptimized,
+    SparseLinearOptimized,
+    EnergyEfficientLiquidCell as EnergyOptimizedCell
+)
+
 # Deployment tools
 from .deploy import MCUDeployer, TargetDevice, DeploymentConfig
 
@@ -52,6 +60,12 @@ __all__ = [
     "MultiModalLiquidFusion",
     "EnergyEfficientLiquidCell",
     "QuantizedDense",
+    
+    # Optimized layers
+    "FastLiquidCell",
+    "LiquidNNOptimized", 
+    "SparseLinearOptimized",
+    "EnergyOptimizedCell",
     
     # Deployment
     "MCUDeployer",
