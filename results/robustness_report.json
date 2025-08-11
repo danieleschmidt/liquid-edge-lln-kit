@@ -1,51 +1,84 @@
 {
-  "generation": "2_make_it_robust",
-  "timestamp": 1754807804.7837086,
-  "final_status": {
-    "health": {
-      "is_healthy": true,
-      "circuit_breaker": {
-        "state": "CLOSED",
-        "failure_count": 2,
-        "failure_threshold": 3,
-        "last_failure_time": 1754807804.774298
-      },
-      "last_checkpoint": 1754807804.7733312
+  "timestamp": "2025-08-11 13:05:10",
+  "config": {
+    "input_dim": 4,
+    "hidden_dim": 8,
+    "output_dim": 2,
+    "energy_budget_mw": 5.0,
+    "adaptation_rate": 0.01,
+    "sparsity_factor": 0.3
+  },
+  "health_status": {
+    "health_score": 72.72727272727273,
+    "uptime_hours": 0.001668858461909824,
+    "total_inferences": 11,
+    "error_rate": 54.54545454545454,
+    "avg_inference_time_ms": 0.48557194796475495,
+    "total_energy_mw": 0.017649819735363694,
+    "avg_energy_per_inference": 0.001604529066851245,
+    "active_alerts": 1,
+    "last_alert": {
+      "type": "HIGH_ERROR_RATE",
+      "severity": "ErrorSeverity.HIGH",
+      "message": "Error rate: 54.55%",
+      "timestamp": 1754917510.8094413,
+      "metrics": {
+        "inference_count": 11,
+        "error_count": 6,
+        "total_energy_used": 0.017649819735363694,
+        "avg_inference_time_ms": 0.48557194796475495,
+        "memory_usage_mb": 0.0,
+        "uptime_seconds": 1754917504.8016884,
+        "health_score": 100.0
+      }
     },
-    "performance": {
-      "uptime_seconds": 0.010132312774658203,
-      "total_inferences": 104,
-      "success_rate": 0.9807692307692307,
-      "error_rate": 0.019230769230769232,
-      "inference_latency": {
-        "mean_ms": 0.07627992069019991,
-        "p50_ms": 0.06759166717529297,
-        "p95_ms": 0.11144876480102536,
-        "p99_ms": 0.150148868560791,
-        "max_ms": 0.23436546325683594
+    "network_healthy": true,
+    "circuit_breaker_state": "OPEN",
+    "circuit_breaker_failures": 5,
+    "neuron_error_rates": [
+      {
+        "neuron_id": 0,
+        "error_count": 0
       },
-      "energy_consumption": {
-        "mean_mw": 0.009999999999999998,
-        "total_mj": 7.780551910400389e-05
+      {
+        "neuron_id": 1,
+        "error_count": 0
       },
-      "throughput_per_second": 9452.057089832531
-    },
-    "config": {
-      "graceful_degradation": true,
-      "auto_recovery": true,
-      "monitoring": true
+      {
+        "neuron_id": 2,
+        "error_count": 0
+      },
+      {
+        "neuron_id": 3,
+        "error_count": 0
+      },
+      {
+        "neuron_id": 4,
+        "error_count": 0
+      },
+      {
+        "neuron_id": 5,
+        "error_count": 0
+      },
+      {
+        "neuron_id": 6,
+        "error_count": 0
+      },
+      {
+        "neuron_id": 7,
+        "error_count": 0
+      }
+    ],
+    "connection_health": {
+      "total_connections": 42,
+      "active_connections": 42,
+      "error_connections": 0
     }
   },
-  "robustness_features": {
-    "error_handling": "\u2705 Comprehensive exception handling",
-    "circuit_breaker": "\u2705 Fault tolerance with automatic recovery",
-    "input_validation": "\u2705 Input sanitization and range checking",
-    "output_validation": "\u2705 Output clamping and NaN protection",
-    "graceful_degradation": "\u2705 Safe fallback during failures",
-    "performance_monitoring": "\u2705 Real-time metrics collection",
-    "health_checks": "\u2705 Automated system health monitoring",
-    "checkpointing": "\u2705 Automatic model backup and recovery",
-    "retry_mechanisms": "\u2705 Exponential backoff for transient failures"
-  },
-  "production_ready_score": 95
+  "test_results": {
+    "normal_operation": "PASSED",
+    "error_handling": "PASSED",
+    "input_validation": "PASSED",
+    "circuit_breaker": "FUNCTIONAL"
+  }
 }

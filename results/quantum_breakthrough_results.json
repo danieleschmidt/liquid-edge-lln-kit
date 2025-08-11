@@ -1,0 +1,42 @@
+{
+  "baseline_performance": {
+    "mean_accuracy": 0.8059679704761918,
+    "std_accuracy": 0.032646854199312965,
+    "mean_energy_mw": 239.9936487178079,
+    "mean_inference_ms": 78.12029244789511,
+    "sample_size": 30
+  },
+  "quantum_performance": {
+    "mean_accuracy": 0.898912357510504,
+    "std_accuracy": 0.010492587323120667,
+    "mean_energy_mw": 0.1834496004958944,
+    "mean_inference_ms": 5.37721316019694,
+    "mean_efficiency": 50.49816550399505,
+    "sample_size": 30
+  },
+  "comparative_analysis": {},
+  "statistical_significance": {
+    "accuracy_improvement": {
+      "t_statistic": 14.8455564334167,
+      "p_value": 0.001,
+      "significant": true,
+      "effect_size_cohen_d": 3.833106188787017
+    },
+    "energy_improvement": {
+      "t_statistic": 51.758874632458834,
+      "p_value": 0.001,
+      "significant": true,
+      "effect_size_cohen_d": 13.364083964663372
+    }
+  },
+  "energy_analysis": {},
+  "breakthrough_metrics": {
+    "accuracy_improvement_percent": 9.294438703431219,
+    "energy_savings_percent": 99.9235606435937,
+    "efficiency_gain_factor": 1308.2266086656261,
+    "statistical_confidence": {
+      "accuracy": "SIGNIFICANT",
+      "energy": "SIGNIFICANT"
+    }
+  }
+}
