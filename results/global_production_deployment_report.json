@@ -1,0 +1,1177 @@
+{
+  "timestamp": "2025-08-11 13:15:44",
+  "deployment_type": "global_production",
+  "simulation_results": {
+    "requests_processed": [
+      {
+        "request_id": "3e7428a51b12224d",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.05054473876953125,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "bf98a3c3b5305dc2",
+        "region": "ap-southeast-1",
+        "language": "ja",
+        "processing_time_ms": 0.02193450927734375,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "0da635215eedbb3d",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.0152587890625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "68616e12f26215c4",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.018596649169921875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "dfb13177f09908eb",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.012159347534179688,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "22d06c1afe2c7817",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.012636184692382812,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "5b4e8ef54a2e096a",
+        "region": "ap-southeast-1",
+        "language": "zh",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "8a845ca5d94c50cf",
+        "region": "us-east-1",
+        "language": "fr",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "5b3cdcea50c9235b",
+        "region": "ap-southeast-1",
+        "language": "ja",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "057e63f14405abe0",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "073c74cffc61b9da",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "e8f3cbda7dac18cc",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ba5536d3a62efab3",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "26d2afdef8371e11",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "23afa9ceb2252dee",
+        "region": "ap-southeast-1",
+        "language": "fr",
+        "processing_time_ms": 0.011920928955078125,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "91f5c6ccd3f9797f",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "9c012ff55e383722",
+        "region": "ap-southeast-1",
+        "language": "fr",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "7966715c3095eb74",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.014781951904296875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "7ffd80d5611f2a7e",
+        "region": "eu-west-1",
+        "language": "zh",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "8cdd0041a0bb4bb4",
+        "region": "ap-southeast-1",
+        "language": "zh",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "5e91879dfd72c7b0",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ab62ccc91e3b1f78",
+        "region": "us-east-1",
+        "language": "de",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "2eb41fbebc5d34b8",
+        "region": "ap-southeast-1",
+        "language": "ja",
+        "processing_time_ms": 0.014781951904296875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "c7b545c6bf306b87",
+        "region": "eu-west-1",
+        "language": "es",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "041aa9b2870ec564",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4b1eeb221df45236",
+        "region": "eu-west-1",
+        "language": "es",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "40da5fc22c1e115c",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.04696846008300781,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "6284a8aa5b6dcbdf",
+        "region": "eu-west-1",
+        "language": "en",
+        "processing_time_ms": 0.014543533325195312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "e75c4de6f1445e1b",
+        "region": "eu-west-1",
+        "language": "es",
+        "processing_time_ms": 0.01239776611328125,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "b0df068892f520ba",
+        "region": "ap-southeast-1",
+        "language": "de",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "b0d2c0d7d629a47d",
+        "region": "eu-west-1",
+        "language": "fr",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "cf261b2b388046eb",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.011920928955078125,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "c97fa00f19c9d140",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "93ce025f9b153252",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "2ecb23f7f42d5f56",
+        "region": "eu-west-1",
+        "language": "en",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "1729fcf6c6b86adc",
+        "region": "eu-west-1",
+        "language": "en",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "aebc9cd6d69ba67b",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "75fd44c0bc30476d",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4a0251dcb2e3b33d",
+        "region": "us-east-1",
+        "language": "de",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "7258a9a9bd20a817",
+        "region": "eu-west-1",
+        "language": "zh",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "362440aed336a163",
+        "region": "us-east-1",
+        "language": "fr",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "b3e407baaf40f262",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "6252f0e158b7134b",
+        "region": "eu-west-1",
+        "language": "zh",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "f7554140be356f71",
+        "region": "us-east-1",
+        "language": "fr",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "d424d59b8c2934d3",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "3fec7416c1b1ad11",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "9b3717e1d5e50e30",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "9d564e5d65730bfa",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ffcaf01aa6e7eb7e",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "04aed4df80cce587",
+        "region": "eu-west-1",
+        "language": "es",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "73da31c57b219e32",
+        "region": "eu-west-1",
+        "language": "es",
+        "processing_time_ms": 0.13566017150878906,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "dc7043fba2385326",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.012874603271484375,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ecfc8476d2a56c50",
+        "region": "eu-west-1",
+        "language": "en",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "d7ab5a4053789fc2",
+        "region": "us-east-1",
+        "language": "fr",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ec77683666b83067",
+        "region": "ap-southeast-1",
+        "language": "es",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4c28c924e6c5eddc",
+        "region": "ap-southeast-1",
+        "language": "fr",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "da7571ac039f9d70",
+        "region": "us-east-1",
+        "language": "de",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "d16d06d16e717de1",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.01239776611328125,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "a0a78af3db9949f5",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4e58986a059181ba",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "0d457efd0d93f029",
+        "region": "ap-southeast-1",
+        "language": "ja",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "fbcf899de2459552",
+        "region": "eu-west-1",
+        "language": "zh",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "8602500c8cefe580",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "c90790ae4afd0cbc",
+        "region": "ap-southeast-1",
+        "language": "fr",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "d857718847e9b93b",
+        "region": "eu-west-1",
+        "language": "zh",
+        "processing_time_ms": 0.022411346435546875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "94e24af9bff4ba65",
+        "region": "ap-southeast-1",
+        "language": "es",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "3eda120560242738",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.016450881958007812,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "a36d0e0c989f6596",
+        "region": "eu-west-1",
+        "language": "es",
+        "processing_time_ms": 0.012874603271484375,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "18435891b25b7b9b",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.012159347534179688,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "65557c3edfcc6ded",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "000e218033ee8d86",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "e83bf8a9e9c8eea2",
+        "region": "ap-southeast-1",
+        "language": "ja",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "22c41ca24a29c4de",
+        "region": "eu-west-1",
+        "language": "en",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "9f75e81fa1d2af16",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "df0dfd728645184d",
+        "region": "eu-west-1",
+        "language": "fr",
+        "processing_time_ms": 0.022649765014648438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "fb0f09d008c00596",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "b1a17fa5c32b68ce",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.029325485229492188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "f9ff40df88db9c98",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "51e7b220bdd68992",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "02242fad6a9df086",
+        "region": "ap-southeast-1",
+        "language": "de",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "cd24402c58991266",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "08412708bcd204aa",
+        "region": "eu-west-1",
+        "language": "zh",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "0b5c7605098c7fec",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "b18d1a1b03e7d0ea",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "5e2768e4fa533c94",
+        "region": "ap-southeast-1",
+        "language": "es",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "34d673dec86f9c4b",
+        "region": "ap-southeast-1",
+        "language": "es",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "14b717761365a504",
+        "region": "us-east-1",
+        "language": "de",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "0a0550256543c168",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "946e372cf2d6d552",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "67681f62e5694a5c",
+        "region": "eu-west-1",
+        "language": "zh",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ec103c8363483e23",
+        "region": "ap-southeast-1",
+        "language": "ja",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "bb95b744a82260d3",
+        "region": "us-east-1",
+        "language": "de",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4a8f615517ee0a7b",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "b0d3525fe1c151e4",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "fb598b05b69d8593",
+        "region": "ap-southeast-1",
+        "language": "es",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "0c287ed00fd93673",
+        "region": "ap-southeast-1",
+        "language": "zh",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "f6925afcce264b3e",
+        "region": "eu-west-1",
+        "language": "en",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "56fa97df0ea17434",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "c7c1ef73b80b1b26",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "1d9d46b53b36ba05",
+        "region": "ap-southeast-1",
+        "language": "es",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "cc7bc988a6b458a7",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ce1756cad76e697f",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "34c250f513003d9e",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "e200960690f1a639",
+        "region": "us-east-1",
+        "language": "fr",
+        "processing_time_ms": 0.009775161743164062,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "b129e2f86a37f583",
+        "region": "us-east-1",
+        "language": "fr",
+        "processing_time_ms": 0.009775161743164062,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "5646c1477cab8eb4",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.009775161743164062,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ecce114cbd7b8551",
+        "region": "ap-southeast-1",
+        "language": "es",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "9dcee221d3a5821d",
+        "region": "ap-southeast-1",
+        "language": "de",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "e225500807784519",
+        "region": "us-east-1",
+        "language": "fr",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "72decde5395279a4",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "cb8a04396357706d",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "5478a2b08ecbe33f",
+        "region": "us-east-1",
+        "language": "de",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "15e0b5f1055e7492",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.0209808349609375,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "f1a5509fa723f9d7",
+        "region": "eu-west-1",
+        "language": "fr",
+        "processing_time_ms": 0.012636184692382812,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "03a2482d68ea7eea",
+        "region": "ap-southeast-1",
+        "language": "ja",
+        "processing_time_ms": 0.01239776611328125,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4bc0a0566b3c3862",
+        "region": "ap-southeast-1",
+        "language": "fr",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "0e8b54a56b84ab8c",
+        "region": "eu-west-1",
+        "language": "fr",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "25a0d33584185873",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "fb49618f6c6e463d",
+        "region": "us-east-1",
+        "language": "fr",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "a4f11330c83a665d",
+        "region": "us-east-1",
+        "language": "de",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4b7f86bf7964ac05",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "1f822e1dc5a77b1e",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "09525d5c5a006591",
+        "region": "ap-southeast-1",
+        "language": "de",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "0940f3b1880b3390",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.011205673217773438,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "3a480823ff947af6",
+        "region": "eu-west-1",
+        "language": "zh",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "06c40fdeafd8b2f4",
+        "region": "ap-southeast-1",
+        "language": "ja",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "66172fff300fc401",
+        "region": "ap-southeast-1",
+        "language": "es",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "e091bbf50d7e3e7a",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4540c17f9fa15032",
+        "region": "eu-west-1",
+        "language": "ja",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4409681d3d28de4e",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.01049041748046875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "4571c0dbef31f258",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "7160b752f17bd9b5",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "cd2025f12445f137",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.010251998901367188,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "3e70518a351a2ccb",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "9191f87dfe6a90ad",
+        "region": "ap-southeast-1",
+        "language": "zh",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "ddeb3e988e97a828",
+        "region": "us-east-1",
+        "language": "de",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "3fbdb5e7a961e676",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.010013580322265625,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "3034f16074c11887",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.010728836059570312,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "80c47234b6274481",
+        "region": "us-east-1",
+        "language": "zh",
+        "processing_time_ms": 0.016689300537109375,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "23ac15d24b1584a5",
+        "region": "eu-west-1",
+        "language": "de",
+        "processing_time_ms": 0.012636184692382812,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "8a4a1b04a6f1f3b6",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.011920928955078125,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "a238ed865a6f1023",
+        "region": "eu-west-1",
+        "language": "en",
+        "processing_time_ms": 0.012159347534179688,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "e71d0651410e3948",
+        "region": "ap-southeast-1",
+        "language": "zh",
+        "processing_time_ms": 0.012159347534179688,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "5906addec48942b6",
+        "region": "ap-southeast-1",
+        "language": "en",
+        "processing_time_ms": 0.011682510375976562,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "cac1c31c60ba028a",
+        "region": "ap-southeast-1",
+        "language": "de",
+        "processing_time_ms": 0.011444091796875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "8361d3d4a87a5bef",
+        "region": "eu-west-1",
+        "language": "es",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "fd04f3e892c6a2f5",
+        "region": "eu-west-1",
+        "language": "fr",
+        "processing_time_ms": 0.010967254638671875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "49a0e853de41eb89",
+        "region": "us-east-1",
+        "language": "es",
+        "processing_time_ms": 0.01811981201171875,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "d18bb3a1a6c03768",
+        "region": "us-east-1",
+        "language": "en",
+        "processing_time_ms": 0.02765655517578125,
+        "compliance_checks": 1
+      },
+      {
+        "request_id": "3ac25adb1412342d",
+        "region": "us-east-1",
+        "language": "ja",
+        "processing_time_ms": 0.024557113647460938,
+        "compliance_checks": 1
+      }
+    ],
+    "performance_metrics": {
+      "simulation_duration_sec": 0.0037064552307128906,
+      "avg_processing_time_ms": 0.013213157653808594,
+      "min_processing_time_ms": 0.009775161743164062,
+      "max_processing_time_ms": 0.13566017150878906,
+      "p95_processing_time_ms": 0.022411346435546875,
+      "throughput_rps": 40469.93438826708
+    },
+    "compliance_summary": {},
+    "regional_performance": {},
+    "global_status": {
+      "system_info": {
+        "version": "2.1.0",
+        "uptime_seconds": 0.003865957260131836,
+        "status": "operational",
+        "total_requests": 150,
+        "throughput_rps": 38800.22201665125
+      },
+      "deployment": {
+        "total_regions": 3,
+        "healthy_regions": 3,
+        "availability": 100.0,
+        "avg_response_time_ms": 89.31725642575363,
+        "max_error_rate": 0.008723418796652513,
+        "regional_status": {
+          "us-east-1": {
+            "healthy": true,
+            "last_check": 1754918144.0442047,
+            "response_time_ms": 55.792511675679414,
+            "error_rate": 0.008723418796652513,
+            "cpu_utilization": 68.58072823998597,
+            "memory_utilization": 55.753301438027165
+          },
+          "eu-west-1": {
+            "healthy": true,
+            "last_check": 1754918144.0442204,
+            "response_time_ms": 127.95583096442829,
+            "error_rate": 0.0038856416833797387,
+            "cpu_utilization": 61.49860192650031,
+            "memory_utilization": 65.99345391405393
+          },
+          "ap-southeast-1": {
+            "healthy": true,
+            "last_check": 1754918144.044227,
+            "response_time_ms": 84.20342663715319,
+            "error_rate": 0.0025535977265216917,
+            "cpu_utilization": 63.11303624225265,
+            "memory_utilization": 44.380252482821604
+          }
+        }
+      },
+      "globalization": {
+        "supported_languages": [
+          "en",
+          "es",
+          "fr",
+          "de",
+          "ja",
+          "zh"
+        ],
+        "language_usage": {
+          "en": 33,
+          "es": 25,
+          "fr": 18,
+          "de": 22,
+          "ja": 27,
+          "zh": 25
+        },
+        "compliance_frameworks": [
+          "GDPR",
+          "CCPA",
+          "PDPA"
+        ],
+        "compliance_checks": {
+          "GDPR": 45,
+          "CCPA": 65,
+          "PDPA": 40
+        }
+      },
+      "regional_distribution": {
+        "us-east-1": 65,
+        "eu-west-1": 45,
+        "ap-southeast-1": 40
+      },
+      "security": {
+        "encryption_at_rest": true,
+        "encryption_in_transit": true,
+        "api_rate_limiting": true,
+        "ddos_protection": true,
+        "vulnerability_scanning": true
+      },
+      "scaling": {
+        "min_instances": 2,
+        "max_instances": 20,
+        "target_cpu_utilization": 70,
+        "scale_up_cooldown": 300,
+        "scale_down_cooldown": 600
+      }
+    }
+  },
+  "capabilities": {
+    "multi_region": true,
+    "internationalization": true,
+    "compliance_ready": true,
+    "auto_scaling": true,
+    "security_hardened": true,
+    "monitoring_enabled": true
+  },
+  "sla_targets": {
+    "availability": "99.9%",
+    "response_time_p95": "200ms",
+    "throughput": "1000+ RPS",
+    "global_coverage": "3+ regions"
+  },
+  "achieved_metrics": {
+    "availability": "100.0%",
+    "response_time_p95": "0.02ms",
+    "throughput": "40469.9 RPS",
+    "global_coverage": "3 regions"
+  }
+}
