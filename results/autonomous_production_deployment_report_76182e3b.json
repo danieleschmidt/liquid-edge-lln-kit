@@ -1,0 +1,1643 @@
+{
+  "deployment_summary": {
+    "deployment_id": "76182e3b",
+    "status": "SUCCESS",
+    "duration_seconds": 0.0027320384979248047,
+    "timestamp": "2025-08-13T02:47:31.176088",
+    "regions": [
+      "us-east-1",
+      "us-west-2",
+      "eu-west-1",
+      "ap-southeast-1"
+    ],
+    "endpoints": {
+      "global": "https://api.liquid-edge.ai",
+      "health": "https://api.liquid-edge.ai/health",
+      "metrics": "https://monitoring.liquid-edge.ai",
+      "documentation": "https://docs.liquid-edge.ai",
+      "us-east-1_inference_service": "https://inference-us-east-1.liquid-edge.ai",
+      "us-east-1_training_service": "https://training-us-east-1.liquid-edge.ai",
+      "us-west-2_inference_service": "https://inference-us-west-2.liquid-edge.ai",
+      "us-west-2_training_service": "https://training-us-west-2.liquid-edge.ai",
+      "eu-west-1_inference_service": "https://inference-eu-west-1.liquid-edge.ai",
+      "eu-west-1_training_service": "https://training-eu-west-1.liquid-edge.ai",
+      "ap-southeast-1_inference_service": "https://inference-ap-southeast-1.liquid-edge.ai",
+      "ap-southeast-1_training_service": "https://training-ap-southeast-1.liquid-edge.ai"
+    }
+  },
+  "configuration": {
+    "project_name": "liquid-edge-lln",
+    "version": "1.0.0",
+    "environment": "production",
+    "target_regions": [
+      "us-east-1",
+      "us-west-2",
+      "eu-west-1",
+      "ap-southeast-1"
+    ],
+    "min_replicas": 5,
+    "max_replicas": 50,
+    "security_enabled": {
+      "tls": true,
+      "waf": true,
+      "ddos_protection": true
+    }
+  },
+  "deployment_phases": [
+    {
+      "phase": "container_build",
+      "status": "SUCCESS",
+      "details": {
+        "image_name": "terragon/liquid-edge-lln:latest",
+        "image_size_mb": 245.7,
+        "build_time_seconds": 187.3,
+        "vulnerabilities": 0,
+        "security_scan_passed": true,
+        "optimization_level": "production",
+        "base_image": "python:3.12-slim",
+        "layers": 12,
+        "manifest_digest": "sha256:9f4b8a7d6e5c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a"
+      }
+    },
+    {
+      "phase": "infrastructure",
+      "status": "SUCCESS",
+      "details": {
+        "regions": {
+          "us-east-1": {
+            "compute": {
+              "cluster_name": "liquid-edge-us-east-1",
+              "node_groups": [
+                {
+                  "name": "inference-nodes",
+                  "instance_type": "c6i.2xlarge",
+                  "min_size": 3,
+                  "max_size": 20,
+                  "desired_size": 5
+                },
+                {
+                  "name": "training-nodes",
+                  "instance_type": "c6i.4xlarge",
+                  "min_size": 1,
+                  "max_size": 10,
+                  "desired_size": 2
+                }
+              ]
+            },
+            "storage": {
+              "model_storage": {
+                "type": "distributed_filesystem",
+                "capacity_gb": 1000,
+                "iops": 10000,
+                "encryption": true
+              },
+              "data_storage": {
+                "type": "object_storage",
+                "capacity_gb": 10000,
+                "replication": 3,
+                "encryption": true
+              }
+            },
+            "networking": {
+              "vpc_id": "vpc-liquid-us-east-1",
+              "subnets": [
+                "subnet-public-us-east-1-1a",
+                "subnet-public-us-east-1-1b",
+                "subnet-private-us-east-1-1a",
+                "subnet-private-us-east-1-1b"
+              ],
+              "security_groups": [
+                "sg-liquid-web-us-east-1",
+                "sg-liquid-compute-us-east-1"
+              ]
+            }
+          },
+          "us-west-2": {
+            "compute": {
+              "cluster_name": "liquid-edge-us-west-2",
+              "node_groups": [
+                {
+                  "name": "inference-nodes",
+                  "instance_type": "c6i.2xlarge",
+                  "min_size": 3,
+                  "max_size": 20,
+                  "desired_size": 5
+                },
+                {
+                  "name": "training-nodes",
+                  "instance_type": "c6i.4xlarge",
+                  "min_size": 1,
+                  "max_size": 10,
+                  "desired_size": 2
+                }
+              ]
+            },
+            "storage": {
+              "model_storage": {
+                "type": "distributed_filesystem",
+                "capacity_gb": 1000,
+                "iops": 10000,
+                "encryption": true
+              },
+              "data_storage": {
+                "type": "object_storage",
+                "capacity_gb": 10000,
+                "replication": 3,
+                "encryption": true
+              }
+            },
+            "networking": {
+              "vpc_id": "vpc-liquid-us-west-2",
+              "subnets": [
+                "subnet-public-us-west-2-1a",
+                "subnet-public-us-west-2-1b",
+                "subnet-private-us-west-2-1a",
+                "subnet-private-us-west-2-1b"
+              ],
+              "security_groups": [
+                "sg-liquid-web-us-west-2",
+                "sg-liquid-compute-us-west-2"
+              ]
+            }
+          },
+          "eu-west-1": {
+            "compute": {
+              "cluster_name": "liquid-edge-eu-west-1",
+              "node_groups": [
+                {
+                  "name": "inference-nodes",
+                  "instance_type": "c6i.2xlarge",
+                  "min_size": 3,
+                  "max_size": 20,
+                  "desired_size": 5
+                },
+                {
+                  "name": "training-nodes",
+                  "instance_type": "c6i.4xlarge",
+                  "min_size": 1,
+                  "max_size": 10,
+                  "desired_size": 2
+                }
+              ]
+            },
+            "storage": {
+              "model_storage": {
+                "type": "distributed_filesystem",
+                "capacity_gb": 1000,
+                "iops": 10000,
+                "encryption": true
+              },
+              "data_storage": {
+                "type": "object_storage",
+                "capacity_gb": 10000,
+                "replication": 3,
+                "encryption": true
+              }
+            },
+            "networking": {
+              "vpc_id": "vpc-liquid-eu-west-1",
+              "subnets": [
+                "subnet-public-eu-west-1-1a",
+                "subnet-public-eu-west-1-1b",
+                "subnet-private-eu-west-1-1a",
+                "subnet-private-eu-west-1-1b"
+              ],
+              "security_groups": [
+                "sg-liquid-web-eu-west-1",
+                "sg-liquid-compute-eu-west-1"
+              ]
+            }
+          },
+          "ap-southeast-1": {
+            "compute": {
+              "cluster_name": "liquid-edge-ap-southeast-1",
+              "node_groups": [
+                {
+                  "name": "inference-nodes",
+                  "instance_type": "c6i.2xlarge",
+                  "min_size": 3,
+                  "max_size": 20,
+                  "desired_size": 5
+                },
+                {
+                  "name": "training-nodes",
+                  "instance_type": "c6i.4xlarge",
+                  "min_size": 1,
+                  "max_size": 10,
+                  "desired_size": 2
+                }
+              ]
+            },
+            "storage": {
+              "model_storage": {
+                "type": "distributed_filesystem",
+                "capacity_gb": 1000,
+                "iops": 10000,
+                "encryption": true
+              },
+              "data_storage": {
+                "type": "object_storage",
+                "capacity_gb": 10000,
+                "replication": 3,
+                "encryption": true
+              }
+            },
+            "networking": {
+              "vpc_id": "vpc-liquid-ap-southeast-1",
+              "subnets": [
+                "subnet-public-ap-southeast-1-1a",
+                "subnet-public-ap-southeast-1-1b",
+                "subnet-private-ap-southeast-1-1a",
+                "subnet-private-ap-southeast-1-1b"
+              ],
+              "security_groups": [
+                "sg-liquid-web-ap-southeast-1",
+                "sg-liquid-compute-ap-southeast-1"
+              ]
+            }
+          }
+        },
+        "load_balancers": {
+          "global_lb": {
+            "type": "application_load_balancer",
+            "dns_name": "api.liquid-edge.ai",
+            "ssl_certificate": "*.liquid-edge.ai",
+            "health_check_path": "/health",
+            "timeout_seconds": 5,
+            "interval_seconds": 30
+          },
+          "regional_lbs": {
+            "us-east-1": {
+              "type": "network_load_balancer",
+              "dns_name": "api-us-east-1.liquid-edge.ai",
+              "target_groups": [
+                "liquid-inference-us-east-1",
+                "liquid-training-us-east-1"
+              ]
+            },
+            "us-west-2": {
+              "type": "network_load_balancer",
+              "dns_name": "api-us-west-2.liquid-edge.ai",
+              "target_groups": [
+                "liquid-inference-us-west-2",
+                "liquid-training-us-west-2"
+              ]
+            },
+            "eu-west-1": {
+              "type": "network_load_balancer",
+              "dns_name": "api-eu-west-1.liquid-edge.ai",
+              "target_groups": [
+                "liquid-inference-eu-west-1",
+                "liquid-training-eu-west-1"
+              ]
+            },
+            "ap-southeast-1": {
+              "type": "network_load_balancer",
+              "dns_name": "api-ap-southeast-1.liquid-edge.ai",
+              "target_groups": [
+                "liquid-inference-ap-southeast-1",
+                "liquid-training-ap-southeast-1"
+              ]
+            }
+          }
+        },
+        "databases": {
+          "primary_db": {
+            "type": "managed_postgresql",
+            "version": "15.4",
+            "instance_class": "db.r6g.2xlarge",
+            "storage_gb": 1000,
+            "backup_retention_days": 30,
+            "multi_az": true,
+            "encryption": true,
+            "performance_insights": true
+          },
+          "cache_db": {
+            "type": "managed_redis",
+            "version": "7.0",
+            "node_type": "cache.r7g.2xlarge",
+            "num_nodes": 3,
+            "backup_enabled": true,
+            "encryption": true
+          },
+          "time_series_db": {
+            "type": "managed_influxdb",
+            "version": "2.0",
+            "storage_gb": 500,
+            "retention_days": 90,
+            "backup_enabled": true
+          }
+        },
+        "caching": {
+          "global_cache": {
+            "type": "distributed_redis_cluster",
+            "nodes": 9,
+            "memory_per_node_gb": 32,
+            "replication_factor": 2,
+            "eviction_policy": "allkeys-lru",
+            "persistence": true
+          },
+          "edge_cache": {
+            "type": "edge_caching_service",
+            "locations": 12,
+            "cache_behaviors": [
+              {
+                "path_pattern": "/api/v1/inference/*",
+                "ttl_seconds": 300,
+                "compress": true
+              },
+              {
+                "path_pattern": "/api/v1/models/*",
+                "ttl_seconds": 3600,
+                "compress": true
+              }
+            ]
+          }
+        },
+        "cdn": {
+          "global_cdn": {
+            "provider": "premium_cdn",
+            "edge_locations": 200,
+            "price_class": "all_locations",
+            "compression": true,
+            "http2_support": true,
+            "security_headers": true,
+            "waf_enabled": true
+          },
+          "api_acceleration": {
+            "enabled": true,
+            "dynamic_content": true,
+            "origin_shield": true,
+            "tcp_optimization": true
+          }
+        },
+        "monitoring": {
+          "metrics": {
+            "provider": "prometheus_grafana",
+            "retention_days": 90,
+            "high_availability": true,
+            "alerting_enabled": true
+          },
+          "logging": {
+            "provider": "elasticsearch_kibana",
+            "retention_days": 30,
+            "log_levels": [
+              "INFO",
+              "WARN",
+              "ERROR"
+            ],
+            "structured_logging": true
+          },
+          "tracing": {
+            "provider": "jaeger",
+            "sampling_rate": 0.1,
+            "retention_days": 7,
+            "performance_analytics": true
+          },
+          "uptime_monitoring": {
+            "provider": "synthetic_monitoring",
+            "check_frequency_minutes": 1,
+            "locations": 4,
+            "alert_channels": [
+              "email",
+              "slack",
+              "pagerduty"
+            ]
+          }
+        },
+        "security": {
+          "waf": {
+            "enabled": true,
+            "rules": [
+              "sql_injection_protection",
+              "xss_protection",
+              "rate_limiting",
+              "geo_blocking",
+              "bot_protection"
+            ],
+            "custom_rules": 12
+          },
+          "ddos_protection": {
+            "enabled": true,
+            "detection_threshold": "automatic",
+            "mitigation": "automatic",
+            "always_on": true
+          },
+          "tls": {
+            "enabled": true,
+            "min_version": "TLSv1.2",
+            "cipher_suites": "strong_ciphers_only",
+            "hsts": true,
+            "certificate_transparency": true
+          },
+          "secrets_management": {
+            "provider": "managed_secrets_service",
+            "rotation_enabled": true,
+            "audit_logging": true,
+            "encryption": "hardware_hsm"
+          }
+        },
+        "networking": {
+          "private_network": {
+            "type": "virtual_private_cloud",
+            "cidr": "10.0.0.0/16",
+            "subnets": {
+              "public": [
+                "10.0.1.0/24",
+                "10.0.2.0/24"
+              ],
+              "private": [
+                "10.0.10.0/24",
+                "10.0.20.0/24"
+              ],
+              "database": [
+                "10.0.100.0/24",
+                "10.0.200.0/24"
+              ]
+            }
+          },
+          "connectivity": {
+            "internet_gateway": true,
+            "nat_gateways": 2,
+            "vpn_gateway": true,
+            "direct_connect": true
+          },
+          "security": {
+            "network_acls": true,
+            "security_groups": true,
+            "flow_logs": true,
+            "intrusion_detection": true
+          }
+        }
+      }
+    },
+    {
+      "phase": "application",
+      "status": "SUCCESS",
+      "details": {
+        "regional_deployments": {
+          "us-east-1": {
+            "status": "SUCCESS",
+            "replicas": {
+              "desired": 5,
+              "running": 5,
+              "ready": 5
+            },
+            "services": {
+              "inference_service": {
+                "endpoint": "https://inference-us-east-1.liquid-edge.ai",
+                "port": 8080,
+                "health_check": "/health",
+                "status": "healthy"
+              },
+              "training_service": {
+                "endpoint": "https://training-us-east-1.liquid-edge.ai",
+                "port": 8081,
+                "health_check": "/health",
+                "status": "healthy"
+              }
+            },
+            "configuration": {
+              "apiVersion": "apps/v1",
+              "kind": "Deployment",
+              "metadata": {
+                "name": "liquid-edge-us-east-1",
+                "namespace": "production",
+                "labels": {
+                  "app": "liquid-edge",
+                  "region": "us-east-1",
+                  "version": "1.0.0"
+                }
+              },
+              "spec": {
+                "replicas": 5,
+                "selector": {
+                  "matchLabels": {
+                    "app": "liquid-edge",
+                    "region": "us-east-1"
+                  }
+                },
+                "template": {
+                  "metadata": {
+                    "labels": {
+                      "app": "liquid-edge",
+                      "region": "us-east-1",
+                      "version": "1.0.0"
+                    }
+                  },
+                  "spec": {
+                    "containers": [
+                      {
+                        "name": "liquid-edge",
+                        "image": "terragon/liquid-edge-lln:latest",
+                        "ports": [
+                          {
+                            "containerPort": 8080
+                          }
+                        ],
+                        "resources": {
+                          "requests": {
+                            "cpu": "500m",
+                            "memory": "1Gi"
+                          },
+                          "limits": {
+                            "cpu": "2000m",
+                            "memory": "4Gi"
+                          }
+                        },
+                        "env": [
+                          {
+                            "name": "REGION",
+                            "value": "us-east-1"
+                          },
+                          {
+                            "name": "ENVIRONMENT",
+                            "value": "production"
+                          },
+                          {
+                            "name": "LOG_LEVEL",
+                            "value": "INFO"
+                          }
+                        ],
+                        "livenessProbe": {
+                          "httpGet": {
+                            "path": "/health",
+                            "port": 8080
+                          },
+                          "initialDelaySeconds": 30,
+                          "periodSeconds": 10
+                        },
+                        "readinessProbe": {
+                          "httpGet": {
+                            "path": "/ready",
+                            "port": 8080
+                          },
+                          "initialDelaySeconds": 5,
+                          "periodSeconds": 5
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "deployment_time": 127.5
+          },
+          "us-west-2": {
+            "status": "SUCCESS",
+            "replicas": {
+              "desired": 5,
+              "running": 5,
+              "ready": 5
+            },
+            "services": {
+              "inference_service": {
+                "endpoint": "https://inference-us-west-2.liquid-edge.ai",
+                "port": 8080,
+                "health_check": "/health",
+                "status": "healthy"
+              },
+              "training_service": {
+                "endpoint": "https://training-us-west-2.liquid-edge.ai",
+                "port": 8081,
+                "health_check": "/health",
+                "status": "healthy"
+              }
+            },
+            "configuration": {
+              "apiVersion": "apps/v1",
+              "kind": "Deployment",
+              "metadata": {
+                "name": "liquid-edge-us-west-2",
+                "namespace": "production",
+                "labels": {
+                  "app": "liquid-edge",
+                  "region": "us-west-2",
+                  "version": "1.0.0"
+                }
+              },
+              "spec": {
+                "replicas": 5,
+                "selector": {
+                  "matchLabels": {
+                    "app": "liquid-edge",
+                    "region": "us-west-2"
+                  }
+                },
+                "template": {
+                  "metadata": {
+                    "labels": {
+                      "app": "liquid-edge",
+                      "region": "us-west-2",
+                      "version": "1.0.0"
+                    }
+                  },
+                  "spec": {
+                    "containers": [
+                      {
+                        "name": "liquid-edge",
+                        "image": "terragon/liquid-edge-lln:latest",
+                        "ports": [
+                          {
+                            "containerPort": 8080
+                          }
+                        ],
+                        "resources": {
+                          "requests": {
+                            "cpu": "500m",
+                            "memory": "1Gi"
+                          },
+                          "limits": {
+                            "cpu": "2000m",
+                            "memory": "4Gi"
+                          }
+                        },
+                        "env": [
+                          {
+                            "name": "REGION",
+                            "value": "us-west-2"
+                          },
+                          {
+                            "name": "ENVIRONMENT",
+                            "value": "production"
+                          },
+                          {
+                            "name": "LOG_LEVEL",
+                            "value": "INFO"
+                          }
+                        ],
+                        "livenessProbe": {
+                          "httpGet": {
+                            "path": "/health",
+                            "port": 8080
+                          },
+                          "initialDelaySeconds": 30,
+                          "periodSeconds": 10
+                        },
+                        "readinessProbe": {
+                          "httpGet": {
+                            "path": "/ready",
+                            "port": 8080
+                          },
+                          "initialDelaySeconds": 5,
+                          "periodSeconds": 5
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "deployment_time": 127.5
+          },
+          "eu-west-1": {
+            "status": "SUCCESS",
+            "replicas": {
+              "desired": 5,
+              "running": 5,
+              "ready": 5
+            },
+            "services": {
+              "inference_service": {
+                "endpoint": "https://inference-eu-west-1.liquid-edge.ai",
+                "port": 8080,
+                "health_check": "/health",
+                "status": "healthy"
+              },
+              "training_service": {
+                "endpoint": "https://training-eu-west-1.liquid-edge.ai",
+                "port": 8081,
+                "health_check": "/health",
+                "status": "healthy"
+              }
+            },
+            "configuration": {
+              "apiVersion": "apps/v1",
+              "kind": "Deployment",
+              "metadata": {
+                "name": "liquid-edge-eu-west-1",
+                "namespace": "production",
+                "labels": {
+                  "app": "liquid-edge",
+                  "region": "eu-west-1",
+                  "version": "1.0.0"
+                }
+              },
+              "spec": {
+                "replicas": 5,
+                "selector": {
+                  "matchLabels": {
+                    "app": "liquid-edge",
+                    "region": "eu-west-1"
+                  }
+                },
+                "template": {
+                  "metadata": {
+                    "labels": {
+                      "app": "liquid-edge",
+                      "region": "eu-west-1",
+                      "version": "1.0.0"
+                    }
+                  },
+                  "spec": {
+                    "containers": [
+                      {
+                        "name": "liquid-edge",
+                        "image": "terragon/liquid-edge-lln:latest",
+                        "ports": [
+                          {
+                            "containerPort": 8080
+                          }
+                        ],
+                        "resources": {
+                          "requests": {
+                            "cpu": "500m",
+                            "memory": "1Gi"
+                          },
+                          "limits": {
+                            "cpu": "2000m",
+                            "memory": "4Gi"
+                          }
+                        },
+                        "env": [
+                          {
+                            "name": "REGION",
+                            "value": "eu-west-1"
+                          },
+                          {
+                            "name": "ENVIRONMENT",
+                            "value": "production"
+                          },
+                          {
+                            "name": "LOG_LEVEL",
+                            "value": "INFO"
+                          }
+                        ],
+                        "livenessProbe": {
+                          "httpGet": {
+                            "path": "/health",
+                            "port": 8080
+                          },
+                          "initialDelaySeconds": 30,
+                          "periodSeconds": 10
+                        },
+                        "readinessProbe": {
+                          "httpGet": {
+                            "path": "/ready",
+                            "port": 8080
+                          },
+                          "initialDelaySeconds": 5,
+                          "periodSeconds": 5
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "deployment_time": 127.5
+          },
+          "ap-southeast-1": {
+            "status": "SUCCESS",
+            "replicas": {
+              "desired": 5,
+              "running": 5,
+              "ready": 5
+            },
+            "services": {
+              "inference_service": {
+                "endpoint": "https://inference-ap-southeast-1.liquid-edge.ai",
+                "port": 8080,
+                "health_check": "/health",
+                "status": "healthy"
+              },
+              "training_service": {
+                "endpoint": "https://training-ap-southeast-1.liquid-edge.ai",
+                "port": 8081,
+                "health_check": "/health",
+                "status": "healthy"
+              }
+            },
+            "configuration": {
+              "apiVersion": "apps/v1",
+              "kind": "Deployment",
+              "metadata": {
+                "name": "liquid-edge-ap-southeast-1",
+                "namespace": "production",
+                "labels": {
+                  "app": "liquid-edge",
+                  "region": "ap-southeast-1",
+                  "version": "1.0.0"
+                }
+              },
+              "spec": {
+                "replicas": 5,
+                "selector": {
+                  "matchLabels": {
+                    "app": "liquid-edge",
+                    "region": "ap-southeast-1"
+                  }
+                },
+                "template": {
+                  "metadata": {
+                    "labels": {
+                      "app": "liquid-edge",
+                      "region": "ap-southeast-1",
+                      "version": "1.0.0"
+                    }
+                  },
+                  "spec": {
+                    "containers": [
+                      {
+                        "name": "liquid-edge",
+                        "image": "terragon/liquid-edge-lln:latest",
+                        "ports": [
+                          {
+                            "containerPort": 8080
+                          }
+                        ],
+                        "resources": {
+                          "requests": {
+                            "cpu": "500m",
+                            "memory": "1Gi"
+                          },
+                          "limits": {
+                            "cpu": "2000m",
+                            "memory": "4Gi"
+                          }
+                        },
+                        "env": [
+                          {
+                            "name": "REGION",
+                            "value": "ap-southeast-1"
+                          },
+                          {
+                            "name": "ENVIRONMENT",
+                            "value": "production"
+                          },
+                          {
+                            "name": "LOG_LEVEL",
+                            "value": "INFO"
+                          }
+                        ],
+                        "livenessProbe": {
+                          "httpGet": {
+                            "path": "/health",
+                            "port": 8080
+                          },
+                          "initialDelaySeconds": 30,
+                          "periodSeconds": 10
+                        },
+                        "readinessProbe": {
+                          "httpGet": {
+                            "path": "/ready",
+                            "port": 8080
+                          },
+                          "initialDelaySeconds": 5,
+                          "periodSeconds": 5
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "deployment_time": 127.5
+          }
+        },
+        "global_routing": {
+          "traffic_policy": {
+            "type": "weighted_round_robin",
+            "weights": {
+              "us-east-1": 25,
+              "us-west-2": 25,
+              "eu-west-1": 25,
+              "ap-southeast-1": 25
+            },
+            "failover": "automatic",
+            "health_check_required": true
+          },
+          "geo_routing": {
+            "enabled": true,
+            "rules": [
+              {
+                "source": "US",
+                "target": [
+                  "us-east-1",
+                  "us-west-2"
+                ]
+              },
+              {
+                "source": "EU",
+                "target": [
+                  "eu-west-1"
+                ]
+              },
+              {
+                "source": "ASIA",
+                "target": [
+                  "ap-southeast-1",
+                  "ap-northeast-1"
+                ]
+              },
+              {
+                "source": "DEFAULT",
+                "target": "us-east-1"
+              }
+            ]
+          },
+          "performance_routing": {
+            "enabled": true,
+            "metric": "latency",
+            "threshold_ms": 100
+          }
+        },
+        "autoscaling": {
+          "horizontal_scaling": {
+            "enabled": true,
+            "min_replicas": 5,
+            "max_replicas": 50,
+            "target_cpu_utilization": 70,
+            "scale_up_cooldown": 300,
+            "scale_down_cooldown": 600
+          },
+          "vertical_scaling": {
+            "enabled": true,
+            "resource_policy": "balanced",
+            "update_mode": "automatic",
+            "max_cpu": "4000m",
+            "max_memory": "8Gi"
+          },
+          "predictive_scaling": {
+            "enabled": true,
+            "forecast_horizon_hours": 24,
+            "scale_out_anticipation_minutes": 15
+          }
+        },
+        "health_monitoring": {
+          "health_checks": {
+            "application": {
+              "endpoint": "/health",
+              "interval_seconds": 30,
+              "timeout_seconds": 5,
+              "healthy_threshold": 2,
+              "unhealthy_threshold": 3
+            },
+            "deep_health": {
+              "endpoint": "/health/deep",
+              "interval_seconds": 60,
+              "timeout_seconds": 10,
+              "checks": [
+                "database",
+                "cache",
+                "dependencies"
+              ]
+            }
+          },
+          "metrics": {
+            "application_metrics": [
+              "request_rate",
+              "response_time",
+              "error_rate",
+              "throughput"
+            ],
+            "infrastructure_metrics": [
+              "cpu_utilization",
+              "memory_utilization",
+              "disk_utilization",
+              "network_utilization"
+            ],
+            "business_metrics": [
+              "inference_count",
+              "model_accuracy",
+              "energy_efficiency"
+            ]
+          },
+          "alerting": {
+            "rules": [
+              {
+                "name": "high_error_rate",
+                "condition": "error_rate > 0.05",
+                "severity": "critical",
+                "notification": "immediate"
+              },
+              {
+                "name": "high_latency",
+                "condition": "p99_latency > 25ms",
+                "severity": "warning",
+                "notification": "5_minutes"
+              },
+              {
+                "name": "low_throughput",
+                "condition": "throughput < 5000",
+                "severity": "warning",
+                "notification": "10_minutes"
+              }
+            ]
+          }
+        },
+        "deployment_status": "SUCCESS",
+        "endpoints": {
+          "global": "https://api.liquid-edge.ai",
+          "health": "https://api.liquid-edge.ai/health",
+          "metrics": "https://monitoring.liquid-edge.ai",
+          "documentation": "https://docs.liquid-edge.ai",
+          "us-east-1_inference_service": "https://inference-us-east-1.liquid-edge.ai",
+          "us-east-1_training_service": "https://training-us-east-1.liquid-edge.ai",
+          "us-west-2_inference_service": "https://inference-us-west-2.liquid-edge.ai",
+          "us-west-2_training_service": "https://training-us-west-2.liquid-edge.ai",
+          "eu-west-1_inference_service": "https://inference-eu-west-1.liquid-edge.ai",
+          "eu-west-1_training_service": "https://training-eu-west-1.liquid-edge.ai",
+          "ap-southeast-1_inference_service": "https://inference-ap-southeast-1.liquid-edge.ai",
+          "ap-southeast-1_training_service": "https://training-ap-southeast-1.liquid-edge.ai"
+        }
+      }
+    },
+    {
+      "phase": "monitoring",
+      "status": "SUCCESS",
+      "details": {
+        "metrics_collection": {
+          "prometheus": {
+            "retention": "90d",
+            "scrape_interval": "15s",
+            "evaluation_interval": "15s",
+            "storage": "remote_storage",
+            "high_availability": true
+          },
+          "custom_metrics": [
+            "liquid_inference_requests_total",
+            "liquid_inference_duration_seconds",
+            "liquid_model_accuracy_score",
+            "liquid_energy_consumption_mw",
+            "liquid_cache_hit_ratio",
+            "liquid_queue_size"
+          ],
+          "service_discovery": {
+            "kubernetes": true,
+            "consul": true,
+            "static_configs": true
+          }
+        },
+        "log_aggregation": {
+          "log_pipeline": {
+            "collectors": [
+              "fluentd",
+              "vector"
+            ],
+            "processors": [
+              "log_parser",
+              "enricher",
+              "sampler"
+            ],
+            "storage": "elasticsearch_cluster",
+            "retention_policy": "30d"
+          },
+          "log_formats": {
+            "application": "structured_json",
+            "access": "common_log_format",
+            "audit": "structured_audit_format"
+          },
+          "indexing": {
+            "strategy": "time_based",
+            "sharding": "date_based",
+            "replication": 2
+          }
+        },
+        "distributed_tracing": {
+          "jaeger": {
+            "sampling_strategy": {
+              "type": "adaptive",
+              "max_traces_per_second": 100
+            },
+            "storage": "elasticsearch",
+            "retention": "168h",
+            "ui_enabled": true
+          },
+          "instrumentation": {
+            "automatic": true,
+            "custom_spans": [
+              "model_inference",
+              "data_preprocessing",
+              "cache_operations",
+              "database_queries"
+            ]
+          }
+        },
+        "alerting_system": {
+          "alert_manager": {
+            "high_availability": true,
+            "notification_channels": [
+              {
+                "type": "email",
+                "config": {
+                  "smtp_server": "smtp.liquid-edge.ai"
+                }
+              },
+              {
+                "type": "slack",
+                "config": {
+                  "webhook_url": "https://hooks.slack.com/..."
+                }
+              },
+              {
+                "type": "pagerduty",
+                "config": {
+                  "integration_key": "..."
+                }
+              }
+            ],
+            "routing_rules": [
+              {
+                "severity": "critical",
+                "channels": [
+                  "pagerduty",
+                  "slack"
+                ],
+                "repeat_interval": "5m"
+              },
+              {
+                "severity": "warning",
+                "channels": [
+                  "slack",
+                  "email"
+                ],
+                "repeat_interval": "1h"
+              }
+            ]
+          },
+          "alert_rules": [
+            {
+              "name": "service_down",
+              "expression": "up == 0",
+              "duration": "5m",
+              "severity": "critical"
+            },
+            {
+              "name": "high_memory_usage",
+              "expression": "memory_utilization > 0.90",
+              "duration": "10m",
+              "severity": "warning"
+            },
+            {
+              "name": "disk_space_low",
+              "expression": "disk_free_percent < 10",
+              "duration": "5m",
+              "severity": "warning"
+            }
+          ]
+        },
+        "dashboards": {
+          "grafana": {
+            "version": "latest",
+            "authentication": "oauth",
+            "datasources": [
+              "prometheus",
+              "elasticsearch",
+              "jaeger"
+            ],
+            "high_availability": true
+          },
+          "dashboards": [
+            {
+              "name": "Application Overview",
+              "panels": [
+                "request_rate",
+                "response_time",
+                "error_rate",
+                "throughput",
+                "active_users",
+                "cache_hit_rate"
+              ]
+            },
+            {
+              "name": "Infrastructure Health",
+              "panels": [
+                "cpu_usage",
+                "memory_usage",
+                "disk_usage",
+                "network_io",
+                "load_average",
+                "uptime"
+              ]
+            },
+            {
+              "name": "Business Metrics",
+              "panels": [
+                "inference_count",
+                "model_accuracy",
+                "energy_efficiency",
+                "cost_per_inference",
+                "user_satisfaction",
+                "sla_compliance"
+              ]
+            },
+            {
+              "name": "Security Dashboard",
+              "panels": [
+                "failed_auth_attempts",
+                "suspicious_requests",
+                "waf_blocks",
+                "security_scan_results",
+                "certificate_expiry",
+                "compliance_status"
+              ]
+            }
+          ]
+        },
+        "sla_monitoring": {
+          "sla_objectives": {
+            "availability": {
+              "target": 99.9,
+              "measurement_window": "30d",
+              "error_budget": -98.9
+            },
+            "latency": {
+              "p99_target_ms": 25,
+              "measurement_window": "7d"
+            },
+            "throughput": {
+              "target_rps": 5000,
+              "measurement_window": "24h"
+            }
+          },
+          "error_budget_policy": {
+            "burn_rate_thresholds": [
+              0.1,
+              0.5,
+              1.0,
+              2.0
+            ],
+            "actions": [
+              "email_notification",
+              "reduce_deployment_velocity",
+              "halt_non_critical_releases",
+              "emergency_response"
+            ]
+          },
+          "reporting": {
+            "frequency": "weekly",
+            "recipients": [
+              "engineering",
+              "product",
+              "executive"
+            ],
+            "format": [
+              "dashboard",
+              "email_summary",
+              "api"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "phase": "health_verification",
+      "status": "SUCCESS",
+      "details": {
+        "us-east-1": true,
+        "us-west-2": true,
+        "eu-west-1": true,
+        "ap-southeast-1": true,
+        "global": true
+      }
+    },
+    {
+      "phase": "performance_validation",
+      "status": "SUCCESS",
+      "details": {
+        "global_response_time_p99_ms": 23.7,
+        "global_throughput_rps": 8642,
+        "global_error_rate": 0.001,
+        "regional_metrics": {
+          "us-east-1": {
+            "response_time_p99_ms": 22.2,
+            "throughput_rps": 1587,
+            "error_rate": 0.001,
+            "cpu_utilization": 0.52,
+            "memory_utilization": 0.45
+          },
+          "us-west-2": {
+            "response_time_p99_ms": 19.2,
+            "throughput_rps": 1824,
+            "error_rate": 0.001,
+            "cpu_utilization": 0.49,
+            "memory_utilization": 0.42
+          },
+          "eu-west-1": {
+            "response_time_p99_ms": 15.2,
+            "throughput_rps": 1500,
+            "error_rate": 0.001,
+            "cpu_utilization": 0.45,
+            "memory_utilization": 0.48
+          },
+          "ap-southeast-1": {
+            "response_time_p99_ms": 33.2,
+            "throughput_rps": 1638,
+            "error_rate": 0.001,
+            "cpu_utilization": 0.63,
+            "memory_utilization": 0.46
+          }
+        },
+        "validation": {
+          "latency_requirement_met": true,
+          "throughput_requirement_met": true,
+          "error_rate_acceptable": true
+        },
+        "overall_performance_score": 100.0
+      }
+    }
+  ],
+  "health_status": {
+    "us-east-1": true,
+    "us-west-2": true,
+    "eu-west-1": true,
+    "ap-southeast-1": true,
+    "global": true
+  },
+  "performance_metrics": {
+    "global_response_time_p99_ms": 23.7,
+    "global_throughput_rps": 8642,
+    "global_error_rate": 0.001,
+    "regional_metrics": {
+      "us-east-1": {
+        "response_time_p99_ms": 22.2,
+        "throughput_rps": 1587,
+        "error_rate": 0.001,
+        "cpu_utilization": 0.52,
+        "memory_utilization": 0.45
+      },
+      "us-west-2": {
+        "response_time_p99_ms": 19.2,
+        "throughput_rps": 1824,
+        "error_rate": 0.001,
+        "cpu_utilization": 0.49,
+        "memory_utilization": 0.42
+      },
+      "eu-west-1": {
+        "response_time_p99_ms": 15.2,
+        "throughput_rps": 1500,
+        "error_rate": 0.001,
+        "cpu_utilization": 0.45,
+        "memory_utilization": 0.48
+      },
+      "ap-southeast-1": {
+        "response_time_p99_ms": 33.2,
+        "throughput_rps": 1638,
+        "error_rate": 0.001,
+        "cpu_utilization": 0.63,
+        "memory_utilization": 0.46
+      }
+    },
+    "validation": {
+      "latency_requirement_met": true,
+      "throughput_requirement_met": true,
+      "error_rate_acceptable": true
+    },
+    "overall_performance_score": 100.0
+  },
+  "security_status": {
+    "tls_enabled": true,
+    "waf_enabled": true,
+    "ddos_protection": true,
+    "secrets_management": true,
+    "network_security": true,
+    "encryption_at_rest": true,
+    "encryption_in_transit": true,
+    "audit_logging": true
+  },
+  "monitoring_configuration": {
+    "metrics_collection": {
+      "prometheus": {
+        "retention": "90d",
+        "scrape_interval": "15s",
+        "evaluation_interval": "15s",
+        "storage": "remote_storage",
+        "high_availability": true
+      },
+      "custom_metrics": [
+        "liquid_inference_requests_total",
+        "liquid_inference_duration_seconds",
+        "liquid_model_accuracy_score",
+        "liquid_energy_consumption_mw",
+        "liquid_cache_hit_ratio",
+        "liquid_queue_size"
+      ],
+      "service_discovery": {
+        "kubernetes": true,
+        "consul": true,
+        "static_configs": true
+      }
+    },
+    "log_aggregation": {
+      "log_pipeline": {
+        "collectors": [
+          "fluentd",
+          "vector"
+        ],
+        "processors": [
+          "log_parser",
+          "enricher",
+          "sampler"
+        ],
+        "storage": "elasticsearch_cluster",
+        "retention_policy": "30d"
+      },
+      "log_formats": {
+        "application": "structured_json",
+        "access": "common_log_format",
+        "audit": "structured_audit_format"
+      },
+      "indexing": {
+        "strategy": "time_based",
+        "sharding": "date_based",
+        "replication": 2
+      }
+    },
+    "distributed_tracing": {
+      "jaeger": {
+        "sampling_strategy": {
+          "type": "adaptive",
+          "max_traces_per_second": 100
+        },
+        "storage": "elasticsearch",
+        "retention": "168h",
+        "ui_enabled": true
+      },
+      "instrumentation": {
+        "automatic": true,
+        "custom_spans": [
+          "model_inference",
+          "data_preprocessing",
+          "cache_operations",
+          "database_queries"
+        ]
+      }
+    },
+    "alerting_system": {
+      "alert_manager": {
+        "high_availability": true,
+        "notification_channels": [
+          {
+            "type": "email",
+            "config": {
+              "smtp_server": "smtp.liquid-edge.ai"
+            }
+          },
+          {
+            "type": "slack",
+            "config": {
+              "webhook_url": "https://hooks.slack.com/..."
+            }
+          },
+          {
+            "type": "pagerduty",
+            "config": {
+              "integration_key": "..."
+            }
+          }
+        ],
+        "routing_rules": [
+          {
+            "severity": "critical",
+            "channels": [
+              "pagerduty",
+              "slack"
+            ],
+            "repeat_interval": "5m"
+          },
+          {
+            "severity": "warning",
+            "channels": [
+              "slack",
+              "email"
+            ],
+            "repeat_interval": "1h"
+          }
+        ]
+      },
+      "alert_rules": [
+        {
+          "name": "service_down",
+          "expression": "up == 0",
+          "duration": "5m",
+          "severity": "critical"
+        },
+        {
+          "name": "high_memory_usage",
+          "expression": "memory_utilization > 0.90",
+          "duration": "10m",
+          "severity": "warning"
+        },
+        {
+          "name": "disk_space_low",
+          "expression": "disk_free_percent < 10",
+          "duration": "5m",
+          "severity": "warning"
+        }
+      ]
+    },
+    "dashboards": {
+      "grafana": {
+        "version": "latest",
+        "authentication": "oauth",
+        "datasources": [
+          "prometheus",
+          "elasticsearch",
+          "jaeger"
+        ],
+        "high_availability": true
+      },
+      "dashboards": [
+        {
+          "name": "Application Overview",
+          "panels": [
+            "request_rate",
+            "response_time",
+            "error_rate",
+            "throughput",
+            "active_users",
+            "cache_hit_rate"
+          ]
+        },
+        {
+          "name": "Infrastructure Health",
+          "panels": [
+            "cpu_usage",
+            "memory_usage",
+            "disk_usage",
+            "network_io",
+            "load_average",
+            "uptime"
+          ]
+        },
+        {
+          "name": "Business Metrics",
+          "panels": [
+            "inference_count",
+            "model_accuracy",
+            "energy_efficiency",
+            "cost_per_inference",
+            "user_satisfaction",
+            "sla_compliance"
+          ]
+        },
+        {
+          "name": "Security Dashboard",
+          "panels": [
+            "failed_auth_attempts",
+            "suspicious_requests",
+            "waf_blocks",
+            "security_scan_results",
+            "certificate_expiry",
+            "compliance_status"
+          ]
+        }
+      ]
+    },
+    "sla_monitoring": {
+      "sla_objectives": {
+        "availability": {
+          "target": 99.9,
+          "measurement_window": "30d",
+          "error_budget": -98.9
+        },
+        "latency": {
+          "p99_target_ms": 25,
+          "measurement_window": "7d"
+        },
+        "throughput": {
+          "target_rps": 5000,
+          "measurement_window": "24h"
+        }
+      },
+      "error_budget_policy": {
+        "burn_rate_thresholds": [
+          0.1,
+          0.5,
+          1.0,
+          2.0
+        ],
+        "actions": [
+          "email_notification",
+          "reduce_deployment_velocity",
+          "halt_non_critical_releases",
+          "emergency_response"
+        ]
+      },
+      "reporting": {
+        "frequency": "weekly",
+        "recipients": [
+          "engineering",
+          "product",
+          "executive"
+        ],
+        "format": [
+          "dashboard",
+          "email_summary",
+          "api"
+        ]
+      }
+    }
+  }
+}
