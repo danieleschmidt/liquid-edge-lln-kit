@@ -1,0 +1,47 @@
+{
+  "deployment_id": "e42a3698",
+  "timestamp": 1755173785.785092,
+  "total_files": 14,
+  "categories": [
+    "container",
+    "kubernetes",
+    "infrastructure",
+    "scripts",
+    "monitoring",
+    "security"
+  ],
+  "files": [
+    "/root/repo/deployment/container/Dockerfile.production",
+    "/root/repo/deployment/container/docker-compose.production.yml",
+    "/root/repo/deployment/kubernetes/k8s-deployment.yaml",
+    "/root/repo/deployment/kubernetes/k8s-ingress.yaml",
+    "/root/repo/deployment/kubernetes/k8s-monitoring.yaml",
+    "/root/repo/deployment/infrastructure/main.tf",
+    "/root/repo/deployment/scripts/deploy.sh",
+    "/root/repo/deployment/scripts/rollback.sh",
+    "/root/repo/deployment/scripts/health-check.sh",
+    "/root/repo/deployment/monitoring/prometheus.yml",
+    "/root/repo/deployment/monitoring/liquid_edge_rules.yml",
+    "/root/repo/deployment/monitoring/grafana-dashboard.json",
+    "/root/repo/deployment/security/network-policies.yaml",
+    "/root/repo/deployment/security/pod-security-policy.yaml"
+  ],
+  "configuration": {
+    "regions": [
+      "us-east-1",
+      "eu-west-1",
+      "ap-southeast-1"
+    ],
+    "environments": [
+      "staging",
+      "production"
+    ],
+    "features": {
+      "kubernetes": true,
+      "docker": true,
+      "monitoring": true,
+      "security": true,
+      "compliance": true
+    }
+  }
+}
