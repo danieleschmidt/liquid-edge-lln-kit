@@ -1,0 +1,73 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: liquid-edge-network-policy
+  namespace: liquid-edge
+spec:
+  podSelector:
+    matchLabels:
+      app: liquid-edge
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: nginx-ingress
+    - namespaceSelector:
+        matchLabels:
+          name: monitoring
+    ports:
+    - protocol: TCP
+      port: 8000
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: redis
+    ports:
+    - protocol: TCP
+      port: 6379
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53
+    - protocol: TCP
+      port: 443
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: liquid-edge-service-account
+  namespace: liquid-edge
+automountServiceAccountToken: false
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: liquid-edge
+  name: liquid-edge-role
+rules:
+- apiGroups: [""]
+  resources: ["configmaps", "secrets"]
+  verbs: ["get", "list"]
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: liquid-edge-role-binding
+  namespace: liquid-edge
+subjects:
+- kind: ServiceAccount
+  name: liquid-edge-service-account
+  namespace: liquid-edge
+roleRef:
+  kind: Role
+  name: liquid-edge-role
+  apiGroup: rbac.authorization.k8s.io
