@@ -1,0 +1,60 @@
+
+version: '3.8'
+
+services:
+  quantum-liquid:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    ports:
+      - "8080:8080"
+    environment:
+      - LOG_LEVEL=DEBUG
+      - QUANTUM_COHERENCE_THRESHOLD=0.6
+      - LIQUID_SPARSITY=0.4
+      - ENERGY_BUDGET_UW=50.0
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4Gi
+          cpus: '2'
+        reservations:
+          memory: 2Gi
+          cpus: '1'
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana-dashboard.json:/var/lib/grafana/dashboards/quantum-liquid.json
+
+volumes:
+  grafana-storage:
+
+networks:
+  default:
+    driver: bridge

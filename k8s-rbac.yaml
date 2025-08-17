@@ -1,0 +1,38 @@
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: quantum-liquid
+  labels:
+    app: quantum-liquid
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: quantum-liquid-role
+  labels:
+    app: quantum-liquid
+rules:
+- apiGroups: [""]
+  resources: ["configmaps", "secrets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: quantum-liquid-rolebinding
+  labels:
+    app: quantum-liquid
+subjects:
+- kind: ServiceAccount
+  name: quantum-liquid
+  namespace: default
+roleRef:
+  kind: Role
+  name: quantum-liquid-role
+  apiGroup: rbac.authorization.k8s.io

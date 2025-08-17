@@ -1,0 +1,12 @@
+{
+  "input_dim": 8,
+  "quantum_dim": 16,
+  "liquid_hidden_dim": 32,
+  "output_dim": 4,
+  "quantum_coherence_time": 100.0,
+  "quantum_entanglement_strength": 0.7,
+  "energy_budget_uw": 50.0,
+  "target_accuracy": 0.98,
+  "implementation": "pure_python",
+  "numpy_available": false
+}

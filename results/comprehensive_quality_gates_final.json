@@ -1,0 +1,200 @@
+{
+  "overall_quality_score": 91.0,
+  "all_gates_passed": false,
+  "gate_scores": {
+    "unit_tests": 16.0,
+    "integration_tests": 20.0,
+    "performance_tests": 20.0,
+    "security_tests": 15.0,
+    "code_quality": 10.0,
+    "coverage": 10.0
+  },
+  "execution_time_s": 3.0593950748443604,
+  "quality_gates": {
+    "unit_tests": {
+      "total_tests": 5,
+      "passed": 4,
+      "failed": 1,
+      "pass_rate": 0.8,
+      "results": [
+        {
+          "test_name": "test_quantum_gate_operations",
+          "description": "Test quantum gate mathematical operations",
+          "result": "PASS",
+          "execution_time_s": 0.0008757114410400391,
+          "timeout_s": 30.0
+        },
+        {
+          "test_name": "test_liquid_dynamics",
+          "description": "Test liquid neural dynamics",
+          "result": "PASS",
+          "execution_time_s": 0.0007646083831787109,
+          "timeout_s": 30.0
+        },
+        {
+          "test_name": "test_quantum_coherence",
+          "description": "Test quantum coherence calculations",
+          "result": "FAIL",
+          "execution_time_s": 2.5272369384765625e-05,
+          "timeout_s": 30.0
+        },
+        {
+          "test_name": "test_input_validation",
+          "description": "Test input validation logic",
+          "result": "PASS",
+          "execution_time_s": 0.009208917617797852,
+          "timeout_s": 30.0
+        },
+        {
+          "test_name": "test_error_handling",
+          "description": "Test error handling mechanisms",
+          "result": "PASS",
+          "execution_time_s": 1.0251998901367188e-05,
+          "timeout_s": 30.0
+        }
+      ],
+      "quality_gate_passed": false
+    },
+    "integration_tests": {
+      "total_tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "results": [
+        {
+          "test_name": "test_end_to_end_inference",
+          "description": "Test complete inference pipeline",
+          "result": "PASS",
+          "execution_time_s": 0.02521824836730957
+        },
+        {
+          "test_name": "test_system_integration",
+          "description": "Test system component integration",
+          "result": "PASS",
+          "execution_time_s": 1.0019748210906982
+        },
+        {
+          "test_name": "test_robustness_integration",
+          "description": "Test robustness features",
+          "result": "PASS",
+          "execution_time_s": 1.0018346309661865
+        },
+        {
+          "test_name": "test_scaling_integration",
+          "description": "Test scaling capabilities",
+          "result": "PASS",
+          "execution_time_s": 1.0020818710327148
+        }
+      ],
+      "quality_gate_passed": true
+    },
+    "performance_tests": {
+      "total_tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "results": [
+        {
+          "test_name": "inference_latency",
+          "avg_latency_ms": 0.4273056983947754,
+          "max_latency_ms": 0.5626678466796875,
+          "requirement_avg_ms": 10.0,
+          "requirement_max_ms": 50.0,
+          "passed": true
+        },
+        {
+          "test_name": "throughput",
+          "throughput_rps": 48221.47620142561,
+          "requirement_rps": 1000.0,
+          "passed": true
+        },
+        {
+          "test_name": "memory_usage",
+          "memory_usage_mb": 75.06053089819991,
+          "requirement_mb": 200.0,
+          "passed": true
+        },
+        {
+          "test_name": "scaling_performance",
+          "scaling_efficiency": 0.8587642728469365,
+          "requirement_efficiency": 0.75,
+          "passed": true
+        }
+      ],
+      "quality_gate_passed": true
+    },
+    "security_tests": {
+      "total_tests": 4,
+      "passed": 3,
+      "failed": 1,
+      "pass_rate": 0.75,
+      "results": [
+        {
+          "test_name": "input_security",
+          "malicious_inputs_tested": 4,
+          "violations_caught": 4,
+          "detection_rate": 1.0,
+          "passed": true
+        },
+        {
+          "test_name": "injection_resistance",
+          "injection_attempts": 10,
+          "blocked_attempts": 10,
+          "block_rate": 1.0,
+          "passed": true
+        },
+        {
+          "test_name": "dos_resistance",
+          "mitigation_effectiveness": 0.8856786343177567,
+          "requirement": 0.9,
+          "passed": false
+        },
+        {
+          "test_name": "output_sanitization",
+          "problematic_outputs_tested": 3,
+          "successfully_sanitized": 3,
+          "sanitization_rate": 1.0,
+          "passed": true
+        }
+      ],
+      "findings": [],
+      "quality_gate_passed": false
+    },
+    "code_quality": {
+      "metrics": {
+        "cyclomatic_complexity": 3.250044722897181,
+        "code_duplication": 0.05686569669849188,
+        "maintainability_index": 76.86856813767152,
+        "technical_debt_ratio": 0.08768886845690929,
+        "security_hotspots": 1
+      },
+      "quality_gate_passed": true,
+      "recommendations": [
+        "Maintain low cyclomatic complexity",
+        "Minimize code duplication",
+        "Keep high maintainability index",
+        "Address security hotspots"
+      ]
+    },
+    "coverage": {
+      "coverage_data": {
+        "line_coverage": 87.2256080997253,
+        "branch_coverage": 85.61614618637232,
+        "function_coverage": 98.11800804321655,
+        "statement_coverage": 90.03857627945222
+      },
+      "minimum_threshold": 85.0,
+      "quality_gate_passed": true,
+      "uncovered_areas": []
+    }
+  },
+  "recommendations": [
+    "Improve unit test coverage and fix failing tests",
+    "Address security vulnerabilities and improve input validation"
+  ],
+  "timestamp": "2025-08-17T00:04:30.390033",
+  "test_environment": {
+    "python_version": "3.12.3 (main, Jun 18 2025, 17:59:45) [GCC 13.3.0]",
+    "platform": "linux"
+  }
+}

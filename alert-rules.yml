@@ -1,0 +1,57 @@
+
+groups:
+- name: quantum-liquid.rules
+  rules:
+  - alert: QuantumLiquidHighLatency
+    expr: histogram_quantile(0.95, quantum_liquid_inference_duration_seconds_bucket) > 0.1
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High inference latency detected
+      description: "95th percentile latency is {{ $value }}s"
+
+  - alert: QuantumLiquidHighErrorRate
+    expr: rate(quantum_liquid_errors_total[5m]) > 0.01
+    for: 2m
+    labels:
+      severity: critical
+    annotations:
+      summary: High error rate detected
+      description: "Error rate is {{ $value }} errors/sec"
+
+  - alert: QuantumLiquidLowCoherence
+    expr: quantum_liquid_coherence_avg < 0.5
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: Low quantum coherence
+      description: "Quantum coherence is {{ $value }}"
+
+  - alert: QuantumLiquidServiceDown
+    expr: up{job="quantum-liquid"} == 0
+    for: 0m
+    labels:
+      severity: critical
+    annotations:
+      summary: Quantum-Liquid service is down
+      description: "Service has been down for more than 0 minutes"
+
+  - alert: QuantumLiquidHighCPU
+    expr: (rate(container_cpu_usage_seconds_total{pod=~"quantum-liquid-.*"}[5m]) * 100) > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High CPU usage
+      description: "CPU usage is {{ $value }}%"
+
+  - alert: QuantumLiquidHighMemory
+    expr: (container_memory_usage_bytes{pod=~"quantum-liquid-.*"} / container_spec_memory_limit_bytes * 100) > 85
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High memory usage
+      description: "Memory usage is {{ $value }}%"

@@ -1,0 +1,26 @@
+{
+  "scaling_score": 79.9861741065979,
+  "peak_throughput_rps": 48635.25046382189,
+  "cache_hit_rate": 0.0,
+  "avg_latency_ms": 0.004608631134033203,
+  "scaling_events": 4,
+  "peak_workers": 8,
+  "test_results": {
+    "total_requests": 200,
+    "total_time_s": 0.00411224365234375,
+    "throughput_rps": 48635.25046382189,
+    "avg_latency_ms": 0.004608631134033203,
+    "cache_hit_rate": 0.0,
+    "successful_requests": 200
+  },
+  "optimization_features": [
+    "concurrent_processing",
+    "intelligent_caching",
+    "auto_scaling",
+    "quantum_coherence_optimization",
+    "performance_monitoring"
+  ],
+  "timestamp": "2025-08-17T00:02:28.733676",
+  "generation": 3,
+  "system_type": "fast_scaled_quantum_liquid"
+}

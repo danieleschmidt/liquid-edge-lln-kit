@@ -1,0 +1,30 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quantum-liquid-ingress
+  labels:
+    app: quantum-liquid
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+spec:
+  tls:
+  - hosts:
+    - api.quantum-liquid.io
+    secretName: quantum-liquid-tls
+  rules:
+  - host: api.quantum-liquid.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: quantum-liquid-service
+            port:
+              number: 80
