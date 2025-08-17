@@ -1,0 +1,12 @@
+{
+  "avg_inference_time_us": 217.3150899875509,
+  "quantum_coherence": 0.197281056255144,
+  "energy_consumption_uw": 47.04078415617284,
+  "quantum_speedup_factor": 0.9203226522900789,
+  "energy_efficiency_factor": 3.18872235424495,
+  "breakthrough_score": 2.934653414475377,
+  "quantum_advantage": false,
+  "implementation": "pure_python",
+  "numpy_available": false,
+  "timestamp": "2025-08-17T00:04:27.364721"
+}

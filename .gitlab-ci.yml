@@ -1,0 +1,50 @@
+
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+  REGISTRY: liquid-edge-registry.io
+  IMAGE_NAME: quantum-liquid
+
+test:
+  stage: test
+  image: python:3.11
+  script:
+    - pip install -r requirements.txt
+    - python -m pytest tests/ -v
+    - pip install bandit safety
+    - bandit -r src/
+    - safety check
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -f Dockerfile.production -t $REGISTRY/$IMAGE_NAME:$CI_COMMIT_SHA .
+    - docker push $REGISTRY/$IMAGE_NAME:$CI_COMMIT_SHA
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  script:
+    - kubectl apply -f k8s-configmap.yaml
+    - kubectl apply -f k8s-deployment.yaml
+    - kubectl apply -f k8s-service.yaml
+    - kubectl apply -f k8s-ingress.yaml
+    - kubectl apply -f k8s-hpa.yaml
+    - kubectl rollout status deployment/quantum-liquid --timeout=300s
+  environment:
+    name: production
+    url: https://api.quantum-liquid.io
+  only:
+    - main

@@ -1,0 +1,27 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quantum-liquid-config
+  labels:
+    app: quantum-liquid
+data:
+  quantum-coherence-threshold: "0.6"
+  liquid-sparsity: "0.4"
+  energy-budget-uw: "50.0"
+  log-level: "INFO"
+  metrics-enabled: "true"
+  cache-size: "1000"
+  max-batch-size: "32"
+  target-latency-ms: "10.0"
+  app.properties: |
+    # Quantum-Liquid Configuration
+    quantum.coherence.threshold=0.6
+    liquid.sparsity=0.4
+    energy.budget.uw=50.0
+    performance.cache.enabled=true
+    performance.cache.size=1000
+    security.input.validation=true
+    security.output.sanitization=true
+    monitoring.metrics.enabled=true
+    monitoring.tracing.enabled=true

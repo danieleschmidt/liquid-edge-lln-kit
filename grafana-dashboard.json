@@ -1,0 +1,67 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Quantum-Liquid Neural Network Monitoring",
+    "tags": [
+      "quantum-liquid",
+      "neural-network",
+      "monitoring"
+    ],
+    "timezone": "UTC",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Inference Latency",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, quantum_liquid_inference_duration_seconds_bucket)",
+            "legendFormat": "95th percentile"
+          },
+          {
+            "expr": "histogram_quantile(0.50, quantum_liquid_inference_duration_seconds_bucket)",
+            "legendFormat": "50th percentile"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Request Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(quantum_liquid_requests_total[5m])",
+            "legendFormat": "Requests/sec"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Quantum Coherence",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "quantum_liquid_coherence_avg",
+            "legendFormat": "Average Coherence"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Error Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(quantum_liquid_errors_total[5m])",
+            "legendFormat": "Errors/sec"
+          }
+        ]
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "5s"
+  }
+}

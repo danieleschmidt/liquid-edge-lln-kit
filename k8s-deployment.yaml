@@ -1,0 +1,94 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quantum-liquid
+  labels:
+    app: quantum-liquid
+    version: v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: quantum-liquid
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: quantum-liquid
+        version: v1
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
+    spec:
+      serviceAccountName: quantum-liquid
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+      containers:
+      - name: quantum-liquid
+        image: liquid-edge-registry.io/quantum-liquid:latest
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+        - name: LOG_LEVEL
+          value: "INFO"
+        - name: QUANTUM_COHERENCE_THRESHOLD
+          valueFrom:
+            configMapKeyRef:
+              name: quantum-liquid-config
+              key: quantum-coherence-threshold
+        - name: LIQUID_SPARSITY
+          valueFrom:
+            configMapKeyRef:
+              name: quantum-liquid-config
+              key: liquid-sparsity
+        - name: ENERGY_BUDGET_UW
+          valueFrom:
+            configMapKeyRef:
+              name: quantum-liquid-config
+              key: energy-budget-uw
+        resources:
+          requests:
+            memory: 2Gi
+            cpu: 1
+          limits:
+            memory: 4Gi
+            cpu: 2
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: http
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: http
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 5
+          failureThreshold: 3
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+        - name: logs
+          mountPath: /app/logs
+      volumes:
+      - name: tmp
+        emptyDir: {}
+      - name: logs
+        emptyDir: {}
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
