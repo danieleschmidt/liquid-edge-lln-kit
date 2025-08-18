@@ -1,0 +1,852 @@
+{
+  "deployment_id": "global-1755520048",
+  "start_time": 1755520048.1240382,
+  "regions": {
+    "us-east-1": {
+      "region": "us-east-1",
+      "is_primary": true,
+      "start_time": 1755520048.1240456,
+      "status": "success",
+      "components": {
+        "vpc": {
+          "status": "success",
+          "result": {
+            "vpc_id": "vpc-us-east-1-48",
+            "cidr": "10.0.0.0/16",
+            "dns_support": true,
+            "dns_hostnames": true
+          }
+        },
+        "subnets": {
+          "status": "success",
+          "result": {
+            "public_subnets": [
+              "subnet-pub-us-east-1-0",
+              "subnet-pub-us-east-1-1",
+              "subnet-pub-us-east-1-2"
+            ],
+            "private_subnets": [
+              "subnet-priv-us-east-1-0",
+              "subnet-priv-us-east-1-1",
+              "subnet-priv-us-east-1-2"
+            ],
+            "availability_zones": [
+              "us-east-1a",
+              "us-east-1b",
+              "us-east-1c"
+            ]
+          }
+        },
+        "security_groups": {
+          "status": "success",
+          "result": {
+            "web_tier": "sg-web-us-east-1",
+            "app_tier": "sg-app-us-east-1",
+            "data_tier": "sg-data-us-east-1",
+            "rules": {
+              "web_tier": [
+                "80:tcp:0.0.0.0/0",
+                "443:tcp:0.0.0.0/0"
+              ],
+              "app_tier": [
+                "8080:tcp:sg-web"
+              ],
+              "data_tier": [
+                "5432:tcp:sg-app",
+                "6379:tcp:sg-app"
+              ]
+            }
+          }
+        },
+        "load_balancer": {
+          "status": "success",
+          "result": {
+            "alb_arn": "arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/liquid-edge-us-east-1",
+            "target_groups": [
+              "tg-us-east-1-web",
+              "tg-us-east-1-api"
+            ],
+            "ssl_certificate": "arn:aws:acm:us-east-1:123456789012:certificate/liquid-edge-global",
+            "health_check": {
+              "path": "/health",
+              "interval": 30,
+              "timeout": 5
+            }
+          }
+        },
+        "container_cluster": {
+          "status": "success",
+          "result": {
+            "cluster_name": "liquid-edge-us-east-1",
+            "cluster_endpoint": "https://kubernetes-us-east-1.liquid-edge.com",
+            "node_groups": {
+              "general": {
+                "min": 2,
+                "max": 10,
+                "desired": 3
+              },
+              "compute": {
+                "min": 1,
+                "max": 5,
+                "desired": 2
+              }
+            },
+            "addons": [
+              "vpc-cni",
+              "coredns",
+              "kube-proxy",
+              "aws-load-balancer-controller"
+            ],
+            "auto_scaling": true
+          }
+        },
+        "database": {
+          "status": "success",
+          "result": {
+            "primary_db": {
+              "endpoint": "liquid-edge-primary.us-east-1.rds.amazonaws.com",
+              "engine": "postgresql",
+              "version": "15.4",
+              "instance_class": "db.r6g.large",
+              "multi_az": true,
+              "encryption": true
+            },
+            "read_replicas": [
+              "liquid-edge-replica-0.us-east-1.rds.amazonaws.com",
+              "liquid-edge-replica-1.us-east-1.rds.amazonaws.com"
+            ],
+            "backup_retention": 30,
+            "automated_backups": true
+          }
+        },
+        "cache": {
+          "status": "success",
+          "result": {
+            "redis_cluster": {
+              "endpoint": "liquid-edge-cache.us-east-1.cache.amazonaws.com",
+              "node_type": "cache.r6g.large",
+              "num_nodes": 3,
+              "encryption_at_transit": true,
+              "encryption_at_rest": true
+            }
+          }
+        },
+        "storage": {
+          "status": "success",
+          "result": {
+            "buckets": {
+              "models": "liquid-edge-models-us-east-1",
+              "logs": "liquid-edge-logs-us-east-1",
+              "backups": "liquid-edge-backups-us-east-1"
+            },
+            "encryption": "AES256",
+            "versioning": true,
+            "lifecycle_policies": true
+          }
+        },
+        "cdn": {
+          "status": "success",
+          "result": {
+            "distribution_id": "EUSEAST1123456",
+            "domain": "cdn-us-east-1.liquid-edge.com",
+            "origins": [
+              "liquid-edge-us-east-1.s3.amazonaws.com"
+            ],
+            "ssl_support": true,
+            "compression": true,
+            "cache_behaviors": {
+              "default": {
+                "ttl": 86400,
+                "compress": true
+              },
+              "/api/*": {
+                "ttl": 0,
+                "compress": false
+              }
+            }
+          }
+        },
+        "monitoring": {
+          "status": "success",
+          "result": {
+            "cloudwatch": {
+              "log_groups": [
+                "/aws/lambda/liquid-edge",
+                "/aws/ecs/liquid-edge"
+              ],
+              "metrics": [
+                "CPUUtilization",
+                "MemoryUtilization",
+                "NetworkIn",
+                "NetworkOut"
+              ],
+              "alarms": [
+                "HighCPU",
+                "HighMemory",
+                "HighLatency",
+                "ErrorRate"
+              ]
+            },
+            "xray": {
+              "tracing_enabled": true,
+              "sampling_rate": 0.1
+            }
+          }
+        }
+      },
+      "end_time": 1755520051.8337266
+    },
+    "eu-west-1": {
+      "region": "eu-west-1",
+      "is_primary": false,
+      "start_time": 1755520051.833814,
+      "status": "success",
+      "components": {
+        "vpc": {
+          "status": "success",
+          "result": {
+            "vpc_id": "vpc-eu-west-1-52",
+            "cidr": "10.0.0.0/16",
+            "dns_support": true,
+            "dns_hostnames": true
+          }
+        },
+        "subnets": {
+          "status": "success",
+          "result": {
+            "public_subnets": [
+              "subnet-pub-eu-west-1-0",
+              "subnet-pub-eu-west-1-1",
+              "subnet-pub-eu-west-1-2"
+            ],
+            "private_subnets": [
+              "subnet-priv-eu-west-1-0",
+              "subnet-priv-eu-west-1-1",
+              "subnet-priv-eu-west-1-2"
+            ],
+            "availability_zones": [
+              "eu-west-1a",
+              "eu-west-1b",
+              "eu-west-1c"
+            ]
+          }
+        },
+        "security_groups": {
+          "status": "success",
+          "result": {
+            "web_tier": "sg-web-eu-west-1",
+            "app_tier": "sg-app-eu-west-1",
+            "data_tier": "sg-data-eu-west-1",
+            "rules": {
+              "web_tier": [
+                "80:tcp:0.0.0.0/0",
+                "443:tcp:0.0.0.0/0"
+              ],
+              "app_tier": [
+                "8080:tcp:sg-web"
+              ],
+              "data_tier": [
+                "5432:tcp:sg-app",
+                "6379:tcp:sg-app"
+              ]
+            }
+          }
+        },
+        "load_balancer": {
+          "status": "success",
+          "result": {
+            "alb_arn": "arn:aws:elasticloadbalancing:eu-west-1:123456789012:loadbalancer/app/liquid-edge-eu-west-1",
+            "target_groups": [
+              "tg-eu-west-1-web",
+              "tg-eu-west-1-api"
+            ],
+            "ssl_certificate": "arn:aws:acm:us-east-1:123456789012:certificate/liquid-edge-global",
+            "health_check": {
+              "path": "/health",
+              "interval": 30,
+              "timeout": 5
+            }
+          }
+        },
+        "container_cluster": {
+          "status": "success",
+          "result": {
+            "cluster_name": "liquid-edge-eu-west-1",
+            "cluster_endpoint": "https://kubernetes-eu-west-1.liquid-edge.com",
+            "node_groups": {
+              "general": {
+                "min": 2,
+                "max": 10,
+                "desired": 3
+              },
+              "compute": {
+                "min": 1,
+                "max": 5,
+                "desired": 2
+              }
+            },
+            "addons": [
+              "vpc-cni",
+              "coredns",
+              "kube-proxy",
+              "aws-load-balancer-controller"
+            ],
+            "auto_scaling": true
+          }
+        },
+        "database": {
+          "status": "success",
+          "result": {
+            "primary_db": {
+              "endpoint": "liquid-edge-primary.eu-west-1.rds.amazonaws.com",
+              "engine": "postgresql",
+              "version": "15.4",
+              "instance_class": "db.r6g.large",
+              "multi_az": true,
+              "encryption": true
+            },
+            "read_replicas": [
+              "liquid-edge-replica-0.eu-west-1.rds.amazonaws.com"
+            ],
+            "backup_retention": 30,
+            "automated_backups": true
+          }
+        },
+        "cache": {
+          "status": "success",
+          "result": {
+            "redis_cluster": {
+              "endpoint": "liquid-edge-cache.eu-west-1.cache.amazonaws.com",
+              "node_type": "cache.r6g.large",
+              "num_nodes": 3,
+              "encryption_at_transit": true,
+              "encryption_at_rest": true
+            }
+          }
+        },
+        "storage": {
+          "status": "success",
+          "result": {
+            "buckets": {
+              "models": "liquid-edge-models-eu-west-1",
+              "logs": "liquid-edge-logs-eu-west-1",
+              "backups": "liquid-edge-backups-eu-west-1"
+            },
+            "encryption": "AES256",
+            "versioning": true,
+            "lifecycle_policies": true
+          }
+        },
+        "cdn": {
+          "status": "success",
+          "result": {
+            "distribution_id": "EEUWEST1123456",
+            "domain": "cdn-eu-west-1.liquid-edge.com",
+            "origins": [
+              "liquid-edge-eu-west-1.s3.amazonaws.com"
+            ],
+            "ssl_support": true,
+            "compression": true,
+            "cache_behaviors": {
+              "default": {
+                "ttl": 86400,
+                "compress": true
+              },
+              "/api/*": {
+                "ttl": 0,
+                "compress": false
+              }
+            }
+          }
+        },
+        "monitoring": {
+          "status": "success",
+          "result": {
+            "cloudwatch": {
+              "log_groups": [
+                "/aws/lambda/liquid-edge",
+                "/aws/ecs/liquid-edge"
+              ],
+              "metrics": [
+                "CPUUtilization",
+                "MemoryUtilization",
+                "NetworkIn",
+                "NetworkOut"
+              ],
+              "alarms": [
+                "HighCPU",
+                "HighMemory",
+                "HighLatency",
+                "ErrorRate"
+              ]
+            },
+            "xray": {
+              "tracing_enabled": true,
+              "sampling_rate": 0.1
+            }
+          }
+        }
+      },
+      "end_time": 1755520055.545459
+    },
+    "ap-southeast-1": {
+      "region": "ap-southeast-1",
+      "is_primary": false,
+      "start_time": 1755520051.8338451,
+      "status": "success",
+      "components": {
+        "vpc": {
+          "status": "success",
+          "result": {
+            "vpc_id": "vpc-ap-southeast-1-52",
+            "cidr": "10.0.0.0/16",
+            "dns_support": true,
+            "dns_hostnames": true
+          }
+        },
+        "subnets": {
+          "status": "success",
+          "result": {
+            "public_subnets": [
+              "subnet-pub-ap-southeast-1-0",
+              "subnet-pub-ap-southeast-1-1",
+              "subnet-pub-ap-southeast-1-2"
+            ],
+            "private_subnets": [
+              "subnet-priv-ap-southeast-1-0",
+              "subnet-priv-ap-southeast-1-1",
+              "subnet-priv-ap-southeast-1-2"
+            ],
+            "availability_zones": [
+              "ap-southeast-1a",
+              "ap-southeast-1b",
+              "ap-southeast-1c"
+            ]
+          }
+        },
+        "security_groups": {
+          "status": "success",
+          "result": {
+            "web_tier": "sg-web-ap-southeast-1",
+            "app_tier": "sg-app-ap-southeast-1",
+            "data_tier": "sg-data-ap-southeast-1",
+            "rules": {
+              "web_tier": [
+                "80:tcp:0.0.0.0/0",
+                "443:tcp:0.0.0.0/0"
+              ],
+              "app_tier": [
+                "8080:tcp:sg-web"
+              ],
+              "data_tier": [
+                "5432:tcp:sg-app",
+                "6379:tcp:sg-app"
+              ]
+            }
+          }
+        },
+        "load_balancer": {
+          "status": "success",
+          "result": {
+            "alb_arn": "arn:aws:elasticloadbalancing:ap-southeast-1:123456789012:loadbalancer/app/liquid-edge-ap-southeast-1",
+            "target_groups": [
+              "tg-ap-southeast-1-web",
+              "tg-ap-southeast-1-api"
+            ],
+            "ssl_certificate": "arn:aws:acm:us-east-1:123456789012:certificate/liquid-edge-global",
+            "health_check": {
+              "path": "/health",
+              "interval": 30,
+              "timeout": 5
+            }
+          }
+        },
+        "container_cluster": {
+          "status": "success",
+          "result": {
+            "cluster_name": "liquid-edge-ap-southeast-1",
+            "cluster_endpoint": "https://kubernetes-ap-southeast-1.liquid-edge.com",
+            "node_groups": {
+              "general": {
+                "min": 2,
+                "max": 10,
+                "desired": 3
+              },
+              "compute": {
+                "min": 1,
+                "max": 5,
+                "desired": 2
+              }
+            },
+            "addons": [
+              "vpc-cni",
+              "coredns",
+              "kube-proxy",
+              "aws-load-balancer-controller"
+            ],
+            "auto_scaling": true
+          }
+        },
+        "database": {
+          "status": "success",
+          "result": {
+            "primary_db": {
+              "endpoint": "liquid-edge-primary.ap-southeast-1.rds.amazonaws.com",
+              "engine": "postgresql",
+              "version": "15.4",
+              "instance_class": "db.r6g.large",
+              "multi_az": true,
+              "encryption": true
+            },
+            "read_replicas": [
+              "liquid-edge-replica-0.ap-southeast-1.rds.amazonaws.com"
+            ],
+            "backup_retention": 30,
+            "automated_backups": true
+          }
+        },
+        "cache": {
+          "status": "success",
+          "result": {
+            "redis_cluster": {
+              "endpoint": "liquid-edge-cache.ap-southeast-1.cache.amazonaws.com",
+              "node_type": "cache.r6g.large",
+              "num_nodes": 3,
+              "encryption_at_transit": true,
+              "encryption_at_rest": true
+            }
+          }
+        },
+        "storage": {
+          "status": "success",
+          "result": {
+            "buckets": {
+              "models": "liquid-edge-models-ap-southeast-1",
+              "logs": "liquid-edge-logs-ap-southeast-1",
+              "backups": "liquid-edge-backups-ap-southeast-1"
+            },
+            "encryption": "AES256",
+            "versioning": true,
+            "lifecycle_policies": true
+          }
+        },
+        "cdn": {
+          "status": "success",
+          "result": {
+            "distribution_id": "EAPSOUTHEAST1123456",
+            "domain": "cdn-ap-southeast-1.liquid-edge.com",
+            "origins": [
+              "liquid-edge-ap-southeast-1.s3.amazonaws.com"
+            ],
+            "ssl_support": true,
+            "compression": true,
+            "cache_behaviors": {
+              "default": {
+                "ttl": 86400,
+                "compress": true
+              },
+              "/api/*": {
+                "ttl": 0,
+                "compress": false
+              }
+            }
+          }
+        },
+        "monitoring": {
+          "status": "success",
+          "result": {
+            "cloudwatch": {
+              "log_groups": [
+                "/aws/lambda/liquid-edge",
+                "/aws/ecs/liquid-edge"
+              ],
+              "metrics": [
+                "CPUUtilization",
+                "MemoryUtilization",
+                "NetworkIn",
+                "NetworkOut"
+              ],
+              "alarms": [
+                "HighCPU",
+                "HighMemory",
+                "HighLatency",
+                "ErrorRate"
+              ]
+            },
+            "xray": {
+              "tracing_enabled": true,
+              "sampling_rate": 0.1
+            }
+          }
+        }
+      },
+      "end_time": 1755520055.5454807
+    }
+  },
+  "services": {
+    "route53": {
+      "hosted_zone": "liquid-edge.com",
+      "health_checks": [
+        {
+          "region": "us-east-1",
+          "endpoint": "https://us-east-1.liquid-edge.com/health"
+        },
+        {
+          "region": "eu-west-1",
+          "endpoint": "https://eu-west-1.liquid-edge.com/health"
+        },
+        {
+          "region": "ap-southeast-1",
+          "endpoint": "https://ap-southeast-1.liquid-edge.com/health"
+        }
+      ],
+      "failover_routing": true,
+      "latency_routing": true
+    },
+    "global_cdn": {
+      "provider": "cloudfront",
+      "edge_locations": 400,
+      "origin_failover": true,
+      "geo_restrictions": false,
+      "waf_integration": true
+    },
+    "monitoring_dashboard": {
+      "grafana_url": "https://monitoring.liquid-edge.com",
+      "prometheus_endpoints": [
+        "https://prometheus-us-east-1.liquid-edge.com",
+        "https://prometheus-eu-west-1.liquid-edge.com",
+        "https://prometheus-ap-southeast-1.liquid-edge.com"
+      ],
+      "alert_manager": "https://alerts.liquid-edge.com"
+    }
+  },
+  "compliance": {
+    "gdpr": {
+      "data_processing_agreement": true,
+      "right_to_be_forgotten": true,
+      "data_portability": true,
+      "consent_management": true,
+      "data_protection_officer": "dpo@liquid-edge.com",
+      "privacy_by_design": true
+    },
+    "ccpa": {
+      "consumer_rights_portal": "https://privacy.liquid-edge.com",
+      "opt_out_mechanism": true,
+      "data_categories_disclosed": true,
+      "third_party_sharing_disclosure": true
+    },
+    "iso27001": {
+      "information_security_policy": true,
+      "risk_assessment": "annual",
+      "security_controls": 114,
+      "incident_response_plan": true,
+      "audit_schedule": "semi-annual"
+    },
+    "sox": {
+      "financial_reporting_controls": true,
+      "audit_trail": true,
+      "segregation_of_duties": true,
+      "change_management": true
+    },
+    "data_residency": {
+      "regional_data_storage": {
+        "us-east-1": "Data stored in us-east-1 remains in region",
+        "eu-west-1": "Data stored in eu-west-1 remains in region",
+        "ap-southeast-1": "Data stored in ap-southeast-1 remains in region"
+      },
+      "cross_border_transfer": false,
+      "data_classification": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted"
+      ]
+    }
+  },
+  "monitoring": {
+    "metrics": {
+      "business_metrics": [
+        "inference_requests_per_second",
+        "model_accuracy",
+        "user_satisfaction_score",
+        "revenue_per_request"
+      ],
+      "technical_metrics": [
+        "response_time_p95",
+        "error_rate",
+        "cpu_utilization",
+        "memory_utilization",
+        "disk_io",
+        "network_throughput"
+      ],
+      "security_metrics": [
+        "failed_authentication_attempts",
+        "suspicious_traffic_patterns",
+        "data_access_anomalies",
+        "vulnerability_scan_results"
+      ]
+    },
+    "alerting": {
+      "channels": [
+        "email",
+        "slack",
+        "pagerduty",
+        "sms"
+      ],
+      "escalation_levels": [
+        "warning",
+        "critical",
+        "emergency"
+      ],
+      "on_call_rotation": true,
+      "alert_suppression": true
+    },
+    "dashboards": {
+      "executive_summary": "Business KPIs and health overview",
+      "operational": "Technical metrics and alerts",
+      "security": "Security events and compliance status",
+      "performance": "Latency, throughput, and resource usage"
+    },
+    "sla_monitoring": {
+      "availability": "99.99%",
+      "latency_p95": "50.0ms",
+      "throughput": "10000 RPS",
+      "error_budget": "0.010000000000005116%"
+    }
+  },
+  "end_time": 1755520055.5456383,
+  "duration_seconds": 7.421600103378296,
+  "health_check": {
+    "overall_status": "healthy",
+    "timestamp": 1755520057.5507212,
+    "regions": {
+      "us-east-1": {
+        "status": "healthy",
+        "services": {
+          "load_balancer": {
+            "status": "healthy",
+            "response_time": 12
+          },
+          "container_cluster": {
+            "status": "healthy",
+            "active_nodes": 3
+          },
+          "database": {
+            "status": "healthy",
+            "connections": 25
+          },
+          "cache": {
+            "status": "healthy",
+            "hit_ratio": 0.85
+          }
+        },
+        "metrics": {
+          "cpu_utilization": 45.0,
+          "memory_utilization": 38.0,
+          "active_connections": 150,
+          "requests_per_second": 85.0
+        }
+      },
+      "eu-west-1": {
+        "status": "healthy",
+        "services": {
+          "load_balancer": {
+            "status": "healthy",
+            "response_time": 12
+          },
+          "container_cluster": {
+            "status": "healthy",
+            "active_nodes": 3
+          },
+          "database": {
+            "status": "healthy",
+            "connections": 25
+          },
+          "cache": {
+            "status": "healthy",
+            "hit_ratio": 0.85
+          }
+        },
+        "metrics": {
+          "cpu_utilization": 45.0,
+          "memory_utilization": 38.0,
+          "active_connections": 150,
+          "requests_per_second": 85.0
+        }
+      },
+      "ap-southeast-1": {
+        "status": "healthy",
+        "services": {
+          "load_balancer": {
+            "status": "healthy",
+            "response_time": 12
+          },
+          "container_cluster": {
+            "status": "healthy",
+            "active_nodes": 3
+          },
+          "database": {
+            "status": "healthy",
+            "connections": 25
+          },
+          "cache": {
+            "status": "healthy",
+            "hit_ratio": 0.85
+          }
+        },
+        "metrics": {
+          "cpu_utilization": 45.0,
+          "memory_utilization": 38.0,
+          "active_connections": 150,
+          "requests_per_second": 85.0
+        }
+      }
+    },
+    "global_services": {
+      "dns": {
+        "status": "healthy",
+        "query_time": 15
+      },
+      "cdn": {
+        "status": "healthy",
+        "cache_hit_ratio": 0.92
+      },
+      "monitoring": {
+        "status": "healthy",
+        "data_lag": 5
+      }
+    }
+  },
+  "deployment_summary": {
+    "deployment_id": "global-1755520048",
+    "project": "liquid-edge-lln-production",
+    "version": "1.0.0",
+    "deployment_time": 10.129128217697144,
+    "regions_deployed": 3,
+    "success_rate": 100.0
+  },
+  "estimated_monthly_cost": {
+    "compute": 1800.0,
+    "storage": 600.0,
+    "networking": 300.0,
+    "monitoring": 150.0,
+    "security": 150.0,
+    "cdn": 300.0,
+    "total": 3300.0
+  },
+  "next_steps": [
+    "Verify health checks are passing in all regions",
+    "Run integration tests across regions",
+    "Configure monitoring alerts and dashboards",
+    "Update DNS records to point to new deployment",
+    "Schedule post-deployment validation tests",
+    "Document rollback procedures"
+  ],
+  "security_recommendations": [
+    "Enable AWS Config rules for compliance monitoring",
+    "Implement least-privilege IAM policies",
+    "Enable VPC Flow Logs for network monitoring",
+    "Configure AWS GuardDuty for threat detection",
+    "Set up AWS Security Hub for centralized security findings"
+  ]
+}
