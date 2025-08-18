@@ -1,0 +1,45 @@
+{
+  "device": "esp32s3",
+  "device_specs": {
+    "voltage": 3.3,
+    "active_current_ma": 120,
+    "sleep_current_ua": 10,
+    "cpu_freq_mhz": 240,
+    "ram_size_kb": 512,
+    "flash_size_mb": 8,
+    "operations_per_cycle": 1.0,
+    "nj_per_cycle": 0.8
+  },
+  "total_measurements": 2,
+  "summary": {
+    "total_energy_mj": 24494.59624671936,
+    "avg_energy_mj": 12247.29812335968,
+    "min_energy_mj": 170.58007335662842,
+    "max_energy_mj": 24324.016173362732,
+    "avg_power_mw": 396.0038595599987,
+    "min_power_mw": 396.0000476493444,
+    "max_power_mw": 396.007671470653,
+    "total_duration_ms": 61855.02529144287,
+    "avg_duration_ms": 30927.512645721436
+  },
+  "measurements": [
+    {
+      "name": "liquid_training",
+      "energy_mj": 24324.016173362732,
+      "power_mw": 396.0000476493444,
+      "duration_ms": 61424.27587509155,
+      "operations": 100000,
+      "energy_per_op_nj": 243240.16173362732,
+      "timestamp": 1755519284.6902897
+    },
+    {
+      "name": "liquid_inference",
+      "energy_mj": 170.58007335662842,
+      "power_mw": 396.007671470653,
+      "duration_ms": 430.74941635131836,
+      "operations": 1000,
+      "energy_per_op_nj": 170580.07335662842,
+      "timestamp": 1755519285.1211157
+    }
+  ]
+}

@@ -78,6 +78,23 @@ __all__ = [
     "ModelEnergyOptimizer"
 ]
 
+# Advanced security and fault tolerance
+from .advanced_security import (
+    SecurityConfig, SecurityMonitor, SecureLiquidInference, 
+    SecurityError, ThreatLevel, SecurityEvent, secure_inference
+)
+from .fault_tolerance import (
+    FaultToleranceConfig, FaultTolerantSystem, FaultType, 
+    RecoveryStrategy, SystemState, FaultEvent
+)
+
+# High-performance inference and scaling
+from .high_performance_inference import (
+    HighPerformanceInferenceEngine, PerformanceConfig, InferenceMode,
+    LoadBalancingStrategy, InferenceRequest, InferenceMetrics,
+    DistributedInferenceCoordinator
+)
+
 # Add robustness components
 __all__.extend([
     "LiquidNetworkMonitor",
@@ -92,7 +109,30 @@ __all__.extend([
     "ErrorSeverity",
     "retry_with_backoff",
     "graceful_degradation",
-    "validate_inputs"
+    "validate_inputs",
+    # Advanced security
+    "SecurityConfig",
+    "SecurityMonitor", 
+    "SecureLiquidInference",
+    "SecurityError",
+    "ThreatLevel",
+    "SecurityEvent",
+    "secure_inference",
+    # Fault tolerance
+    "FaultToleranceConfig",
+    "FaultTolerantSystem",
+    "FaultType",
+    "RecoveryStrategy", 
+    "SystemState",
+    "FaultEvent",
+    # High-performance inference
+    "HighPerformanceInferenceEngine",
+    "PerformanceConfig",
+    "InferenceMode",
+    "LoadBalancingStrategy",
+    "InferenceRequest",
+    "InferenceMetrics",
+    "DistributedInferenceCoordinator"
 ])
 
 # Conditionally add ROS 2 components
