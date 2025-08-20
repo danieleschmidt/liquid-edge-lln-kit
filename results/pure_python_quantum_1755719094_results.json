@@ -1,0 +1,101 @@
+{
+  "quantum_small": {
+    "config": {
+      "input_dim": 4,
+      "hidden_dim": 8,
+      "output_dim": 1,
+      "superposition_states": 4,
+      "tau_min": 10.0,
+      "tau_max": 100.0,
+      "coherence_time": 50.0,
+      "entanglement_strength": 0.3,
+      "decoherence_rate": 0.01,
+      "energy_efficiency_factor": 25.0,
+      "use_adaptive_superposition": true,
+      "quantum_noise_resilience": 0.1,
+      "dt": 0.1
+    },
+    "quantum": {
+      "avg_energy_mj": 0.0005373760000000001,
+      "accuracy": 0.9638055334079713,
+      "avg_error": 0.037553702834685815,
+      "avg_inference_time_ms": 0.9442394000075183,
+      "total_batches": 15
+    },
+    "baseline": {
+      "avg_energy_mj": 0.006655999999999999,
+      "accuracy": 0.9638160138740833,
+      "avg_error": 0.03754242055024002,
+      "avg_inference_time_ms": 0.042804399993201514,
+      "total_batches": 15
+    },
+    "energy_improvement": 12.386113261477991,
+    "accuracy_ratio": 0.9999891260718216
+  },
+  "quantum_medium": {
+    "config": {
+      "input_dim": 4,
+      "hidden_dim": 16,
+      "output_dim": 1,
+      "superposition_states": 8,
+      "tau_min": 10.0,
+      "tau_max": 100.0,
+      "coherence_time": 50.0,
+      "entanglement_strength": 0.3,
+      "decoherence_rate": 0.01,
+      "energy_efficiency_factor": 50.0,
+      "use_adaptive_superposition": true,
+      "quantum_noise_resilience": 0.1,
+      "dt": 0.1
+    },
+    "quantum": {
+      "avg_energy_mj": 0.001729312,
+      "accuracy": 0.9637993924599357,
+      "avg_error": 0.03756031371597809,
+      "avg_inference_time_ms": 2.610141000002386,
+      "total_batches": 15
+    },
+    "baseline": {
+      "avg_energy_mj": 0.021504000000000006,
+      "accuracy": 0.9637891852118143,
+      "avg_error": 0.03757130225551083,
+      "avg_inference_time_ms": 0.0564742666673131,
+      "total_batches": 15
+    },
+    "energy_improvement": 12.43500305323736,
+    "accuracy_ratio": 1.0000105907477257
+  },
+  "quantum_large": {
+    "config": {
+      "input_dim": 4,
+      "hidden_dim": 32,
+      "output_dim": 1,
+      "superposition_states": 16,
+      "tau_min": 10.0,
+      "tau_max": 100.0,
+      "coherence_time": 50.0,
+      "entanglement_strength": 0.3,
+      "decoherence_rate": 0.01,
+      "energy_efficiency_factor": 100.0,
+      "use_adaptive_superposition": true,
+      "quantum_noise_resilience": 0.1,
+      "dt": 0.1
+    },
+    "quantum": {
+      "avg_energy_mj": 0.006079264,
+      "accuracy": 0.9638100574550659,
+      "avg_error": 0.03754883264083529,
+      "avg_inference_time_ms": 11.57000060000731,
+      "total_batches": 15
+    },
+    "baseline": {
+      "avg_energy_mj": 0.075776,
+      "accuracy": 0.9637279914218846,
+      "avg_error": 0.037637184870597855,
+      "avg_inference_time_ms": 0.0730658666649712,
+      "total_batches": 15
+    },
+    "energy_improvement": 12.464666775451764,
+    "accuracy_ratio": 1.0000851547676437
+  }
+}

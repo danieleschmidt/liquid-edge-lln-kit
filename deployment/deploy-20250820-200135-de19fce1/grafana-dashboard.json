@@ -1,0 +1,63 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Liquid Edge LLN - Production Monitoring",
+    "tags": [
+      "liquid-edge",
+      "production",
+      "neural-networks"
+    ],
+    "timezone": "UTC",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Inference Throughput",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "rate(liquid_edge_inferences_total[5m])",
+            "legendFormat": "Inferences/sec"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "P99 Latency",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.99, liquid_edge_latency_histogram)",
+            "legendFormat": "P99 Latency (ms)"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Energy Consumption",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "liquid_edge_energy_consumption_mw",
+            "legendFormat": "Energy (mW)"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Error Rate",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "rate(liquid_edge_errors_total[5m]) / rate(liquid_edge_requests_total[5m])",
+            "legendFormat": "Error Rate"
+          }
+        ]
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "5s"
+  }
+}
