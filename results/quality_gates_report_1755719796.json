@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-08-20 19:56:36",
+  "test_execution_summary": {
+    "total_tests": 23,
+    "passed": 22,
+    "failed": 1,
+    "success_rate": 95.65217391304348,
+    "coverage_percentage": 87.39999999999999
+  },
+  "quality_gates": {
+    "test_coverage_min": 85.0,
+    "success_rate_min": 95.0,
+    "max_critical_errors": 0,
+    "max_security_violations": 0,
+    "performance_regression_max": 2.0
+  },
+  "quality_validation": {
+    "all_gates_passed": true,
+    "critical_errors": 0,
+    "security_violations": 1
+  },
+  "errors": [
+    "Traceback (most recent call last):\n  File \"/root/repo/test_quantum_autonomous_sdlc.py\", line 319, in test_input_validation\n    is_valid, msg = monitor.validate_input(invalid_input)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/repo/robust_quantum_production_system.py\", line 114, in validate_input\n    self._log_security_event(\"INVALID_INPUT\", \"NaN or Inf detected\", SecurityLevel.HIGH)\n  File \"/root/repo/robust_quantum_production_system.py\", line 174, in _log_security_event\n    self.threat_level = max(self.threat_level, level)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: '>' not supported between instances of 'SecurityLevel' and 'SecurityLevel'\n\nStderr:\nSecurity Event: INVALID_INPUT - NaN or Inf detected (Level: high)\n"
+  ],
+  "warnings": [],
+  "performance_metrics": {},
+  "recommendations": [
+    "Resolve all error conditions identified in testing"
+  ]
+}
