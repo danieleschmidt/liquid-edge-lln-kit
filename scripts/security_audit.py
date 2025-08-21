@@ -161,12 +161,9 @@ class SecurityAuditor:
             r'DEBUG\s*=\s*True': ("MEDIUM", "Debug mode enabled"),
             r'SECURE_SSL_REDIRECT\s*=\s*False': ("HIGH", "SSL redirect disabled"),
             r'ALLOWED_HOSTS\s*=\s*\[\s*["\'][*]["\']\s*\]': ("HIGH", "Wildcard allowed hosts"),
-            r'SECRET_KEY\s*=\s*["\'][^"\'
-]*["\']': ("HIGH", "Hardcoded secret key"),
-            r'password\s*[=:]\s*["\'][^"\'
-]*["\']': ("HIGH", "Hardcoded password"),
-            r'api_key\s*[=:]\s*["\'][^"\'
-]*["\']': ("HIGH", "Hardcoded API key"),
+            r'SECRET_KEY\s*=\s*["\'][^"\']*["\']': ("HIGH", "Hardcoded secret key"),
+            r'password\s*[=:]\s*["\'][^"\']*["\']': ("HIGH", "Hardcoded password"),
+            r'api_key\s*[=:]\s*["\'][^"\']*["\']': ("HIGH", "Hardcoded API key"),
         }
         
         for file_path in config_files:
@@ -198,8 +195,7 @@ class SecurityAuditor:
             r'["\']?[Ss]ecret_?[Kk]ey["\']?\s*[:=]\s*["\'][A-Za-z0-9/+=]{40,}["\']': "AWS Secret Key",
             r'["\']?[Aa]pi_?[Kk]ey["\']?\s*[:=]\s*["\'][A-Za-z0-9]{32,}["\']': "API Key",
             r'["\']?[Tt]oken["\']?\s*[:=]\s*["\'][A-Za-z0-9]{32,}["\']': "Token",
-            r'["\']?[Pp]assword["\']?\s*[:=]\s*["\'][^"\'
-]{8,}["\']': "Password",
+            r'["\']?[Pp]assword["\']?\s*[:=]\s*["\'][^"\']{8,}["\']': "Password",
             r'-----BEGIN [A-Z ]+-----': "Private Key",
             r'mongodb://[^\s]+:[^\s]+@': "MongoDB Connection String",
             r'mysql://[^\s]+:[^\s]+@': "MySQL Connection String",

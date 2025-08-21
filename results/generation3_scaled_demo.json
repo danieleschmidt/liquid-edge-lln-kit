@@ -1,227 +1,58 @@
 {
   "generation": 3,
-  "title": "MAKE IT SCALE - High-Performance Optimization & Auto-Scaling",
-  "description": "Advanced performance optimization, intelligent caching, batch processing, and auto-scaling",
-  "load_test_scenarios": [
-    {
-      "scenario": {
-        "name": "Light Load - Single Requests",
-        "batch_size": 1,
-        "num_batches": 5,
-        "description": "Low-concurrency baseline testing"
+  "type": "scaled_demo",
+  "config": {
+    "input_dim": 4,
+    "hidden_dim": 16,
+    "output_dim": 2,
+    "energy_budget_mw": 150.0,
+    "target_fps": 100,
+    "batch_size": 32,
+    "cache_size": 1000,
+    "max_concurrent_inferences": 8,
+    "performance_mode": "batch_optimized",
+    "use_vectorization": true,
+    "use_inference_cache": true,
+    "use_parallel_processing": true
+  },
+  "metrics": {
+    "estimated_energy_mw": 0.0030743999999999997,
+    "total_execution_time_s": 0.02352285385131836,
+    "stress_test_throughput_samples_per_s": 180423.45248849315,
+    "batch_throughput_samples_per_s": 569926.6581740977,
+    "cache_speedup": 0.9447236180904522,
+    "energy_efficiency_samples_per_s_per_mw": 58685744.36914297,
+    "avg_inference_time_ms": 0.005106925964355469,
+    "achievable_fps": 195812.51167133517,
+    "cache_hit_rate": 0.84
+  },
+  "scaling": {
+    "performance_benchmarks": {
+      "single_thread": {
+        "total_time_s": 0.003010272979736328,
+        "samples_processed": 100,
+        "avg_time_per_sample_ms": 0.03010272979736328,
+        "throughput_samples_per_s": 33219.57864723586
       },
-      "total_requests": 5,
-      "total_time_s": 0.05246934100000544,
-      "throughput_rps": 95.29374497002891,
-      "avg_latency_ms": 10.493868200001089,
-      "results_sample": [
-        {
-          "motors": {
-            "left_motor": 0.002138744699004388,
-            "right_motor": -0.0009094270644811852
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173503.8502753
-        },
-        {
-          "motors": {
-            "left_motor": 0.00402802322147197,
-            "right_motor": -0.0017244133555263516
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173503.8607104
-        },
-        {
-          "motors": {
-            "left_motor": 0.005700902369717781,
-            "right_motor": -0.0024547209016838683
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173503.8712137
-        }
-      ]
-    },
-    {
-      "scenario": {
-        "name": "Medium Load - Small Batches",
-        "batch_size": 4,
-        "num_batches": 10,
-        "description": "Medium-concurrency batch processing"
+      "multi_thread": {
+        "total_time_s": 0.00021314620971679688,
+        "samples_processed": 100,
+        "avg_time_per_sample_ms": 0.0021314620971679688,
+        "throughput_samples_per_s": 469161.5212527964
       },
-      "total_requests": 40,
-      "total_time_s": 0.10730253299999504,
-      "throughput_rps": 372.7777796261515,
-      "avg_latency_ms": 2.682563324999876,
-      "results_sample": [
-        {
-          "motors": {
-            "left_motor": 0.009687148646287497,
-            "right_motor": -0.004220725174754515
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173503.9028819
-        },
-        {
-          "motors": {
-            "left_motor": 0.011312167357985478,
-            "right_motor": -0.004566481731929858
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173503.9029677
-        },
-        {
-          "motors": {
-            "left_motor": 0.014010208305163469,
-            "right_motor": -0.004627763360061854
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173503.9030287
-        }
-      ]
-    },
-    {
-      "scenario": {
-        "name": "High Load - Large Batches",
-        "batch_size": 16,
-        "num_batches": 8,
-        "description": "High-concurrency stress testing"
-      },
-      "total_requests": 128,
-      "total_time_s": 0.09156415699999343,
-      "throughput_rps": 1397.9269202468515,
-      "avg_latency_ms": 0.7153449765624487,
-      "results_sample": [
-        {
-          "motors": {
-            "left_motor": 0.029424370899926958,
-            "right_motor": -0.005743262086625293
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173504.0101395
-        },
-        {
-          "motors": {
-            "left_motor": 0.028954382231013848,
-            "right_motor": -0.005841189056649911
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173504.0102663
-        },
-        {
-          "motors": {
-            "left_motor": 0.02976900388695607,
-            "right_motor": -0.005673756962206857
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173504.0103517
-        }
-      ]
-    },
-    {
-      "scenario": {
-        "name": "Peak Load - Maximum Throughput",
-        "batch_size": 32,
-        "num_batches": 5,
-        "description": "Maximum throughput testing"
-      },
-      "total_requests": 160,
-      "total_time_s": 0.06617620800000168,
-      "throughput_rps": 2417.7873715580067,
-      "avg_latency_ms": 0.4136013000000105,
-      "results_sample": [
-        {
-          "motors": {
-            "left_motor": 0.029364281483671515,
-            "right_motor": -0.0060976560299409064
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173504.1017938
-        },
-        {
-          "motors": {
-            "left_motor": 0.029220288184692463,
-            "right_motor": -0.006126175067625166
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173504.1018567
-        },
-        {
-          "motors": {
-            "left_motor": 0.03023707316033274,
-            "right_motor": -0.005891197662242707
-          },
-          "processing_mode": "batch",
-          "timestamp": 1755173504.1019146
-        }
-      ]
-    }
-  ],
-  "final_performance_stats": {
-    "total_requests": 333,
-    "avg_response_time_ms": 0.087,
-    "max_response_time_ms": 0.208,
-    "min_response_time_ms": 0.066,
-    "estimated_throughput_rps": 1000,
-    "liquid_brain_stats": {
-      "total_inferences": 333,
-      "avg_inference_time_ms": 0.083,
-      "estimated_fps": 1000,
-      "optimizer_stats": {
-        "cache_hit_rate_percent": 0.0,
-        "total_cache_operations": 0,
-        "vectorized_operations": 333,
-        "parallel_operations": 0,
-        "batch_operations": 0,
-        "jit_cached_functions": 0
-      },
-      "cache_stats": {
-        "size": 333,
-        "max_size": 1000,
-        "hits": 0,
-        "misses": 333,
-        "hit_rate_percent": 0.0,
-        "memory_usage_estimate_kb": 33.300000000000004
+      "batch_optimized": {
+        "total_time_s": 0.0005469322204589844,
+        "samples_processed": 100,
+        "avg_time_per_sample_ms": 0.005469322204589844,
+        "throughput_samples_per_s": 182838.01220575414
       }
     },
-    "auto_scaling_stats": {
-      "current_workers": 2,
-      "min_workers": 2,
-      "max_workers": 2,
-      "avg_cpu_utilization": 95.0,
-      "total_scale_decisions": 0,
-      "recent_decisions": []
-    },
-    "configuration": {
-      "caching_enabled": true,
-      "vectorization_enabled": true,
-      "parallel_processing_enabled": true,
-      "batch_size": 32
-    }
+    "stress_test_samples": 1000,
+    "batch_processing_enabled": true,
+    "cache_enabled": true,
+    "parallel_processing_enabled": true,
+    "auto_scaling_configured": true
   },
-  "scaling_features_demo": {
-    "cache_stats": {
-      "size": 2,
-      "max_size": 100,
-      "hits": 7,
-      "misses": 2,
-      "hit_rate_percent": 77.78,
-      "memory_usage_estimate_kb": 0.2
-    },
-    "batch_processing": {
-      "requests_processed": 20,
-      "total_time_ms": 23.354460000007293,
-      "avg_batch_size": 7.2
-    }
-  },
-  "optimization_features": {
-    "intelligent_caching": true,
-    "jit_compilation": true,
-    "vectorization": true,
-    "batch_processing": true,
-    "auto_scaling": true,
-    "memory_pooling": true,
-    "connection_pooling": true,
-    "performance_monitoring": true
-  },
-  "timestamp": 1755173504.1949265
+  "status": "completed",
+  "timestamp": 1755820381.0302303
 }

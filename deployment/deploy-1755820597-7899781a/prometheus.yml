@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "liquid_edge_rules.yml"
+
+scrape_configs:
+  - job_name: 'liquid-edge-lln'
+    static_configs:
+      - targets: ['liquid-edge-lln-service:80']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  - job_name: 'kubernetes-pods'
+    kubernetes_sd_configs:
+      - role: pod
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true
