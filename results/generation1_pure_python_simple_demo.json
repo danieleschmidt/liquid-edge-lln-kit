@@ -1,0 +1,39 @@
+{
+  "generation": 1,
+  "type": "pure_python_simple_demo",
+  "config": {
+    "input_dim": 4,
+    "hidden_dim": 8,
+    "output_dim": 2,
+    "energy_budget_mw": 80.0,
+    "target_fps": 30,
+    "sparsity": 0.2
+  },
+  "metrics": {
+    "final_loss": NaN,
+    "final_energy_mw": 0.001488,
+    "estimated_energy_mw": 0.001488,
+    "training_time_s": 0.13858509063720703,
+    "inference_time_ms": 0.010950565338134766,
+    "achievable_fps": 91319.48617461354,
+    "energy_within_budget": true
+  },
+  "sample_prediction": {
+    "input": [
+      0.04967141530112327,
+      1.0324083969394795,
+      1.9292314628974794,
+      0.012524642517293828
+    ],
+    "output": [
+      NaN,
+      NaN
+    ],
+    "target": [
+      0.789980285986165,
+      0.01490142459033698
+    ]
+  },
+  "status": "completed",
+  "timestamp": 1755820380.5728936
+}

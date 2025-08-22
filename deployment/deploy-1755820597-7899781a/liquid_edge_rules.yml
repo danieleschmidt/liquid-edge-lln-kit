@@ -1,0 +1,29 @@
+groups:
+  - name: liquid_edge_alerts
+    rules:
+      - alert: HighErrorRate
+        expr: rate(liquid_edge_errors_total[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High error rate detected"
+          description: "Error rate is {{ $value }} errors/sec"
+      
+      - alert: EnergyBudgetExceeded
+        expr: liquid_edge_energy_consumption_mw > 150
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Energy budget exceeded"
+          description: "Energy consumption is {{ $value }}mW"
+      
+      - alert: LowThroughput
+        expr: rate(liquid_edge_inference_total[5m]) < 100
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low inference throughput"
+          description: "Throughput is {{ $value }} inferences/sec"

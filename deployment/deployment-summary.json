@@ -1,47 +1,49 @@
 {
-  "deployment_id": "e42a3698",
-  "timestamp": 1755173785.785092,
-  "total_files": 14,
-  "categories": [
-    "container",
-    "kubernetes",
-    "infrastructure",
-    "scripts",
-    "monitoring",
-    "security"
-  ],
-  "files": [
-    "/root/repo/deployment/container/Dockerfile.production",
-    "/root/repo/deployment/container/docker-compose.production.yml",
-    "/root/repo/deployment/kubernetes/k8s-deployment.yaml",
-    "/root/repo/deployment/kubernetes/k8s-ingress.yaml",
-    "/root/repo/deployment/kubernetes/k8s-monitoring.yaml",
-    "/root/repo/deployment/infrastructure/main.tf",
-    "/root/repo/deployment/scripts/deploy.sh",
-    "/root/repo/deployment/scripts/rollback.sh",
-    "/root/repo/deployment/scripts/health-check.sh",
-    "/root/repo/deployment/monitoring/prometheus.yml",
-    "/root/repo/deployment/monitoring/liquid_edge_rules.yml",
-    "/root/repo/deployment/monitoring/grafana-dashboard.json",
-    "/root/repo/deployment/security/network-policies.yaml",
-    "/root/repo/deployment/security/pod-security-policy.yaml"
-  ],
-  "configuration": {
-    "regions": [
-      "us-east-1",
-      "eu-west-1",
-      "ap-southeast-1"
+  "deployment_info": {
+    "deployment_id": "deploy-1755820597-7899781a",
+    "generated_at": "2025-08-21 23:56:37",
+    "generation_time_s": 0.002194643020629883,
+    "artifacts_count": 11
+  },
+  "deployment_artifacts": {
+    "containerization": [
+      "deployment/deploy-1755820597-7899781a/Dockerfile"
     ],
-    "environments": [
-      "staging",
-      "production"
+    "kubernetes": [
+      "deployment/deploy-1755820597-7899781a/k8s-deployment.yaml",
+      "deployment/deploy-1755820597-7899781a/k8s-service.yaml",
+      "deployment/deploy-1755820597-7899781a/k8s-ingress.yaml"
     ],
-    "features": {
-      "kubernetes": true,
-      "docker": true,
-      "monitoring": true,
-      "security": true,
-      "compliance": true
-    }
+    "monitoring": [
+      "deployment/deploy-1755820597-7899781a/prometheus.yml",
+      "deployment/deploy-1755820597-7899781a/grafana-dashboard.json",
+      "deployment/deploy-1755820597-7899781a/liquid_edge_rules.yml"
+    ],
+    "automation": [
+      "deployment/deploy-1755820597-7899781a/deploy.sh",
+      "deployment/deploy-1755820597-7899781a/rollback.sh",
+      "deployment/deploy-1755820597-7899781a/health-check.sh"
+    ],
+    "documentation": [
+      "deployment/deploy-1755820597-7899781a/DEPLOYMENT.md"
+    ]
+  },
+  "production_readiness": {
+    "containerization": true,
+    "orchestration": true,
+    "monitoring": true,
+    "alerting": true,
+    "security": true,
+    "documentation": true,
+    "automation": true,
+    "scalability": true,
+    "disaster_recovery": true
+  },
+  "performance_targets": {
+    "inference_throughput": "> 1000 samples/s",
+    "energy_efficiency": "< 150mW",
+    "response_time": "< 50ms p95",
+    "availability": "99.9%",
+    "auto_scaling": "3-10 replicas"
   }
 }

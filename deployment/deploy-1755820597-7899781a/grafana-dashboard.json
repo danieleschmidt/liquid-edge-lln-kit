@@ -1,0 +1,43 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Liquid Edge LLN Production Dashboard",
+    "version": 1,
+    "schemaVersion": 27,
+    "panels": [
+      {
+        "id": 1,
+        "title": "Inference Throughput",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(liquid_edge_inference_total[5m])",
+            "legendFormat": "Inferences/sec"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Energy Consumption",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "liquid_edge_energy_consumption_mw",
+            "legendFormat": "Energy (mW)"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Error Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(liquid_edge_errors_total[5m])",
+            "legendFormat": "Errors/sec"
+          }
+        ]
+      }
+    ]
+  }
+}

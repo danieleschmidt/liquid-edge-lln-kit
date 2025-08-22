@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: liquid-edge-lln-service
+  labels:
+    app: liquid-edge-lln
+spec:
+  selector:
+    app: liquid-edge-lln
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: ClusterIP
