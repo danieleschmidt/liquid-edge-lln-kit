@@ -135,6 +135,12 @@ __all__.extend([
     "DistributedInferenceCoordinator"
 ])
 
+# Autonomous Evolutionary SDLC (Breakthrough Innovation)
+from .autonomous_evolutionary_sdlc import (
+    AutonomousEvolutionarySDLC, SDLCGenome, EvolutionaryConfig,
+    EvolutionaryPhase, OptimizationObjective, create_autonomous_evolutionary_sdlc
+)
+
 # Conditionally add ROS 2 components
 if _ros2_available:
     __all__.extend([
@@ -143,3 +149,13 @@ if _ros2_available:
         "LiquidTurtleBot",
         "LiquidNavigationNode"
     ])
+
+# Add evolutionary SDLC components  
+__all__.extend([
+    "AutonomousEvolutionarySDLC",
+    "SDLCGenome", 
+    "EvolutionaryConfig",
+    "EvolutionaryPhase",
+    "OptimizationObjective",
+    "create_autonomous_evolutionary_sdlc"
+])
