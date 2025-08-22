@@ -1,0 +1,65 @@
+{
+  "deployment_id": "quantum-minimal-1755826028",
+  "start_time": 1755826028.668772,
+  "status": "deployed",
+  "test_results": {
+    "latency_ms": 29.226064682006836,
+    "output_shape": "(10, 4)",
+    "success": true
+  },
+  "load_test": {
+    "total_requests": 1000,
+    "total_time_seconds": 2.835458517074585,
+    "throughput_req_s": 352.67664611497315,
+    "average_latency_ms": 2.835458517074585
+  },
+  "energy_test": {
+    "workload_results": [
+      {
+        "batch_size": 1,
+        "energy_mw": 0.00065536,
+        "energy_per_request_mw": 0.00065536
+      },
+      {
+        "batch_size": 10,
+        "energy_mw": 0.0065536,
+        "energy_per_request_mw": 0.00065536
+      },
+      {
+        "batch_size": 100,
+        "energy_mw": 0.065536,
+        "energy_per_request_mw": 0.00065536
+      }
+    ],
+    "energy_per_request_mw": 0.0006553600000000001,
+    "efficiency_score": 1.0
+  },
+  "coherence_test": {
+    "average_coherence": 0.9998859167098999,
+    "coherence_stability": 1.0,
+    "measurements": [
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999,
+      0.9998859167098999
+    ]
+  },
+  "deployment_time_seconds": 6.360643148422241,
+  "overall_score": 0.5967231698333206
+}
