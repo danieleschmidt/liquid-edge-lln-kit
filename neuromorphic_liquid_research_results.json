@@ -1,0 +1,95 @@
+{
+  "neuromorphic_liquid": {
+    "energy_per_inference_nj": 42.24,
+    "inference_time_ms": 0.8,
+    "learning_epochs": 5,
+    "memory_kb": 16,
+    "throughput_fps": 1250.0,
+    "convergence_speedup": 10.0,
+    "energy_efficiency": 16.666666666666664,
+    "multimodal_speedup": 2.6666666666666665
+  },
+  "component_analysis": {
+    "event_driven": {
+      "dense_operations": 1408,
+      "event_operations": 140.8,
+      "operation_reduction": 10.0,
+      "dense_energy_nj": 704.0,
+      "event_energy_nj": 42.24,
+      "energy_efficiency": 16.666666666666664
+    },
+    "stdp_learning": {
+      "traditional_epochs": 50,
+      "stdp_epochs": 5,
+      "convergence_speedup": 10.0,
+      "traditional_time_ms": 500.0,
+      "stdp_time_ms": 5.0,
+      "time_speedup": 100.0
+    },
+    "adaptive_dynamics": {
+      "fixed_tau_ms": 50.0,
+      "adaptive_tau_fast_ms": 5.0,
+      "adaptive_tau_slow_ms": 100.0,
+      "fixed_response_ms": 150.0,
+      "adaptive_response_ms": 105.0,
+      "response_speedup": 1.4285714285714286
+    },
+    "multimodal_fusion": {
+      "num_modalities": 4,
+      "traditional_time_ms": 8.0,
+      "parallel_fusion_time_ms": 3.0,
+      "fusion_speedup": 2.6666666666666665,
+      "attention_accuracy_boost": 0.15
+    }
+  },
+  "baseline_comparisons": {
+    "traditional_lstm": {
+      "energy_per_inference_nj": 5000,
+      "inference_time_ms": 10.0,
+      "learning_epochs": 50,
+      "memory_kb": 128
+    },
+    "standard_rnn": {
+      "energy_per_inference_nj": 3000,
+      "inference_time_ms": 5.0,
+      "learning_epochs": 30,
+      "memory_kb": 64
+    },
+    "liquid_nn": {
+      "energy_per_inference_nj": 1000,
+      "inference_time_ms": 2.0,
+      "learning_epochs": 20,
+      "memory_kb": 32
+    }
+  },
+  "improvements": {
+    "traditional_lstm": {
+      "energy_improvement": 118.37121212121211,
+      "speed_improvement": 12.5,
+      "memory_improvement": 8.0,
+      "learning_improvement": 10.0
+    },
+    "standard_rnn": {
+      "energy_improvement": 71.02272727272727,
+      "speed_improvement": 6.25,
+      "memory_improvement": 4.0,
+      "learning_improvement": 6.0
+    },
+    "liquid_nn": {
+      "energy_improvement": 23.674242424242422,
+      "speed_improvement": 2.5,
+      "memory_improvement": 2.0,
+      "learning_improvement": 4.0
+    }
+  },
+  "configuration": {
+    "input_dim": 8,
+    "hidden_dim": 32,
+    "output_dim": 4,
+    "spike_threshold": 1.0,
+    "refractory_period": 5.0,
+    "stdp_learning_rate": 0.01,
+    "dynamic_sparsity": 0.7,
+    "energy_target_uj": 50.0
+  }
+}
