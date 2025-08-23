@@ -1,0 +1,331 @@
+warning: The top-level linter settings are deprecated in favour of their counterparts in the `lint` section. Please update the following options in `pyproject.toml`:
+  - 'ignore' -> 'lint.ignore'
+  - 'select' -> 'lint.select'
+  - 'isort' -> 'lint.isort'
+  - 'per-file-ignores' -> 'lint.per-file-ignores'
+[
+  {
+    "code": "W293",
+    "name": "blank-line-with-whitespace",
+    "count": 10352,
+    "fixable": false
+  },
+  {
+    "code": "UP006",
+    "name": "non-pep585-annotation",
+    "count": 1136,
+    "fixable": true
+  },
+  {
+    "code": "W291",
+    "name": "trailing-whitespace",
+    "count": 648,
+    "fixable": false
+  },
+  {
+    "code": "F401",
+    "name": "unused-import",
+    "count": 486,
+    "fixable": false
+  },
+  {
+    "code": "F541",
+    "name": "f-string-missing-placeholders",
+    "count": 444,
+    "fixable": true
+  },
+  {
+    "code": "UP035",
+    "name": "deprecated-import",
+    "count": 253,
+    "fixable": false
+  },
+  {
+    "code": "PTH123",
+    "name": "builtin-open",
+    "count": 162,
+    "fixable": false
+  },
+  {
+    "code": "I001",
+    "name": "unsorted-imports",
+    "count": 143,
+    "fixable": true
+  },
+  {
+    "code": "UP045",
+    "name": "non-pep604-annotation-optional",
+    "count": 109,
+    "fixable": true
+  },
+  {
+    "code": "W292",
+    "name": "missing-newline-at-end-of-file",
+    "count": 106,
+    "fixable": false
+  },
+  {
+    "code": "F841",
+    "name": "unused-variable",
+    "count": 90,
+    "fixable": false
+  },
+  {
+    "code": "ARG002",
+    "name": "unused-method-argument",
+    "count": 74,
+    "fixable": false
+  },
+  {
+    "code": "B007",
+    "name": "unused-loop-control-variable",
+    "count": 44,
+    "fixable": false
+  },
+  {
+    "code": "UP038",
+    "name": "non-pep604-isinstance",
+    "count": 41,
+    "fixable": false
+  },
+  {
+    "code": "E722",
+    "name": "bare-except",
+    "count": 35,
+    "fixable": false
+  },
+  {
+    "code": "B904",
+    "name": "raise-without-from-inside-except",
+    "count": 25,
+    "fixable": false
+  },
+  {
+    "code": "C901",
+    "name": "complex-structure",
+    "count": 25,
+    "fixable": false
+  },
+  {
+    "code": "N806",
+    "name": "non-lowercase-variable-in-function",
+    "count": 24,
+    "fixable": false
+  },
+  {
+    "code": "ARG001",
+    "name": "unused-function-argument",
+    "count": 23,
+    "fixable": false
+  },
+  {
+    "code": null,
+    "name": "invalid-syntax",
+    "count": 16,
+    "fixable": false
+  },
+  {
+    "code": "UP015",
+    "name": "redundant-open-modes",
+    "count": 16,
+    "fixable": true
+  },
+  {
+    "code": "PTH103",
+    "name": "os-makedirs",
+    "count": 15,
+    "fixable": false
+  },
+  {
+    "code": "PTH201",
+    "name": "path-constructor-current-directory",
+    "count": 12,
+    "fixable": true
+  },
+  {
+    "code": "PTH110",
+    "name": "os-path-exists",
+    "count": 11,
+    "fixable": false
+  },
+  {
+    "code": "PTH118",
+    "name": "os-path-join",
+    "count": 10,
+    "fixable": false
+  },
+  {
+    "code": "SIM105",
+    "name": "suppressible-exception",
+    "count": 10,
+    "fixable": false
+  },
+  {
+    "code": "SIM102",
+    "name": "collapsible-if",
+    "count": 9,
+    "fixable": false
+  },
+  {
+    "code": "B023",
+    "name": "function-uses-loop-variable",
+    "count": 8,
+    "fixable": false
+  },
+  {
+    "code": "F821",
+    "name": "undefined-name",
+    "count": 7,
+    "fixable": false
+  },
+  {
+    "code": "SIM118",
+    "name": "in-dict-keys",
+    "count": 7,
+    "fixable": false
+  },
+  {
+    "code": "B006",
+    "name": "mutable-argument-default",
+    "count": 6,
+    "fixable": false
+  },
+  {
+    "code": "E402",
+    "name": "module-import-not-at-top-of-file",
+    "count": 6,
+    "fixable": false
+  },
+  {
+    "code": "SIM103",
+    "name": "needless-bool",
+    "count": 5,
+    "fixable": false
+  },
+  {
+    "code": "UP007",
+    "name": "non-pep604-annotation-union",
+    "count": 5,
+    "fixable": true
+  },
+  {
+    "code": "ARG004",
+    "name": "unused-static-method-argument",
+    "count": 4,
+    "fixable": false
+  },
+  {
+    "code": "N803",
+    "name": "invalid-argument-name",
+    "count": 4,
+    "fixable": false
+  },
+  {
+    "code": "PTH101",
+    "name": "os-chmod",
+    "count": 4,
+    "fixable": false
+  },
+  {
+    "code": "PTH120",
+    "name": "os-path-dirname",
+    "count": 4,
+    "fixable": false
+  },
+  {
+    "code": "C420",
+    "name": "unnecessary-dict-comprehension-for-iterable",
+    "count": 3,
+    "fixable": true
+  },
+  {
+    "code": "SIM108",
+    "name": "if-else-block-instead-of-if-exp",
+    "count": 3,
+    "fixable": false
+  },
+  {
+    "code": "SIM114",
+    "name": "if-with-same-arms",
+    "count": 3,
+    "fixable": true
+  },
+  {
+    "code": "ARG005",
+    "name": "unused-lambda-argument",
+    "count": 2,
+    "fixable": false
+  },
+  {
+    "code": "B019",
+    "name": "cached-instance-method",
+    "count": 2,
+    "fixable": false
+  },
+  {
+    "code": "B028",
+    "name": "no-explicit-stacklevel",
+    "count": 2,
+    "fixable": false
+  },
+  {
+    "code": "E741",
+    "name": "ambiguous-variable-name",
+    "count": 2,
+    "fixable": false
+  },
+  {
+    "code": "F811",
+    "name": "redefined-while-unused",
+    "count": 2,
+    "fixable": false
+  },
+  {
+    "code": "N801",
+    "name": "invalid-class-name",
+    "count": 2,
+    "fixable": false
+  },
+  {
+    "code": "A002",
+    "name": "builtin-argument-shadowing",
+    "count": 1,
+    "fixable": false
+  },
+  {
+    "code": "A004",
+    "name": "builtin-import-shadowing",
+    "count": 1,
+    "fixable": false
+  },
+  {
+    "code": "F402",
+    "name": "import-shadowed-by-loop-var",
+    "count": 1,
+    "fixable": false
+  },
+  {
+    "code": "F521",
+    "name": "string-dot-format-invalid-format",
+    "count": 1,
+    "fixable": false
+  },
+  {
+    "code": "N802",
+    "name": "invalid-function-name",
+    "count": 1,
+    "fixable": false
+  },
+  {
+    "code": "SIM115",
+    "name": "open-file-with-context-handler",
+    "count": 1,
+    "fixable": false
+  },
+  {
+    "code": "UP034",
+    "name": "extraneous-parentheses",
+    "count": 1,
+    "fixable": true
+  }
+]

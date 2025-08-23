@@ -150,6 +150,15 @@ if _ros2_available:
         "LiquidNavigationNode"
     ])
 
+# Internationalization (i18n) system
+from .i18n import (
+    Language, Region, LocaleConfig, TranslationManager,
+    set_language, set_locale, translate, format_metric, format_datetime,
+    get_compliance_requirements, get_localized_logger, LocalizedLogger,
+    I18nConfig, get_i18n_config, get_translation_manager,
+    integrate_with_error_handler, integrate_with_compliance
+)
+
 # Add evolutionary SDLC components  
 __all__.extend([
     "AutonomousEvolutionarySDLC",
@@ -158,4 +167,25 @@ __all__.extend([
     "EvolutionaryPhase",
     "OptimizationObjective",
     "create_autonomous_evolutionary_sdlc"
+])
+
+# Add i18n components
+__all__.extend([
+    "Language",
+    "Region", 
+    "LocaleConfig",
+    "TranslationManager",
+    "set_language",
+    "set_locale",
+    "translate",
+    "format_metric",
+    "format_datetime",
+    "get_compliance_requirements",
+    "get_localized_logger",
+    "LocalizedLogger",
+    "I18nConfig",
+    "get_i18n_config",
+    "get_translation_manager",
+    "integrate_with_error_handler",
+    "integrate_with_compliance"
 ])
