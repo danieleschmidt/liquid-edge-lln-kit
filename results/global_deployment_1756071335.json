@@ -1,0 +1,495 @@
+{
+  "metadata": {
+    "deployment_timestamp": 1756071335,
+    "total_deployment_time_seconds": 4.2126195430755615,
+    "global_deployment_version": "1.0.0"
+  },
+  "configuration": {
+    "supported_languages": 9,
+    "deployment_regions": 6,
+    "compliance_regions": 3,
+    "wcag_level": "AA"
+  },
+  "internationalization": {
+    "languages_supported": [
+      "en",
+      "es",
+      "fr",
+      "de",
+      "ja",
+      "zh",
+      "pt",
+      "ru",
+      "ar"
+    ],
+    "rtl_support_enabled": true,
+    "translation_coverage": 100.0
+  },
+  "compliance_results": [
+    {
+      "region": "eu_gdpr",
+      "jurisdiction": "European Union",
+      "compliant": false,
+      "violations": [
+        {
+          "requirement": "data_minimization",
+          "description": "Missing or disabled: data_minimization"
+        },
+        {
+          "requirement": "breach_notification_hours",
+          "description": "Missing or disabled: breach_notification_hours"
+        },
+        {
+          "requirement": "age_of_consent",
+          "description": "Missing or disabled: age_of_consent"
+        },
+        {
+          "requirement": "legal_basis_required",
+          "description": "Missing or disabled: legal_basis_required"
+        }
+      ],
+      "recommendations": [
+        "Enable data_minimization to meet General Data Protection Regulation (GDPR) requirements",
+        "Enable breach_notification_hours to meet General Data Protection Regulation (GDPR) requirements",
+        "Enable age_of_consent to meet General Data Protection Regulation (GDPR) requirements",
+        "Enable legal_basis_required to meet General Data Protection Regulation (GDPR) requirements"
+      ]
+    },
+    {
+      "region": "us_ccpa",
+      "jurisdiction": "California, USA",
+      "compliant": false,
+      "violations": [
+        {
+          "requirement": "right_to_delete",
+          "description": "Missing or disabled: right_to_delete"
+        },
+        {
+          "requirement": "non_discrimination",
+          "description": "Missing or disabled: non_discrimination"
+        },
+        {
+          "requirement": "privacy_policy_required",
+          "description": "Missing or disabled: privacy_policy_required"
+        },
+        {
+          "requirement": "consumer_request_response_days",
+          "description": "Missing or disabled: consumer_request_response_days"
+        },
+        {
+          "requirement": "data_retention_limits",
+          "description": "Missing or disabled: data_retention_limits"
+        },
+        {
+          "requirement": "third_party_disclosure",
+          "description": "Missing or disabled: third_party_disclosure"
+        }
+      ],
+      "recommendations": [
+        "Enable right_to_delete to meet California Consumer Privacy Act (CCPA) requirements",
+        "Enable non_discrimination to meet California Consumer Privacy Act (CCPA) requirements",
+        "Enable privacy_policy_required to meet California Consumer Privacy Act (CCPA) requirements",
+        "Enable consumer_request_response_days to meet California Consumer Privacy Act (CCPA) requirements",
+        "Enable data_retention_limits to meet California Consumer Privacy Act (CCPA) requirements",
+        "Enable third_party_disclosure to meet California Consumer Privacy Act (CCPA) requirements"
+      ]
+    },
+    {
+      "region": "sg_pdpa",
+      "jurisdiction": "Singapore",
+      "compliant": false,
+      "violations": [
+        {
+          "requirement": "dpo_appointment",
+          "description": "Missing or disabled: dpo_appointment"
+        },
+        {
+          "requirement": "access_and_correction_rights",
+          "description": "Missing or disabled: access_and_correction_rights"
+        },
+        {
+          "requirement": "data_retention_policies",
+          "description": "Missing or disabled: data_retention_policies"
+        },
+        {
+          "requirement": "cross_border_transfer_restrictions",
+          "description": "Missing or disabled: cross_border_transfer_restrictions"
+        }
+      ],
+      "recommendations": [
+        "Enable dpo_appointment to meet Personal Data Protection Act (PDPA) requirements",
+        "Enable access_and_correction_rights to meet Personal Data Protection Act (PDPA) requirements",
+        "Enable data_retention_policies to meet Personal Data Protection Act (PDPA) requirements",
+        "Enable cross_border_transfer_restrictions to meet Personal Data Protection Act (PDPA) requirements"
+      ]
+    }
+  ],
+  "deployment_results": [
+    {
+      "region": "us-east-1",
+      "display_name": "N. Virginia",
+      "deployment_time_seconds": 0.7042005062103271,
+      "status": "successful",
+      "completed_steps": [
+        "infrastructure_provisioning",
+        "container_deployment",
+        "load_balancer_configuration",
+        "monitoring_setup",
+        "health_check_validation",
+        "performance_validation"
+      ],
+      "performance_metrics": {
+        "latency_ms": 50.135526575700425,
+        "throughput_rps": 993.727613185979,
+        "target_latency_ms": 50.0,
+        "latency_target_met": false
+      },
+      "configuration": {
+        "region_code": "us-east-1",
+        "display_name": "N. Virginia",
+        "timezone": "Americas/New_York",
+        "currency": "USD",
+        "neuromorphic_config": {
+          "input_dim": 64,
+          "liquid_dim": 128,
+          "spike_dim": 256,
+          "output_dim": 8,
+          "energy_optimization": true,
+          "fault_tolerance": true,
+          "auto_scaling": true
+        }
+      },
+      "endpoint": "https://us-east-1.neuromorphic-liquid.com",
+      "health_check_url": "https://us-east-1.neuromorphic-liquid.com/health"
+    },
+    {
+      "region": "eu-west-1",
+      "display_name": "Ireland",
+      "deployment_time_seconds": 0.7016811370849609,
+      "status": "successful",
+      "completed_steps": [
+        "infrastructure_provisioning",
+        "container_deployment",
+        "load_balancer_configuration",
+        "monitoring_setup",
+        "health_check_validation",
+        "performance_validation"
+      ],
+      "performance_metrics": {
+        "latency_ms": 69.74721070921153,
+        "throughput_rps": 641.5593670542078,
+        "target_latency_ms": 75.0,
+        "latency_target_met": true
+      },
+      "configuration": {
+        "region_code": "eu-west-1",
+        "display_name": "Ireland",
+        "timezone": "Europe/Dublin",
+        "currency": "EUR",
+        "neuromorphic_config": {
+          "input_dim": 64,
+          "liquid_dim": 128,
+          "spike_dim": 256,
+          "output_dim": 8,
+          "energy_optimization": true,
+          "fault_tolerance": true,
+          "auto_scaling": true
+        }
+      },
+      "endpoint": "https://eu-west-1.neuromorphic-liquid.com",
+      "health_check_url": "https://eu-west-1.neuromorphic-liquid.com/health"
+    },
+    {
+      "region": "ap-southeast-1",
+      "display_name": "Singapore",
+      "deployment_time_seconds": 0.701690673828125,
+      "status": "successful",
+      "completed_steps": [
+        "infrastructure_provisioning",
+        "container_deployment",
+        "load_balancer_configuration",
+        "monitoring_setup",
+        "health_check_validation",
+        "performance_validation"
+      ],
+      "performance_metrics": {
+        "latency_ms": 86.23351906297029,
+        "throughput_rps": 770.2348739228427,
+        "target_latency_ms": 100.0,
+        "latency_target_met": true
+      },
+      "configuration": {
+        "region_code": "ap-southeast-1",
+        "display_name": "Singapore",
+        "timezone": "Asia/Singapore",
+        "currency": "SGD",
+        "neuromorphic_config": {
+          "input_dim": 64,
+          "liquid_dim": 128,
+          "spike_dim": 256,
+          "output_dim": 8,
+          "energy_optimization": true,
+          "fault_tolerance": true,
+          "auto_scaling": true
+        }
+      },
+      "endpoint": "https://ap-southeast-1.neuromorphic-liquid.com",
+      "health_check_url": "https://ap-southeast-1.neuromorphic-liquid.com/health"
+    },
+    {
+      "region": "ap-northeast-1",
+      "display_name": "Tokyo",
+      "deployment_time_seconds": 0.701507568359375,
+      "status": "successful",
+      "completed_steps": [
+        "infrastructure_provisioning",
+        "container_deployment",
+        "load_balancer_configuration",
+        "monitoring_setup",
+        "health_check_validation",
+        "performance_validation"
+      ],
+      "performance_metrics": {
+        "latency_ms": 83.96657622461618,
+        "throughput_rps": 1104.9514505905747,
+        "target_latency_ms": 80.0,
+        "latency_target_met": false
+      },
+      "configuration": {
+        "region_code": "ap-northeast-1",
+        "display_name": "Tokyo",
+        "timezone": "Asia/Tokyo",
+        "currency": "JPY",
+        "neuromorphic_config": {
+          "input_dim": 64,
+          "liquid_dim": 128,
+          "spike_dim": 256,
+          "output_dim": 8,
+          "energy_optimization": true,
+          "fault_tolerance": true,
+          "auto_scaling": true
+        }
+      },
+      "endpoint": "https://ap-northeast-1.neuromorphic-liquid.com",
+      "health_check_url": "https://ap-northeast-1.neuromorphic-liquid.com/health"
+    },
+    {
+      "region": "ap-southeast-2",
+      "display_name": "Sydney",
+      "deployment_time_seconds": 0.701693058013916,
+      "status": "successful",
+      "completed_steps": [
+        "infrastructure_provisioning",
+        "container_deployment",
+        "load_balancer_configuration",
+        "monitoring_setup",
+        "health_check_validation",
+        "performance_validation"
+      ],
+      "performance_metrics": {
+        "latency_ms": 84.81272671913595,
+        "throughput_rps": 565.5089160500348,
+        "target_latency_ms": 120.0,
+        "latency_target_met": true
+      },
+      "configuration": {
+        "region_code": "ap-southeast-2",
+        "display_name": "Sydney",
+        "timezone": "Australia/Sydney",
+        "currency": "AUD",
+        "neuromorphic_config": {
+          "input_dim": 64,
+          "liquid_dim": 128,
+          "spike_dim": 256,
+          "output_dim": 8,
+          "energy_optimization": true,
+          "fault_tolerance": true,
+          "auto_scaling": true
+        }
+      },
+      "endpoint": "https://ap-southeast-2.neuromorphic-liquid.com",
+      "health_check_url": "https://ap-southeast-2.neuromorphic-liquid.com/health"
+    },
+    {
+      "region": "sa-east-1",
+      "display_name": "S\u00e3o Paulo",
+      "deployment_time_seconds": 0.7018465995788574,
+      "status": "successful",
+      "completed_steps": [
+        "infrastructure_provisioning",
+        "container_deployment",
+        "load_balancer_configuration",
+        "monitoring_setup",
+        "health_check_validation",
+        "performance_validation"
+      ],
+      "performance_metrics": {
+        "latency_ms": 96.52196794817858,
+        "throughput_rps": 1060.7239584762801,
+        "target_latency_ms": 100.0,
+        "latency_target_met": true
+      },
+      "configuration": {
+        "region_code": "sa-east-1",
+        "display_name": "S\u00e3o Paulo",
+        "timezone": "Americas/Sao_Paulo",
+        "currency": "BRL",
+        "neuromorphic_config": {
+          "input_dim": 64,
+          "liquid_dim": 128,
+          "spike_dim": 256,
+          "output_dim": 8,
+          "energy_optimization": true,
+          "fault_tolerance": true,
+          "auto_scaling": true
+        }
+      },
+      "endpoint": "https://sa-east-1.neuromorphic-liquid.com",
+      "health_check_url": "https://sa-east-1.neuromorphic-liquid.com/health"
+    }
+  ],
+  "cdn_configuration": {
+    "providers": [
+      "CloudFlare",
+      "AWS CloudFront"
+    ],
+    "cache_ttl_seconds": 3600,
+    "edge_locations": [
+      {
+        "location_code": "us-east",
+        "location_name": "Ashburn, VA",
+        "cache_hit_ratio": 0.252,
+        "status": "active",
+        "last_health_check": 1756071335.6561275
+      },
+      {
+        "location_code": "us-west",
+        "location_name": "San Francisco, CA",
+        "cache_hit_ratio": 0.285,
+        "status": "active",
+        "last_health_check": 1756071335.656156
+      },
+      {
+        "location_code": "eu-west",
+        "location_name": "Dublin, Ireland",
+        "cache_hit_ratio": 0.318,
+        "status": "active",
+        "last_health_check": 1756071335.6561604
+      },
+      {
+        "location_code": "eu-central",
+        "location_name": "Frankfurt, Germany",
+        "cache_hit_ratio": 0.29100000000000004,
+        "status": "active",
+        "last_health_check": 1756071335.6561625
+      },
+      {
+        "location_code": "ap-southeast",
+        "location_name": "Singapore",
+        "cache_hit_ratio": 0.35600000000000004,
+        "status": "active",
+        "last_health_check": 1756071335.656165
+      },
+      {
+        "location_code": "ap-northeast",
+        "location_name": "Tokyo, Japan",
+        "cache_hit_ratio": 0.324,
+        "status": "active",
+        "last_health_check": 1756071335.6561677
+      },
+      {
+        "location_code": "ap-southeast-2",
+        "location_name": "Sydney, Australia",
+        "cache_hit_ratio": 0.389,
+        "status": "active",
+        "last_health_check": 1756071335.6561718
+      }
+    ]
+  },
+  "performance_validation": {
+    "overall_status": "degraded",
+    "regional_performance": {
+      "us-east-1": {
+        "status": "degraded",
+        "latency_ms": 50.135526575700425,
+        "throughput_rps": 993.727613185979,
+        "target_met": false
+      },
+      "eu-west-1": {
+        "status": "healthy",
+        "latency_ms": 69.74721070921153,
+        "throughput_rps": 641.5593670542078,
+        "target_met": true
+      },
+      "ap-southeast-1": {
+        "status": "healthy",
+        "latency_ms": 86.23351906297029,
+        "throughput_rps": 770.2348739228427,
+        "target_met": true
+      },
+      "ap-northeast-1": {
+        "status": "degraded",
+        "latency_ms": 83.96657622461618,
+        "throughput_rps": 1104.9514505905747,
+        "target_met": false
+      },
+      "ap-southeast-2": {
+        "status": "healthy",
+        "latency_ms": 84.81272671913595,
+        "throughput_rps": 565.5089160500348,
+        "target_met": true
+      },
+      "sa-east-1": {
+        "status": "healthy",
+        "latency_ms": 96.52196794817858,
+        "throughput_rps": 1060.7239584762801,
+        "target_met": true
+      }
+    },
+    "global_metrics": {
+      "average_latency_ms": 78.56958787330217,
+      "total_throughput_rps": 5136.706179279919,
+      "sla_compliance_ratio": 0.6666666666666666,
+      "regions_deployed": 6,
+      "regions_healthy": 4
+    }
+  },
+  "accessibility_configuration": {
+    "wcag_level": "AA",
+    "features": {
+      "keyboard_navigation": true,
+      "screen_reader_support": true,
+      "high_contrast_mode": true,
+      "text_scaling": true,
+      "audio_descriptions": true,
+      "captions_support": true,
+      "focus_indicators": true,
+      "color_blind_support": true
+    },
+    "compliance_checks": {
+      "contrast_ratio_minimum": 4.5,
+      "large_text_contrast_minimum": 3.0,
+      "keyboard_accessible": true,
+      "aria_labels_present": true,
+      "alt_text_required": true,
+      "heading_structure_valid": true
+    }
+  },
+  "global_metrics": {
+    "successful_deployments": 6,
+    "total_global_throughput_rps": 5136.7061792799195,
+    "average_global_latency_ms": 78.56958787330215,
+    "sla_compliance_ratio": 0.6666666666666666,
+    "languages_localized": 9,
+    "regions_compliant": 0,
+    "cdn_edge_locations": 7
+  },
+  "global_readiness": {
+    "international_ready": true,
+    "compliance_ready": false,
+    "multi_region_deployed": true,
+    "cdn_enabled": true,
+    "accessibility_compliant": true,
+    "production_ready": false
+  }
+}
