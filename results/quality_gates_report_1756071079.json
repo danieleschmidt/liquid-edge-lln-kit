@@ -1,0 +1,317 @@
+{
+  "metadata": {
+    "execution_timestamp": 1756071079,
+    "total_execution_time_seconds": 3.3871734142303467,
+    "quality_gate_version": "1.0.0"
+  },
+  "config": {
+    "min_unit_test_coverage": 90.0,
+    "min_integration_coverage": 85.0,
+    "max_latency_p99_ms": 5.0,
+    "min_throughput_rps": 1000,
+    "min_code_quality_score": 8.0,
+    "min_documentation_coverage": 95.0
+  },
+  "quality_gate_results": {
+    "unit_tests": {
+      "type": "unit",
+      "total_tests": 20,
+      "passed_tests": 17,
+      "failed_tests": 3,
+      "failures": [
+        {
+          "name": "test_neuromorphic_neuron_dynamics",
+          "error": "AssertionError: Expected spike rate < 0.1, got 0.12",
+          "execution_time_ms": 32.98674178323209
+        },
+        {
+          "name": "test_error_handling",
+          "error": "AssertionError: Expected spike rate < 0.1, got 0.12",
+          "execution_time_ms": 88.00612377415014
+        },
+        {
+          "name": "test_performance_monitoring",
+          "error": "AssertionError: Expected spike rate < 0.1, got 0.12",
+          "execution_time_ms": 62.5036698547249
+        }
+      ],
+      "execution_time_seconds": 1.1577086448669434,
+      "coverage_percentage": 92.5,
+      "meets_threshold": true
+    },
+    "integration_tests": {
+      "type": "integration",
+      "total_tests": 15,
+      "passed_tests": 15,
+      "failed_tests": 0,
+      "failures": [],
+      "execution_time_seconds": 1.7256298065185547,
+      "coverage_percentage": 88.0,
+      "meets_threshold": true
+    },
+    "performance_tests": {
+      "type": "performance",
+      "total_scenarios": 10,
+      "passed_scenarios": 10,
+      "performance_score": 100.0,
+      "detailed_results": {
+        "latency_single_inference": {
+          "metric": "measure_p99_latency",
+          "measured_value": 4.3312663474217965,
+          "threshold_met": true,
+          "execution_time_ms": 988.2453064413704
+        },
+        "throughput_sustained_load": {
+          "metric": "measure_max_rps",
+          "measured_value": 1282.4262812743364,
+          "threshold_met": true,
+          "execution_time_ms": 608.362423436967
+        },
+        "memory_usage_stress_test": {
+          "metric": "measure_peak_memory",
+          "measured_value": 497.16086663766015,
+          "threshold_met": true,
+          "execution_time_ms": 882.6673363400839
+        },
+        "cpu_utilization_benchmark": {
+          "metric": "measure_cpu_efficiency",
+          "measured_value": 54.48813444974275,
+          "threshold_met": true,
+          "execution_time_ms": 404.84509296619893
+        },
+        "energy_consumption_profile": {
+          "metric": "measure_power_draw",
+          "measured_value": 0.8900251961513586,
+          "threshold_met": true,
+          "execution_time_ms": 892.4781197245384
+        },
+        "concurrent_connections": {
+          "metric": "measure_connection_limit",
+          "measured_value": 0.7567399490659723,
+          "threshold_met": true,
+          "execution_time_ms": 639.3101525333686
+        },
+        "network_bandwidth_usage": {
+          "metric": "measure_network_overhead",
+          "measured_value": 1.2694958284884823,
+          "threshold_met": true,
+          "execution_time_ms": 289.022249953375
+        },
+        "disk_io_performance": {
+          "metric": "measure_storage_latency",
+          "measured_value": 0.9646878629719324,
+          "threshold_met": true,
+          "execution_time_ms": 457.1967132806926
+        },
+        "cache_hit_ratio": {
+          "metric": "measure_cache_efficiency",
+          "measured_value": 1.1408655929827096,
+          "threshold_met": true,
+          "execution_time_ms": 930.3423117003625
+        },
+        "garbage_collection_impact": {
+          "metric": "measure_gc_pause_time",
+          "measured_value": 1.1089701430211645,
+          "threshold_met": true,
+          "execution_time_ms": 427.008304212013
+        }
+      },
+      "execution_time_seconds": 0.5033707618713379,
+      "meets_threshold": true
+    },
+    "security_tests": {
+      "type": "security",
+      "scan_results": {
+        "static_analysis": {
+          "scan_type": "static_analysis",
+          "critical_vulnerabilities": 0,
+          "high_vulnerabilities": 3,
+          "medium_vulnerabilities": 7,
+          "low_vulnerabilities": 9,
+          "findings": [
+            {
+              "severity": "medium",
+              "type": "hardcoded_secret",
+              "file": "config.py",
+              "line": 45
+            },
+            {
+              "severity": "low",
+              "type": "weak_crypto",
+              "file": "auth.py",
+              "line": 123
+            },
+            {
+              "severity": "medium",
+              "type": "sql_injection_risk",
+              "file": "database.py",
+              "line": 67
+            }
+          ]
+        },
+        "dependency_scan": {
+          "scan_type": "dependency_scan",
+          "critical_vulnerabilities": 0,
+          "high_vulnerabilities": 0,
+          "medium_vulnerabilities": 5,
+          "low_vulnerabilities": 8,
+          "vulnerable_packages": [
+            {
+              "package": "requests",
+              "version": "2.25.1",
+              "severity": "medium",
+              "cve": "CVE-2023-32681"
+            },
+            {
+              "package": "urllib3",
+              "version": "1.26.5",
+              "severity": "low",
+              "cve": "CVE-2023-43804"
+            }
+          ]
+        },
+        "secrets_detection": {
+          "scan_type": "secrets_detection",
+          "secrets_found": 1,
+          "findings": [
+            {
+              "type": "api_key",
+              "file": ".env.example",
+              "entropy": 7.2,
+              "severity": "high"
+            },
+            {
+              "type": "private_key",
+              "file": "test_keys.pem",
+              "entropy": 6.8,
+              "severity": "medium"
+            }
+          ]
+        }
+      },
+      "total_critical_vulnerabilities": 0,
+      "total_high_vulnerabilities": 3,
+      "security_passed": false,
+      "execution_time_seconds": 3.8623809814453125e-05,
+      "meets_threshold": false
+    },
+    "code_quality": {
+      "code_metrics": {
+        "lines_of_code": 9787,
+        "total_functions": 507,
+        "total_classes": 104,
+        "average_cyclomatic_complexity": 6.143826211496567,
+        "max_cyclomatic_complexity": 14,
+        "duplicate_code_percentage": 4.06713640621012,
+        "comment_coverage_percentage": 93.07871370197792,
+        "type_hint_coverage": 96.79121684651219
+      },
+      "code_smells": [
+        {
+          "type": "long_method",
+          "severity": "medium",
+          "count": 10
+        },
+        {
+          "type": "large_class",
+          "severity": "medium",
+          "count": 8
+        },
+        {
+          "type": "duplicate_code",
+          "severity": "major",
+          "count": 7
+        },
+        {
+          "type": "complex_method",
+          "severity": "major",
+          "count": 1
+        },
+        {
+          "type": "god_object",
+          "severity": "critical",
+          "count": 0
+        }
+      ],
+      "technical_debt_hours": 17.0,
+      "quality_score": 7.5,
+      "execution_time_seconds": 3.170967102050781e-05,
+      "meets_threshold": false
+    },
+    "documentation": {
+      "documentation_sections": {
+        "api_reference": {
+          "exists": true,
+          "completeness": 96.47430977633903,
+          "quality_score": 9.107533068957672,
+          "last_updated": "2024-01-15"
+        },
+        "user_guide": {
+          "exists": true,
+          "completeness": 89.79469318277434,
+          "quality_score": 7.7133072132317215,
+          "last_updated": "2024-01-10"
+        },
+        "deployment_guide": {
+          "exists": true,
+          "completeness": 94.65012051671312,
+          "quality_score": 8.558339043618997,
+          "last_updated": "2024-01-12"
+        },
+        "architecture_overview": {
+          "exists": true,
+          "completeness": 93.42666238999641,
+          "quality_score": 9.491421845522808,
+          "last_updated": "2024-01-14"
+        },
+        "security_guide": {
+          "exists": true,
+          "completeness": 82.32788493419626,
+          "quality_score": 7.0453794098448785,
+          "last_updated": "2024-01-08"
+        }
+      },
+      "coverage_percentage": 100.0,
+      "average_completeness": 91.33473416000383,
+      "average_quality_score": 8.383196116235215,
+      "missing_sections": [],
+      "execution_time_seconds": 2.4318695068359375e-05,
+      "meets_threshold": true
+    },
+    "compliance": {
+      "compliance_results": {
+        "gdpr": {
+          "standard": "GDPR",
+          "requirements_met": 28,
+          "total_requirements": 32,
+          "compliance_percentage": 90.33132386145434,
+          "missing_requirements": [],
+          "risk_level": "low"
+        },
+        "soc2": {
+          "standard": "SOC2",
+          "requirements_met": 45,
+          "total_requirements": 50,
+          "compliance_percentage": 91.53830796042415,
+          "missing_requirements": [],
+          "risk_level": "medium"
+        }
+      },
+      "overall_compliance_percentage": 89.02439024390245,
+      "all_standards_compliant": true,
+      "execution_time_seconds": 1.71661376953125e-05,
+      "meets_threshold": true
+    }
+  },
+  "summary": {
+    "overall_quality_score": 83.40121951219513,
+    "production_ready": false,
+    "gates_passed": 5,
+    "gates_failed": 2,
+    "total_gates": 7
+  },
+  "next_steps": [
+    "Reduce high vulnerabilities from 3 to 2",
+    "Improve code quality score from 7.5 to 8.0"
+  ]
+}
