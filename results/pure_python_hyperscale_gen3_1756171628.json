@@ -1,0 +1,497 @@
+{
+  "High Throughput Config": {
+    "configuration": {
+      "name": "High Throughput Config",
+      "network": {
+        "input_dim": 8,
+        "hidden_dim": 16,
+        "output_dim": 2,
+        "fusion_mode": "balanced_fusion",
+        "energy_target_uw": 30.0
+      },
+      "hyperscale": {
+        "thread_pool_size": 6,
+        "caching_enabled": true,
+        "batch_processing": true,
+        "cache_policy": "adaptive"
+      }
+    },
+    "performance_results": {
+      "avg_inference_time_ms": 1.0507392883300781,
+      "min_inference_time_ms": 0.8783340454101562,
+      "max_inference_time_ms": 3.7491321563720703,
+      "p95_inference_time_ms": 1.215219497680664,
+      "sequential_throughput_hz": 947.3900099836918,
+      "concurrent_throughput_hz": 1441.4436210948265,
+      "batch_throughput_hz": 2830.241032146617,
+      "successful_concurrent_ratio": 1.0
+    },
+    "system_metrics": {
+      "inference_metrics": {
+        "total_inferences": 1050,
+        "avg_inference_time_ms": 92.65063422066825,
+        "throughput_hz": 10.793234265599045,
+        "concurrent_requests": 0,
+        "batches_processed": 1
+      },
+      "cache_metrics": {
+        "hit_rate": 0.0,
+        "miss_rate": 1.0,
+        "total_requests": 1050,
+        "cache_size_mb": 4.520902633666992,
+        "evictions": 0,
+        "efficiency_score": 0.0
+      },
+      "worker_metrics": {
+        "total_workers": 6,
+        "worker_states": {
+          "worker_0": {
+            "active_requests": 0,
+            "total_requests": 1050,
+            "avg_response_time_ms": 92.65063422066824
+          },
+          "worker_1": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_2": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_3": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_4": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_5": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          }
+        }
+      },
+      "system_metrics": {
+        "memory_usage_mb": 64.52090263366699,
+        "threads_active": 8
+      }
+    },
+    "efficiency_scores": {
+      "cache_efficiency_score": 0.0,
+      "throughput_score": 100.0,
+      "latency_score": 78.98521423339844,
+      "overall_score": 59.66173807779948
+    }
+  },
+  "Low Latency Config": {
+    "configuration": {
+      "name": "Low Latency Config",
+      "network": {
+        "input_dim": 6,
+        "hidden_dim": 12,
+        "output_dim": 2,
+        "fusion_mode": "neuro_dominant",
+        "energy_target_uw": 20.0
+      },
+      "hyperscale": {
+        "thread_pool_size": 4,
+        "caching_enabled": true,
+        "batch_processing": false,
+        "cache_policy": "adaptive"
+      }
+    },
+    "performance_results": {
+      "avg_inference_time_ms": 1.003270149230957,
+      "min_inference_time_ms": 0.6692409515380859,
+      "max_inference_time_ms": 43.91813278198242,
+      "p95_inference_time_ms": 1.119375228881836,
+      "sequential_throughput_hz": 992.1213204996106,
+      "concurrent_throughput_hz": 1630.8864551359868,
+      "batch_throughput_hz": 1075.3357296318895,
+      "successful_concurrent_ratio": 1.0
+    },
+    "system_metrics": {
+      "inference_metrics": {
+        "total_inferences": 1150,
+        "avg_inference_time_ms": 78.56738007586935,
+        "throughput_hz": 12.727928550428183,
+        "concurrent_requests": 0,
+        "batches_processed": 0
+      },
+      "cache_metrics": {
+        "hit_rate": 0.0,
+        "miss_rate": 1.0,
+        "total_requests": 1150,
+        "cache_size_mb": 4.216623306274414,
+        "evictions": 0,
+        "efficiency_score": 0.0
+      },
+      "worker_metrics": {
+        "total_workers": 4,
+        "worker_states": {
+          "worker_0": {
+            "active_requests": 0,
+            "total_requests": 1150,
+            "avg_response_time_ms": 78.56738007586932
+          },
+          "worker_1": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_2": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_3": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          }
+        }
+      },
+      "system_metrics": {
+        "memory_usage_mb": 44.216623306274414,
+        "threads_active": 12
+      }
+    },
+    "efficiency_scores": {
+      "cache_efficiency_score": 0.0,
+      "throughput_score": 100.0,
+      "latency_score": 79.93459701538086,
+      "overall_score": 59.97819900512695
+    }
+  },
+  "Memory Efficient Config": {
+    "configuration": {
+      "name": "Memory Efficient Config",
+      "network": {
+        "input_dim": 10,
+        "hidden_dim": 20,
+        "output_dim": 3,
+        "fusion_mode": "liquid_dominant",
+        "energy_target_uw": 40.0
+      },
+      "hyperscale": {
+        "thread_pool_size": 3,
+        "caching_enabled": true,
+        "batch_processing": true,
+        "cache_policy": "lfu"
+      }
+    },
+    "performance_results": {
+      "avg_inference_time_ms": 1.1671738624572754,
+      "min_inference_time_ms": 0.9820461273193359,
+      "max_inference_time_ms": 2.7811527252197266,
+      "p95_inference_time_ms": 1.3875961303710938,
+      "sequential_throughput_hz": 853.1476098749662,
+      "concurrent_throughput_hz": 1264.838001495742,
+      "batch_throughput_hz": 2148.6882886021217,
+      "successful_concurrent_ratio": 1.0
+    },
+    "system_metrics": {
+      "inference_metrics": {
+        "total_inferences": 1050,
+        "avg_inference_time_ms": 114.0656396320888,
+        "throughput_hz": 8.766881974496737,
+        "concurrent_requests": 0,
+        "batches_processed": 1
+      },
+      "cache_metrics": {
+        "hit_rate": 0.0,
+        "miss_rate": 1.0,
+        "total_requests": 1050,
+        "cache_size_mb": 5.20045280456543,
+        "evictions": 0,
+        "efficiency_score": 0.0
+      },
+      "worker_metrics": {
+        "total_workers": 3,
+        "worker_states": {
+          "worker_0": {
+            "active_requests": 0,
+            "total_requests": 1050,
+            "avg_response_time_ms": 114.06563963208883
+          },
+          "worker_1": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_2": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          }
+        }
+      },
+      "system_metrics": {
+        "memory_usage_mb": 35.20045280456543,
+        "threads_active": 12
+      }
+    },
+    "efficiency_scores": {
+      "cache_efficiency_score": 0.0,
+      "throughput_score": 100.0,
+      "latency_score": 76.65652275085449,
+      "overall_score": 58.885507583618164
+    }
+  },
+  "Adaptive Hyperscale Config": {
+    "configuration": {
+      "name": "Adaptive Hyperscale Config",
+      "network": {
+        "input_dim": 12,
+        "hidden_dim": 24,
+        "output_dim": 4,
+        "fusion_mode": "adaptive",
+        "energy_target_uw": 50.0
+      },
+      "hyperscale": {
+        "thread_pool_size": 8,
+        "caching_enabled": true,
+        "batch_processing": true,
+        "cache_policy": "adaptive"
+      }
+    },
+    "performance_results": {
+      "avg_inference_time_ms": 1.5687980651855469,
+      "min_inference_time_ms": 1.2238025665283203,
+      "max_inference_time_ms": 9.921550750732422,
+      "p95_inference_time_ms": 2.3040771484375,
+      "sequential_throughput_hz": 634.7448749655334,
+      "concurrent_throughput_hz": 896.6456680659084,
+      "batch_throughput_hz": 1671.2638365356263,
+      "successful_concurrent_ratio": 1.0
+    },
+    "system_metrics": {
+      "inference_metrics": {
+        "total_inferences": 1050,
+        "avg_inference_time_ms": 146.9025234949021,
+        "throughput_hz": 6.807235003248277,
+        "concurrent_requests": 0,
+        "batches_processed": 1
+      },
+      "cache_metrics": {
+        "hit_rate": 0.0,
+        "miss_rate": 1.0,
+        "total_requests": 1050,
+        "cache_size_mb": 5.880002975463867,
+        "evictions": 0,
+        "efficiency_score": 0.0
+      },
+      "worker_metrics": {
+        "total_workers": 8,
+        "worker_states": {
+          "worker_0": {
+            "active_requests": 0,
+            "total_requests": 1050,
+            "avg_response_time_ms": 146.90252349490206
+          },
+          "worker_1": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_2": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_3": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_4": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_5": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_6": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          },
+          "worker_7": {
+            "active_requests": 0,
+            "total_requests": 0,
+            "avg_response_time_ms": 0.0
+          }
+        }
+      },
+      "system_metrics": {
+        "memory_usage_mb": 85.88000297546387,
+        "threads_active": 21
+      }
+    },
+    "efficiency_scores": {
+      "cache_efficiency_score": 0.0,
+      "throughput_score": 89.66456680659084,
+      "latency_score": 68.62403869628906,
+      "overall_score": 52.76286850095997
+    }
+  },
+  "throughput_stress_test": {
+    "load_levels": {
+      "load_100": {
+        "load": 100,
+        "successful_requests": 100,
+        "failed_requests": 0,
+        "total_time_s": 0.0879511833190918,
+        "throughput_hz": 1136.9943669455183,
+        "success_rate": 1.0
+      },
+      "load_500": {
+        "load": 500,
+        "successful_requests": 500,
+        "failed_requests": 0,
+        "total_time_s": 0.4192330837249756,
+        "throughput_hz": 1192.6539660405451,
+        "success_rate": 1.0
+      },
+      "load_1000": {
+        "load": 1000,
+        "successful_requests": 1000,
+        "failed_requests": 0,
+        "total_time_s": 0.7705867290496826,
+        "throughput_hz": 1297.7124602615966,
+        "success_rate": 1.0
+      },
+      "load_2000": {
+        "load": 2000,
+        "successful_requests": 2000,
+        "failed_requests": 0,
+        "total_time_s": 1.57511305809021,
+        "throughput_hz": 1269.7501234768229,
+        "success_rate": 1.0
+      },
+      "load_5000": {
+        "load": 5000,
+        "successful_requests": 5000,
+        "failed_requests": 0,
+        "total_time_s": 4.068952798843384,
+        "throughput_hz": 1228.8174002463902,
+        "success_rate": 1.0
+      }
+    },
+    "max_throughput_hz": 1297.7124602615966,
+    "max_successful_load": "load_5000"
+  },
+  "latency_benchmark": {
+    "min_latency_ms": 0.6434917449951172,
+    "max_latency_ms": 5.382299423217773,
+    "avg_latency_ms": 0.8835501670837402,
+    "median_latency_ms": 0.8349418640136719,
+    "p95_latency_ms": 1.1916160583496094,
+    "p99_latency_ms": 1.4348030090332031,
+    "sub_ms_percentage": 86.8,
+    "sub_500us_percentage": 0.0
+  },
+  "concurrent_load_test": {
+    "concurrency_results": {
+      "concurrency_10": {
+        "concurrency_level": 10,
+        "total_requests": 50,
+        "successful_requests": 50,
+        "failed_requests": 0,
+        "total_time_s": 0.048216819763183594,
+        "requests_per_second": 1036.9825352558398,
+        "success_rate": 1.0,
+        "avg_response_time_ms": 0.9643363952636719
+      },
+      "concurrency_50": {
+        "concurrency_level": 50,
+        "total_requests": 250,
+        "successful_requests": 250,
+        "failed_requests": 0,
+        "total_time_s": 0.3757197856903076,
+        "requests_per_second": 665.389499093524,
+        "success_rate": 1.0,
+        "avg_response_time_ms": 1.5028791427612305
+      },
+      "concurrency_100": {
+        "concurrency_level": 100,
+        "total_requests": 500,
+        "successful_requests": 500,
+        "failed_requests": 0,
+        "total_time_s": 0.4143869876861572,
+        "requests_per_second": 1206.6015943017092,
+        "success_rate": 1.0,
+        "avg_response_time_ms": 0.8287739753723145
+      },
+      "concurrency_200": {
+        "concurrency_level": 200,
+        "total_requests": 1000,
+        "successful_requests": 1000,
+        "failed_requests": 0,
+        "total_time_s": 0.8545713424682617,
+        "requests_per_second": 1170.177316163793,
+        "success_rate": 1.0,
+        "avg_response_time_ms": 0.8545713424682617
+      },
+      "concurrency_500": {
+        "concurrency_level": 500,
+        "total_requests": 2500,
+        "successful_requests": 2500,
+        "failed_requests": 0,
+        "total_time_s": 2.698513984680176,
+        "requests_per_second": 926.4358140046091,
+        "success_rate": 1.0,
+        "avg_response_time_ms": 1.0794055938720704
+      },
+      "concurrency_1000": {
+        "concurrency_level": 1000,
+        "total_requests": 5000,
+        "successful_requests": 5000,
+        "failed_requests": 0,
+        "total_time_s": 5.061042308807373,
+        "requests_per_second": 987.9387870950723,
+        "success_rate": 1.0,
+        "avg_response_time_ms": 1.0122084617614746
+      }
+    },
+    "max_rps": 1206.6015943017092,
+    "optimal_concurrency": "concurrency_500"
+  },
+  "hyperscale_analysis": {
+    "performance_summary": {
+      "max_throughput_hz": 1630.8864551359868,
+      "min_latency_ms": 1.003270149230957,
+      "avg_cache_hit_rate_percent": 0.0,
+      "best_throughput_config": "Low Latency Config",
+      "best_latency_config": "Low Latency Config",
+      "best_overall_config": "Low Latency Config"
+    },
+    "scalability_achievements": {
+      "peak_throughput_hz": 1297.7124602615966,
+      "p95_latency_ms": 1.1916160583496094,
+      "sub_millisecond_percentage": 86.8,
+      "max_requests_per_second": 1206.6015943017092,
+      "hyperscale_ready": true
+    },
+    "efficiency_metrics": {
+      "cache_utilization": 0.0,
+      "resource_efficiency": 57.82207829187614,
+      "scaling_efficiency": 0.7957098767819434
+    },
+    "benchmark_achievements": {
+      "throughput_target_10k_hz": false,
+      "latency_target_1ms": false,
+      "cache_target_80_percent": false,
+      "concurrent_target_1k_rps": true
+    }
+  }
+}
