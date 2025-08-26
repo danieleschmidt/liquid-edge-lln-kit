@@ -1,0 +1,376 @@
+{
+  "Maximum Security": {
+    "configuration": {
+      "name": "Maximum Security",
+      "network": {
+        "input_dim": 8,
+        "hidden_dim": 16,
+        "output_dim": 2,
+        "fusion_mode": "balanced_fusion",
+        "energy_target_uw": 30.0
+      },
+      "robustness_enabled": {
+        "security": true,
+        "monitoring": true,
+        "graceful_degradation": true
+      }
+    },
+    "test_results": {
+      "total_inferences": 700,
+      "successful_inferences": 700,
+      "failed_inferences": 0,
+      "graceful_degradations": 650,
+      "security_violations": 0,
+      "circuit_breaker_trips": 0,
+      "average_inference_time_ms": 0.30287742614746094,
+      "uptime_percentage": 100.0,
+      "error_recovery_time_ms": 0.0
+    },
+    "system_health": {
+      "system_state": "degraded",
+      "threat_level": "high",
+      "circuit_breaker_state": "closed",
+      "consecutive_errors": 650,
+      "uptime_hours": 5.92445002661811e-05,
+      "total_inferences": 50,
+      "current_metrics": {
+        "timestamp": 1756171237.654769,
+        "avg_inference_time_ms": 0.2983999252319336,
+        "avg_energy_consumption_uw": 1.6486844297758365,
+        "error_rate_per_sec": 1.6666666666666667,
+        "total_inferences": 50,
+        "system_uptime_sec": 0.21328020095825195,
+        "alerts_count": 647
+      },
+      "recent_alerts": [
+        {
+          "timestamp": 1756171237.6513352,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.6516957,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.6521358,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.6524687,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.6527941,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.6532524,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.653508,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.653784,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.6541889,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.6545467,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        }
+      ],
+      "timestamp": 1756171237.6547925
+    },
+    "robustness_metrics": {
+      "robustness_score": 75.0,
+      "fault_tolerance_rating": "Excellent",
+      "security_rating": "Excellent",
+      "recovery_rating": "Excellent"
+    },
+    "performance_impact": {
+      "baseline_inference_time_ms": 0.3,
+      "robust_inference_time_ms": 0.30287742614746094,
+      "overhead_percentage": 0.9591420491536495
+    }
+  },
+  "High Performance": {
+    "configuration": {
+      "name": "High Performance",
+      "network": {
+        "input_dim": 10,
+        "hidden_dim": 20,
+        "output_dim": 3,
+        "fusion_mode": "quantum_dominant",
+        "energy_target_uw": 45.0
+      },
+      "robustness_enabled": {
+        "security": true,
+        "monitoring": true,
+        "graceful_degradation": true
+      }
+    },
+    "test_results": {
+      "total_inferences": 700,
+      "successful_inferences": 700,
+      "failed_inferences": 0,
+      "graceful_degradations": 600,
+      "security_violations": 0,
+      "circuit_breaker_trips": 0,
+      "average_inference_time_ms": 0.33779008047921316,
+      "uptime_percentage": 100.0,
+      "error_recovery_time_ms": 0.0
+    },
+    "system_health": {
+      "system_state": "degraded",
+      "threat_level": "high",
+      "circuit_breaker_state": "closed",
+      "consecutive_errors": 600,
+      "uptime_hours": 6.60183032353719e-05,
+      "total_inferences": 100,
+      "current_metrics": {
+        "timestamp": 1756171237.8940592,
+        "avg_inference_time_ms": 0.40992259979248047,
+        "avg_energy_consumption_uw": 1.646381798196889,
+        "error_rate_per_sec": 1.6666666666666667,
+        "total_inferences": 100,
+        "system_uptime_sec": 0.23766589164733887,
+        "alerts_count": 597
+      },
+      "recent_alerts": [
+        {
+          "timestamp": 1756171237.8905528,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.8908017,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.8912628,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.8915315,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.8918798,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.8922732,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.892602,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.892969,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.8933637,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171237.8937428,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        }
+      ],
+      "timestamp": 1756171237.8940856
+    },
+    "robustness_metrics": {
+      "robustness_score": 75.0,
+      "fault_tolerance_rating": "Excellent",
+      "security_rating": "Excellent",
+      "recovery_rating": "Excellent"
+    },
+    "performance_impact": {
+      "baseline_inference_time_ms": 0.3,
+      "robust_inference_time_ms": 0.33779008047921316,
+      "overhead_percentage": 12.59669349307106
+    }
+  },
+  "Ultra-Robust Edge": {
+    "configuration": {
+      "name": "Ultra-Robust Edge",
+      "network": {
+        "input_dim": 6,
+        "hidden_dim": 12,
+        "output_dim": 2,
+        "fusion_mode": "neuro_dominant",
+        "energy_target_uw": 20.0
+      },
+      "robustness_enabled": {
+        "security": true,
+        "monitoring": true,
+        "graceful_degradation": true
+      }
+    },
+    "test_results": {
+      "total_inferences": 700,
+      "successful_inferences": 700,
+      "failed_inferences": 0,
+      "graceful_degradations": 600,
+      "security_violations": 0,
+      "circuit_breaker_trips": 0,
+      "average_inference_time_ms": 0.36746297563825336,
+      "uptime_percentage": 100.0,
+      "error_recovery_time_ms": 0.0
+    },
+    "system_health": {
+      "system_state": "degraded",
+      "threat_level": "high",
+      "circuit_breaker_state": "closed",
+      "consecutive_errors": 600,
+      "uptime_hours": 7.17485613293118e-05,
+      "total_inferences": 100,
+      "current_metrics": {
+        "timestamp": 1756171238.153188,
+        "avg_inference_time_ms": 0.21201372146606445,
+        "avg_energy_consumption_uw": 1.6440791666179415,
+        "error_rate_per_sec": 1.6666666666666667,
+        "total_inferences": 100,
+        "system_uptime_sec": 0.25829482078552246,
+        "alerts_count": 597
+      },
+      "recent_alerts": [
+        {
+          "timestamp": 1756171238.1486483,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.1490297,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.1493814,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.1496973,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.150383,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.1513321,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.1519222,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.1522536,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.1525834,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        },
+        {
+          "timestamp": 1756171238.1529684,
+          "type": "error_rate",
+          "message": "High error rate: 1.667/sec",
+          "severity": "warning"
+        }
+      ],
+      "timestamp": 1756171238.1532087
+    },
+    "robustness_metrics": {
+      "robustness_score": 75.0,
+      "fault_tolerance_rating": "Excellent",
+      "security_rating": "Excellent",
+      "recovery_rating": "Excellent"
+    },
+    "performance_impact": {
+      "baseline_inference_time_ms": 0.3,
+      "robust_inference_time_ms": 0.36746297563825336,
+      "overhead_percentage": 22.48765854608446
+    }
+  },
+  "robustness_analysis": {
+    "summary_metrics": {
+      "average_uptime_percentage": 100.0,
+      "average_robustness_score": 75.0,
+      "average_performance_overhead_percentage": 12.014498029436389,
+      "best_configuration": "Maximum Security",
+      "adversarial_tests_passed": 0,
+      "adversarial_tests_total": 3,
+      "adversarial_pass_rate": 0.0
+    },
+    "robustness_achievements": {
+      "fault_tolerance": true,
+      "security_hardening": false,
+      "graceful_degradation": true,
+      "production_ready": false
+    }
+  }
+}
