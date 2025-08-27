@@ -1,0 +1,93 @@
+{
+  "demonstration": "global_deployment",
+  "timestamp": 1756294660,
+  "configuration": {
+    "regions": 5,
+    "languages": 10,
+    "cultural_adaptation": true,
+    "compliance_frameworks": 8
+  },
+  "processing_results": [
+    {
+      "request_id": 1,
+      "source_region": "north_america",
+      "language": "en",
+      "routed_to": "north_america",
+      "processing_time_ms": 0.05602836608886719,
+      "latency_ms": 0.011205673217773438,
+      "energy_uw": 1.2,
+      "compliance_frameworks": [
+        "ccpa",
+        "pipeda"
+      ],
+      "cultural_adaptations": 6
+    },
+    {
+      "request_id": 2,
+      "source_region": "europe",
+      "language": "de",
+      "routed_to": "europe",
+      "processing_time_ms": 0.025510787963867188,
+      "latency_ms": 0.0051021575927734375,
+      "energy_uw": 1.2,
+      "compliance_frameworks": [
+        "gdpr",
+        "dpa"
+      ],
+      "cultural_adaptations": 6
+    },
+    {
+      "request_id": 3,
+      "source_region": "asia",
+      "language": "ja",
+      "routed_to": "asia_pacific",
+      "processing_time_ms": 0.020265579223632812,
+      "latency_ms": 0.0040531158447265625,
+      "energy_uw": 1.2,
+      "compliance_frameworks": [
+        "pdpa_singapore",
+        "pdpa_thailand",
+        "apps"
+      ],
+      "cultural_adaptations": 6
+    },
+    {
+      "request_id": 4,
+      "source_region": "south_america",
+      "language": "es",
+      "routed_to": "latin_america",
+      "processing_time_ms": 0.014781951904296875,
+      "latency_ms": 0.002956390380859375,
+      "energy_uw": 1.2,
+      "compliance_frameworks": [
+        "lgpd"
+      ],
+      "cultural_adaptations": 6
+    },
+    {
+      "request_id": 5,
+      "source_region": "africa",
+      "language": "en",
+      "routed_to": "africa",
+      "processing_time_ms": 0.013589859008789062,
+      "latency_ms": 0.0027179718017578125,
+      "energy_uw": 1.2,
+      "compliance_frameworks": [
+        "gdpr"
+      ],
+      "cultural_adaptations": 6
+    }
+  ],
+  "final_status": {
+    "operational_regions": 5,
+    "total_regions": 5,
+    "supported_languages": 10,
+    "global_success_rate": 1.0,
+    "average_latency_ms": 0.021,
+    "energy_efficiency_maintained": true,
+    "compliance_frameworks_covered": 8,
+    "cultural_adaptation_enabled": true,
+    "follow_the_sun_operations": true,
+    "global_failover_ready": true
+  }
+}
