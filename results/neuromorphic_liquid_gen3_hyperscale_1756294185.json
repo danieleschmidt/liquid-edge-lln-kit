@@ -1,0 +1,78 @@
+{
+  "test_type": "hyperscale_performance",
+  "timestamp": 1756294185,
+  "configuration": {
+    "target_neurons": 1000000,
+    "target_throughput_ops": 100000,
+    "target_latency_ms": 1.0,
+    "scaling_mode": "multi_core",
+    "nodes": 2,
+    "liquid_clusters": 64
+  },
+  "performance_tests": {
+    "batch_sizes": [
+      64,
+      256,
+      1024,
+      4096,
+      16384
+    ],
+    "throughput_ops": [
+      9545.38994381623,
+      20158.865725443076,
+      30371.799594096723,
+      45396.30692153619,
+      51187.42526929096
+    ],
+    "latency_ms": [
+      0.10476261377334595,
+      0.04960596561431885,
+      0.032925279811024666,
+      0.022028223611414433,
+      0.019536048057489097
+    ],
+    "energy_uw": [
+      0.24,
+      0.96,
+      3.84,
+      15.36000000000001,
+      61.439999999999834
+    ],
+    "scaling_factors": [
+      1000.0,
+      1000.0,
+      1000.0,
+      1000.0,
+      1000.0
+    ],
+    "parallel_efficiency": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "final_metrics": {
+    "peak_throughput_ops": 51187.42526929096,
+    "average_latency_ms": 0.02123467908227199,
+    "current_neurons": 1000000,
+    "scaling_factor": 1000.0,
+    "energy_efficiency_factor": 63.99999895833352,
+    "parallel_efficiency": 1.0,
+    "targets_achieved": {
+      "neurons": true,
+      "throughput": false,
+      "latency": true,
+      "availability": true
+    },
+    "hyperscale_features": {
+      "distributed_liquid_computing": true,
+      "hierarchical_spike_routing": true,
+      "adaptive_load_balancing": true,
+      "dynamic_partitioning": true,
+      "multi_node_scaling": true,
+      "sub_millisecond_processing": true
+    }
+  }
+}
